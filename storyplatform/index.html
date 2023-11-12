@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .carousel-container {
+      position: relative;
+      width: 80%;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+    }
+
+    .carousel-dots, .carousel-arrows {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot, .arrow {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #717171;
+    }
+  </style>
+</head>
+<body>
+
+
+
+<!-- Second Carousel: "New to Netflix" Elements with Arrows -->
+<div class="carousel-container">
+  <div class="carousel">
+    <!-- New to Netflix elements (repeat this block as needed) -->
+    <div class="carousel-item">New to Netflix Element 1</div>
+    <div class="carousel-item">New to Netflix Element 2</div>
+    <div class="carousel-item">New to Netflix Element 3</div>
+    <!-- Add more elements as needed -->
+  </div>
+
+  <div class="carousel-dots">
+    <!-- Dots for navigation -->
+  </div>
+
+  <div class="carousel-arrows">
+    <!-- Navigation arrows -->
+    <span class="arrow" onclick="prevSlide()">◄</span>
+    <span class="arrow" onclick="nextSlide()">►</span>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const videoCarousel = document.querySelector('.carousel');
+    const videoDotsContainer = document.querySelector('.carousel-dots');
+    const videoItems = document.querySelectorAll('.carousel-item');
+    const totalVideoItems = videoItems.length;
+    let currentVideoIndex = 0;
+
+    // Create dots for the video carousel
+    for (let i = 0; i < totalVideoItems; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      videoDotsContainer.appendChild(dot);
+
+      dot.addEventListener('click', () => {
+        currentVideoIndex = i;
+        updateVideoCarousel();
+      });
+    }
+
+    // Set the first dot as active
+    videoDotsContainer.children[currentVideoIndex].classList.add('active');
+
+    function updateVideoCarousel() {
+      videoCarousel.style.transform = `translateX(${-currentVideoIndex * 100}%)`;
+      updateVideoDots();
+    }
+
+    function updateVideoDots() {
+      for (let i = 0; i < totalVideoItems; i++) {
+        videoDotsContainer.children[i].classList.remove('active');
+      }
+      videoDotsContainer.children[currentVideoIndex].classList.add('active');
+    }
+
+    // Move to the next video every 5 seconds
+    setInterval(() => {
+      currentVideoIndex = (currentVideoIndex + 1) % totalVideoItems;
+      updateVideoCarousel();
+    }, 5000);
+  });
+
+  // Script for "New to Netflix" Carousel
+  let currentElementIndex = 0;
+  const elementCarousel = document.querySelectorAll('.carousel')[1];
+
+  function nextSlide() {
+    currentElementIndex = (currentElementIndex + 1) % totalVideoItems;
+    updateElementCarousel();
+  }
+
+  function prevSlide() {
+    currentElementIndex = (currentElementIndex - 1 + totalVideoItems) % totalVideoItems;
+    updateElementCarousel();
+  }
+
+  function updateElementCarousel() {
+    elementCarousel.style.transform = `translateX(${-currentElementIndex * 100}%)`;
+  }
+</script>
+
+</body>
+</html>

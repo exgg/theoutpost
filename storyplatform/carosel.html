@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Carousel</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #141414;
+    }
+
+    #carousel-container {
+      width: 80%;
+      margin: 50px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 300px;
+      box-sizing: border-box;
+      margin-right: 20px;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    #prev, #next {
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+      background-color: #333;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2; /* Ensure arrows are on top */
+    }
+
+    #prev {
+      left: 10px;
+    }
+
+    #next {
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item {
+        min-width: calc(50% - 10px);
+      }
+      #prev, #next {
+        font-size: 18px;
+        padding: 8px;
+      }
+    }
+  </style>
+
+  <style>
+    body {
+      padding-top: 56px; /* Adjust based on your header height */
+    }
+
+    /* Custom styles */
+    .carousel-item iframe {
+      height: 50vh; /* Adjust the height as needed */
+    }
+
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333; /* Set your desired background color */
+      color: #fff; /* Set your desired text color */
+      padding: 10px;
+      text-align: left;
+      font-size: 18px;
+      z-index: 1000;
+    }
+
+    .header-link {
+      color: #fff;
+      text-decoration: none;
+      margin-left: auto;
+      margin-right: 20px;
+      float: right;
+    }
+
+    .header-link:hover {
+      text-decoration: underline;
+    }
+
+
+    #floating-div {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      /* background-color: rgba(0, 0, 0, 0.8); */
+      padding: 20px;
+      border-radius: 5px;
+      color: #fff;
+      z-index: 100;
+    }
+
+    #floating-div h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #floating-div p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    #floating-div button {
+      font-size: 18px;
+      padding: 10px;
+      background-color: #e50914;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #all-shows {
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div class="sticky-header">
+  The Story Platform
+  <a href="#all-shows" class="header-link">All Shows</a>
+</div>
+
+<div id="floating-div">
+  <h2>Expressions of the Soul's Algorithm</h2>
+  <p>Inspired by Charles Le Brun's timeless masterpiece 'Expressions des passions de l'Ame,'<br>
+     this exhibit stands at the crossroads of history and innovation, inviting you to witness the birth of a new universe of passion and sentimentality</p>
+  <button>Play</button>
+</div>
+
+
+<video id="myVideo" width="100%" height="auto" controls loop autoplay="true"
+muted="true">
+  <source src="art.mp4" type="video/mp4" >
+  Your browser does not support the video tag.
+</video>
+
+<br><br><br><br>
+<div id="all-shows">
+  <h3>All Shows</h3>
+</div>
+
+<div id="carousel-container">
+  <button id="prev">&lt;</button>
+  <div id="carousel">
+    <div class="carousel-item"><img src="image1.png" alt="Image 1"></div>
+    <div class="carousel-item"><img src="image2.png" alt="Image 2"></div>
+    <div class="carousel-item"><img src="image3.png" alt="Image 3"></div>
+    <div class="carousel-item"><img src="image4.png" alt="Image 4"></div>
+    <div class="carousel-item"><img src="image5.png" alt="Image 5"></div>
+    <div class="carousel-item"><img src="image1.png" alt="Image 6"></div>
+    <div class="carousel-item"><img src="image2.png" alt="Image 7"></div>
+    <div class="carousel-item"><img src="image3.png" alt="Image 8"></div>
+    <div class="carousel-item"><img src="image4.png" alt="Image 9"></div>
+    <div class="carousel-item"><img src="image5.png" alt="Image 10"></div>
+  </div>
+  <button id="next">&gt;</button>
+</div>
+
+<script>
+
+  const carousel = document.getElementById('carousel');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+
+  let currentIndex = 0;
+
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < carousel.children.length - 5) {
+      currentIndex += 2;
+    } else {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex -= 2;
+    } else {
+      currentIndex = carousel.children.length - 5;
+    }
+    updateCarousel();
+  });
+
+  function updateCarousel() {
+    const newTransformValue = -currentIndex * 320; // Adjust 320 to the width of your carousel items
+    carousel.style.transform = `translateX(${newTransformValue}px)`;
+  }
+</script>
+
+</body>
+</html>
