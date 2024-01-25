@@ -34,6 +34,7 @@ header::after {
     transition: width 0.5s ease-in-out; /* Transition only the width */
 }
 
+
 .main-title {
     text-decoration: none;
     color: white;
