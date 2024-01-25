@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+            body {
+	            font-family: Arial, sans-serif;
+	            margin: 0;
+	            padding: 0;
+	        }
+
+	        header {
+	    background-color: #000;
+	    color: white;
+	    padding: 10px;
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    position: relative;
+	}
+
+
+	header::after {
+	    content: "";
+	    position: absolute;
+	    left: 50%;
+	    bottom: 0;
+	    width: 0;
+	    height: 3px; /* Adjust the thickness of the line */
+	    background-color: blue; /* Adjust the color of the line */
+	    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+	}
+
+	 .main-title {
+	            text-decoration: none;
+	            color: white;
+	        }
+
+	        a.main-title:hover {
+	            color: white;
+	        }
+
+	        a.main-title:visited {
+	            color: white;
+        }
+
+
+	body.loaded header::after {
+	    left: 0;
+	    width: 100%;
+}
+
+
+     .logo {
+	            font-size: 20px;
+        }
+
+        /* Style the header */
+       header {
+		   background-color: #000;
+		   color: white;
+		   padding: 10px;
+		   display: flex;
+		   justify-content: space-between;
+		   align-items: center;
+		   position: relative;
+	   }
+
+	   header::after {
+		   content: "";
+		   position: absolute;
+		   left: 50%;
+		   bottom: 0;
+		   width: 0;
+		   height: 3px; /* Adjust the thickness of the line */
+		   background-color: #2e95d3; /* Adjust the color of the line */
+		   transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+        }
+
+        /* Style the menu items */
+        nav {
+            display: inline-block;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            width: 60px;
+            display: inline-block;
+        }
+
+        /* Style the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 300px;
+            left: 50%; /* Center the dropdown-content horizontally */
+            transform: translateX(-50%); /* Center the dropdown-content horizontally */
+            top: 38px; /* Move the dropdown-content down by 5 pixels */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Adjust the width of dropdown items */
+        .dropdown-content a {
+            width: auto; /* Reset width for dropdown items */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="logo"><a href="index.html" class="main-title">Bright Visions Group</a></div>
+        <nav>
+
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <div class="dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Business strategy and development</a>
+                    <a href="#">Retail performances and distribution</a>
+                    <a href="#">Customer experience and digital approach</a>
+                </div>
+            </div>
+            <a href="#">Contact</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </nav>
+    </header>
+
+
+        <p>
+
+	        <div class="container">
+	            <img src="welcome.png" alt="Our approach">
+	        </div>
+
+	        <br>
+	        We are a boutique business consulting company based in
+	London with an International approach. We can support
+	companies and projects in different countries, with special focus
+	on UK and Asia.
+
+
+	    </p>
+
+
+	    <script>
+	        function toggleMenu() {
+	            var menu = document.getElementById('menu');
+	            menu.classList.toggle('show');
+	        }
+    </script>
+</body>
+</html>
