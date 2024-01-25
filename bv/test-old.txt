@@ -1,0 +1,80 @@
+ <p>
+
+       
+        <img src="welcome.png" heigth="50%"></img><br>
+        We are a boutique business consulting company based in
+London with an International approach. We can support
+companies and projects in different countries, with special focus
+on UK and Asia.
+
+
+    </p>
+
+    <h2>Our Approach</h2>
+    <img src="process.png"></img>
+    
+
+    .........................................................
+
+
+
+    <h2>Contact</h2>
+<p>
+    THANK YOU!
+
+WE LOOK FORWARD TO
+
+WORKING WITH YOU!
+
+info@brightvisionsgroup.com
+
+<br>
++44 07895128097
+
+
+    </p>
+
+
+    .........................................................
+    <p>
+
+        <h2>About</h2>
+
+        <img src="sharon.jpg" height="300px"></img>
+
+        <p>
+            We are a boutique business consulting company based in London with
+            an International approach. We can support companies and projects in
+            different countries, with special focus on UK and Asia, thanks to the
+            special background of the founder.<br>
+            Our mission is to help you to achieve your goals using a very
+            customized 360 degree approach according to yours and your clients’
+            specific needs to help you to succeed in the long term.
+            Our values: we offer creative solutions which evolve according to the
+            changes in the market and clients.<br>
+    
+            
+        </p>
+
+    </p>
+
+    <p>
+        
+
+<img src="team.png"></img>
+
+With over 13 years experience in luxury business, I have worked for multiple
+Brands like Max Mara, Luxottica and Armani group across Asia and UK.
+During my career I had the chance to be in charge of successful projects,
+including the set up of the retail foundations of Armani Brands in China.
+
+Languages: Italian, English, Mandarin.
+
+    </p>
+
+
+  
+
+    <footer>
+        &copy; 2024 BrightVisionsGroup. All rights reserved.
+    </footer>
