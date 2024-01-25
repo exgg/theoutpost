@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Visions Group</title>
+    <link rel="stylesheet" href="grid.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px; /* Adjust the thickness of the line */
+    background-color: blue; /* Adjust the color of the line */
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+body.loaded header::after {
+    left: 0;
+    width: 100%;
+}
+
+        .logo {
+            font-size: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+           
+            float: right;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #555;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            margin-right: 5px; /* Added margin-right */
+        }
+
+        @media only screen and (max-width: 600px) {
+            li {
+                display: none;
+                width: 100%;
+                text-align: center;
+            }
+
+            li.show {
+                display: block;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .menu-regular {
+                display: none;
+            }
+            ul {
+                overflow: hidden;
+                float: none;
+            }
+
+            footer {
+                background-color: #000;
+                color: black;
+                padding: 10px;
+                text-align: center;
+            }
+
+            hr {
+                
+            }
+
+        }
+    </style>
+</head>
+<body class="loaded">
+
+    <header>
+        <div class="logo">Bright Visions Group</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰
+            <ul id="menu">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="approach.html">Our Approach</a></li>
+                <li><a href="fees.html">Fees</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+    
+        </div>
+
+        <div class="menu-regular">
+
+        <ul id="menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="approach.html">Our Approach</a></li>
+            <li><a href="fees.html">Fees</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        </div>
+        
+    </header>
+
+
+    <p>
+
+        We are a boutique business consulting company based in London with
+        an International approach. We can support companies and projects in
+        different countries, with special focus on UK and Asia, thanks to the
+        special background of the founder.<br>
+        Our mission is to help you to achieve your goals using a very
+        customized 360 degree approach according to yours and your clients’
+        specific needs to help you to succeed in the long term.
+        Our values: we offer creative solutions which evolve according to the
+        changes in the market and clients.<br>
+        <br>
+
+
+    </p>
+
+    
+    <div class="grid-container">
+        <div class="grid-item"><img src="sharon.jpg" height="300px"></img></div>
+        <div class="grid-item"><p>
+          
+            With over 13 years experience in luxury business, I have worked for multiple Brands like Max Mara, Luxottica and Armani group across Asia and UK. During my career I had the chance to be in charge of successful projects, including the set up of the retail foundations of Armani Brands in China. Languages: Italian, English, Mandarin.
+
+            <br>
+            
+        </p></div>
+    </div>
+
+
+
+
+    <footer>
+        &copy; 2024 BrightVisionsGroup. All rights reserved.
+    </footer>
+
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
