@@ -3,7 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylex.css">
+    <link rel="stylesheet" href="grid.css">
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+.footer {
+      background-color: black;  /* Set the background color of the footer */
+      color: white;            /* Set the text color to white */
+      padding: 20px;           /* Add some padding for better visibility */
+      text-align: center;      /* Center-align the text */
+}
+
+.logo {
+    font-size: 20px;
+}
+
+a:hover {
+    background-color: #555;
+}
+
+header {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+   
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full width of the header */
+    height: 3px; /* Adjust the thickness of the line */
+    background-color: blue; /* Adjust the color of the line */
+    transition: width 0.5s ease-in-out; /* Transition only the width */
+}
+
+
+.main-title {
+    text-decoration: none;
+    color: white;
+}
+
+a.main-title:hover {
+    color: white;
+}
+
+a.main-title:visited {
+    color: white;
+}
+
+
+.container {
+    text-align: center;
+    background-color: white;
+    border-bottom: 2px solid blue; /* Blue line at the bottom */
+}
+
+.container img {
+    /* Additional styles for the image, if needed */
+    display: block; /* This ensures the image doesn't have extra space below it */
+    margin: 0;   /* This centers the image horizontally */
+    border: none;      /* No border */
+    padding: 0;        /* No padding */
+}
+
+/* Style the menu items */
+nav {
+    display: inline-block;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    width: 60px;
+    display: inline-block;
+}
+
+nav::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 3px; /* Adjust the thickness of the line */
+        background-color: blue; /* Adjust the color of the line */
+        transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+/* Style the dropdown */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #333;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+z-index: 1;
+width: 300px;
+left: 50%; /* Center the dropdown-content horizontally */
+transform: translateX(-50%); /* Center the dropdown-content horizontally */
+top: 38px; /* Move the dropdown-content down by 5 pixels */
+}
+
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+/* Adjust the width of dropdown items */
+.dropdown-content a {
+width: auto; /* Reset width for dropdown items */
+display: block;
+}
+
+.menu-icon {
+    display: none;
+}
+
+    .custom-div {
+      margin-left: 20px; /* Adjust the left margin as needed */
+      margin-right: 20px; /* Adjust the right margin as needed */
+    }
+
+    .custom-div p {
+      text-align: left; /* This sets the text alignment to left */
+    }
+
+@media only screen and (max-width: 600px) {
+
+.menu-icon {
+    display: block;
+}
+
+.menu-regular {
+    display: none;
+}
+}
+    </style>
 </head>
 
     <header>
@@ -24,19 +176,19 @@
     <div class="menu-regular">
         <nav>
 
-            <a href="#">Home</a>
-            <a href="#">About</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
             <div class="dropdown">
                 <a href="#">Services</a>
                 <div class="dropdown-content">
-                    <a href="#">Business strategy and development</a>
+                    <a href="business-strategy-and-development.html">Business strategy and development</a>
                     <a href="#">Retail performances and distribution</a>
                     <a href="#">Customer experience and digital approach</a>
                 </div>
             </div>
-            <a href="#">Approach</a>
-            <a href="#">Fees</a>
-            <a href="#">Contact</a>
+            <a href="approach.html">Approach</a>
+            <a href="fees.html">Fees</a>
+            <a href="contact.html">Contact</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
         </nav>
     </div>
@@ -44,12 +196,20 @@
     </header>
 
     <body class="loaded">
-       <div class="container">
-        <br>
-                
-<h1>Business strategy and development</h1>
+        <body class="loaded">
+       
+           
+            <div class="container">
+                <br><br>
+    
+        <p>
+            <h2>Business strategy and development</h2><br>
 
-<h1>Business strategy and Intelligence</h1>
+            <div class="custom-div">
+                
+
+
+<h3>Business strategy and Intelligence</h3>
 <p>We help you to develop and plan the best short term or long term
 strategy to achieve your goals according to your business needs
 and the peculiarity of the local market. We specialize in UK, Europe,
@@ -58,13 +218,13 @@ We also collect and process data from various sources to provide
 insights into market trends, customer behavior and operational
 efficiency.</p>
 
-<h1>Go to market</h1>
+<h3>Go to market</h3>
 <p>If you want to enter a new market we can support throughout the
 whole process: from the very initial stages related to market
 analysis to the set up of the company/office till the start of your
 business.</p>
 
-<h1>Project Management</h1>
+<h3>Project Management</h3>
 <p>From the launch of a pop up store, a store opening/closure, to any
 specific need a company might have, we oversee each project,
 ensuring it is completely efficient, on time and within budget. These
@@ -87,7 +247,7 @@ Some of the roles that we can cover: Country Manager, Retail
 Director/Manager, Retail Project Manager, Business Developer, HR
 Manager, CRM, Retail Marketing Manager, Store Manager/Director.</p>
 
-<h1>Reorganization and recruiting</h1>
+<h3>Reorganization and recruiting</h3>
 <p>We help you to optimize and improve the efficiency of your
 corporate and in store team structure. Once agreed the best
 solution for your business, we can support you during the local
@@ -95,14 +255,22 @@ recruiting process of the team, thanks also to our network of local
 recruiting experts.
 We can also support you to recruit and supervise the team during
 pop up or other short term projects.</p>
-</div>   
-</body>
 
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById('menu');
-        menu.classList.toggle('show');
-    }
-</script>
+</div>
+
+<br><br><br><br>  
+
+    </div>
+
+    <footer>
+        <p class="footer">© 2024 BrightVisionsGroup. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 
 </html>

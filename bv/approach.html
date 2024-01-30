@@ -6,158 +6,139 @@
     <title>Bright Visions Group</title>
     <style>
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-        .container {
-            text-align: center;
-        }
-
-        .container img {
-            /* Additional styles for the image, if needed */
-            display: block; /* This ensures the image doesn't have extra space below it */
-            margin: auto;   /* This centers the image horizontally */
-        }
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #000;
         }
-
+        
+        .footer {
+              background-color: black;  /* Set the background color of the footer */
+              color: white;            /* Set the text color to white */
+              padding: 20px;           /* Add some padding for better visibility */
+              text-align: center;      /* Center-align the text */
+        }
+        
+        .logo {
+            font-size: 20px;
+        }
+        
+        a:hover {
+            background-color: #555;
+        }
+        
+        header {
+            background-color: #000;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+           
+        header::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%; /* Full width of the header */
+            height: 3px; /* Adjust the thickness of the line */
+            background-color: blue; /* Adjust the color of the line */
+            transition: width 0.5s ease-in-out; /* Transition only the width */
+        }
+        
+        
         .main-title {
             text-decoration: none;
             color: white;
         }
-
+        
         a.main-title:hover {
             color: white;
         }
-
+        
         a.main-title:visited {
             color: white;
         }
-
-
-        header {
-    background-color: #000;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-header::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0;
-    height: 3px; /* Adjust the thickness of the line */
-    background-color: blue; /* Adjust the color of the line */
-    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
-}
-
-body.loaded header::after {
-    left: 0;
-    width: 100%;
-}
-
-        .logo {
-            font-size: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-           
-            float: right;
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
+        
+        
+        .container {
             text-align: center;
-            padding: 14px 16px;
+            background-color: white;
+            border-bottom: 2px solid blue; /* Blue line at the bottom */
+        }
+        
+    
+        
+        /* Style the menu items */
+        nav {
+            display: inline-block;
+        }
+        
+        nav a {
+            color: white;
             text-decoration: none;
+            padding: 10px;
+            width: 60px;
+            display: inline-block;
         }
-
-        li a:hover {
-            background-color: #555;
+        
+        nav::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                width: 0;
+                height: 3px; /* Adjust the thickness of the line */
+                background-color: blue; /* Adjust the color of the line */
+                transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
         }
-
+        
+        /* Style the dropdown */
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+        
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        width: 300px;
+        left: 50%; /* Center the dropdown-content horizontally */
+        transform: translateX(-50%); /* Center the dropdown-content horizontally */
+        top: 38px; /* Move the dropdown-content down by 5 pixels */
+        }
+        
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+        
+        /* Adjust the width of dropdown items */
+        .dropdown-content a {
+        width: auto; /* Reset width for dropdown items */
+        display: block;
+        }
+        
         .menu-icon {
             display: none;
-            cursor: pointer;
-            color: white;
-            font-size: 20px;
-            padding: 10px;
-            margin-right: 5px; /* Added margin-right */
         }
-
-        @media only screen and (max-width: 600px) {
-            li {
-                display: none;
-                width: 100%;
-                text-align: center;
-            }
-
-            li.show {
-                display: block;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-
-            .menu-regular {
-                display: none;
-            }
-            ul {
-                overflow: hidden;
-                float: none;
-            }
-
-            
-
-            hr {
-                
-            }
-
-        }
-
-
-        footer {
-            margin: 0;
-    border-top: 1px solid #000;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
-    font-size: .9285714286rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: #777;
-    background: #141515;
-}
-
-         
-
-         .footer-text {
-            color: white;
-        }
-
         
-
-    </style>
+        @media only screen and (max-width: 600px) {
+        
+        .menu-icon {
+            display: block;
+        }
+        
+        .menu-regular {
+            display: none;
+        }
+        }
+            </style>
 </head>
 <body class="loaded">
 
@@ -177,35 +158,52 @@ body.loaded header::after {
         </div>
 
         <div class="menu-regular">
-
-        <ul id="menu">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="approach.html">Our Approach</a></li>
-            <li><a href="fees.html">Fees</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-
+            <nav>
+    
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <div class="dropdown">
+                    <a href="#">Services</a>
+                    <div class="dropdown-content">
+                        <a href="business-strategy-and-development.html">Business strategy and development</a>
+                        <a href="retail-performances-and-distribution.html">Retail performances and distribution</a>
+                        <a href="customer-experience-and-digital-approach.html">Customer experience and digital approach</a>
+                    </div>
+                </div>
+                <a href="approach.html">Approach</a>
+                <a href="fees.html">Fees</a>
+                <a href="contact.html">Contact</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </nav>
         </div>
         
     </header>
 
 
-    
+    <body class="loaded">
+       
+           
+        <div class="container">
+            <br><br>
 
     <p>
         <h2>Our Approach</h2>
-        <div class="container">
-            <img src="process.png" alt="Our approach">
+       
+            <center>
+                <img src="process.png" alt="Our approach">
+            </center>
+
+            <br><br><br><br>  
         </div>
+       
+
     </p>
-    <br><br><br>
+ 
 
 
     <footer>
-        <p class="footer-text"> &copy; 2024 BrightVisionsGroup. All rights reserved.</p>
+        <p class="footer">© 2024 BrightVisionsGroup. All rights reserved.</p>
     </footer>
-
 
     <script>
         function toggleMenu() {

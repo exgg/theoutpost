@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Visions Group</title>
+    <link rel="stylesheet" href="stylex.css">
+    <link rel="stylesheet" href="grid.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
 
-        header {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+.footer {
+      background-color: black;  /* Set the background color of the footer */
+      color: white;            /* Set the text color to white */
+      padding: 20px;           /* Add some padding for better visibility */
+      text-align: center;      /* Center-align the text */
+}
+
+.logo {
+    font-size: 20px;
+}
+
+a:hover {
+    background-color: #555;
+}
+
+header {
     background-color: #000;
     color: white;
     padding: 10px;
@@ -20,122 +38,163 @@
     align-items: center;
     position: relative;
 }
-
+   
 header::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: 0;
-    width: 0;
+    width: 100%; /* Full width of the header */
     height: 3px; /* Adjust the thickness of the line */
     background-color: blue; /* Adjust the color of the line */
-    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out; /* Transition only the width */
 }
 
-body.loaded header::after {
-    left: 0;
-    width: 100%;
+
+.main-title {
+    text-decoration: none;
+    color: white;
 }
 
-        .logo {
-            font-size: 20px;
-        }
+a.main-title:hover {
+    color: white;
+}
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-           
-            float: right;
-        }
+a.main-title:visited {
+    color: white;
+}
 
-        li {
-            float: left;
-        }
 
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+.container {
+    text-align: center;
+    background-color: white;
+    border-bottom: 2px solid blue; /* Blue line at the bottom */
+}
 
-        li a:hover {
-            background-color: #555;
-        }
+.container img {
+    /* Additional styles for the image, if needed */
+    display: block; /* This ensures the image doesn't have extra space below it */
+    margin: 0;   /* This centers the image horizontally */
+    border: none;      /* No border */
+    padding: 0;        /* No padding */
+}
 
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            color: white;
-            font-size: 20px;
-            padding: 10px;
-            margin-right: 5px; /* Added margin-right */
-        }
+/* Style the menu items */
+nav {
+    display: inline-block;
+}
 
-        @media only screen and (max-width: 600px) {
-            li {
-                display: none;
-                width: 100%;
-                text-align: center;
-            }
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    width: 60px;
+    display: inline-block;
+}
 
-            li.show {
-                display: block;
-            }
+nav::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 3px; /* Adjust the thickness of the line */
+        background-color: blue; /* Adjust the color of the line */
+        transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
 
-            .menu-icon {
-                display: block;
-            }
+/* Style the dropdown */
+.dropdown {
+position: relative;
+display: inline-block;
+}
 
-            ul {
-                overflow: hidden;
-                float: none;
-            }
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #333;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+z-index: 1;
+width: 300px;
+left: 50%; /* Center the dropdown-content horizontally */
+transform: translateX(-50%); /* Center the dropdown-content horizontally */
+top: 38px; /* Move the dropdown-content down by 5 pixels */
+}
 
-            footer {
-                background-color: #000;
-                color: black;
-                padding: 10px;
-                text-align: center;
-            }
 
-            hr {
-                
-            }
+.dropdown:hover .dropdown-content {
+display: block;
+}
 
-        }
+/* Adjust the width of dropdown items */
+.dropdown-content a {
+width: auto; /* Reset width for dropdown items */
+display: block;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+.menu-icon {
+    display: block;
+}
+
+.menu-regular {
+    display: none;
+}
+}
     </style>
 </head>
-<body class="loaded">
 
     <header>
-        <div class="logo">Bright Visions Group</div>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <ul id="menu">
-            <li><a href="#">About Us</a></li>
-            
-            <li>
-                <a href="#">Services</a>
-                <ul>
-                    <li><a href="#">Service 1</a></li>
-                    <li><a href="#">Service 2</a></li>
-                    <li><a href="#">Service 3</a></li>
-                </ul>
-            </li>
+    <div class="logo"><a href="index.html" class="main-title">Bright Visions Group</a></div>
 
-            <li><a href="#">Our Approach</a></li>
-            <li><a href="#">Fees</a></li>
-            <li><a href="#">Contact</a></li>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰
+        <ul id="menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="approach.html">Our Approach</a></li>
+            <li><a href="fees.html">Fees</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        
+
+    </div>
+
+    <div class="menu-regular">
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <div class="dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="business-strategy-and-development.html">Business strategy and development</a>
+                    <a href="retail-performances-and-distribution.html">Retail performances and distribution</a>
+                    <a href="customer-experience-and-digital-approach.html">Customer experience and digital approach</a>
+                </div>
+            </div>
+            <a href="approach.html">Approach</a>
+            <a href="fees.html">Fees</a>
+            <a href="contact.html">Contact</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </nav>
+    </div>
+
     </header>
 
-    <p>
-
-        <h2>Fees</h2>
+    <body class="loaded">
+        <body class="loaded">
+       
+           
+            <div class="container">
+                <br><br>
+    
+        <p>
+            <h2>Fees</h2>
 
         <p>
 
@@ -144,7 +203,7 @@ quotation according to your needs.  </p>
 <p>
 Here you can find some fee strucests :  </p>
 <p>
-• DAILy - HOURLY RATE: We start from 90 GBP + VAT  </p>
+• DAILY - HOURLY RATE: We start from 90 GBP + VAT  </p>
 <p>
 • ON PROJECTS: Whether for a few days, or several months, we offer a bespoke rates  for the whole
 period of the project  </p>
@@ -160,10 +219,13 @@ together. We can support, coordinate and connect.
 
     </p>
 
-    <footer>
-        &copy; 2024 BrightVisionsGroup. All rights reserved.
-    </footer>
+    <br><br><br><br>  
 
+    </div>
+
+    <footer>
+        <p class="footer">© 2024 BrightVisionsGroup. All rights reserved.</p>
+    </footer>
 
     <script>
         function toggleMenu() {
