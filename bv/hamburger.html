@@ -1,0 +1,151 @@
+<style>
+    body {
+      font-family: Arial;
+      background: palegreen;
+    }
+    
+    .visible {
+      display: block !important;
+    }
+    
+    nav.mobile-menu {
+      position: fixed;
+      background: white;
+      box-sizing: border-box;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      padding: 0 16px;
+    }
+    nav.mobile-menu .logo {
+      font-size: 21px;
+      text-decoration: none;
+      color: #333333;
+      font-weight: bold;
+    }
+    nav.mobile-menu .mobile-menu-overlay {
+      z-index: 1337;
+      display: none;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      background: white;
+      top: 0;
+      left: 0;
+      text-align: center;
+    }
+    nav.mobile-menu .mobile-menu-overlay ul {
+      position: relative;
+      top: 50%;
+      transform: perspective(1px) translateY(-50%);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 36px;
+    }
+    nav.mobile-menu .mobile-menu-overlay ul li {
+      margin-bottom: 24px;
+    }
+    nav.mobile-menu .mobile-menu-overlay ul li a {
+      color: #333333;
+      text-decoration: none;
+    }
+    
+    .hamburger-menu,
+    .hamburger-menu:after,
+    .hamburger-menu:before {
+      width: 24px;
+      height: 4px;
+      border-radius: 2px;
+    }
+    
+    .hamburger-wrapper {
+      display: block;
+      padding: 12px 0;
+      z-index: 1338;
+    }
+    
+    .hamburger-menu {
+      position: relative;
+      background: black;
+      transition: all 0ms 200ms;
+      display: block;
+    }
+    .hamburger-menu.animate {
+      background: white;
+    }
+    
+    .hamburger-menu:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 8px;
+      background: black;
+      transition: bottom 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .hamburger-menu:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      background: black;
+      transition: top 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .hamburger-menu.animate:after {
+      top: 0;
+      transform: rotate(45deg);
+      transition: top 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .hamburger-menu.animate:before {
+      bottom: 0;
+      transform: rotate(-45deg);
+      transition: bottom 200ms cubic-bezier(0.23, 1, 0.32, 1), transform 200ms 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    </style>
+    
+      <script>
+      window.console = window.console || function(t) {};
+    </script>
+    
+      
+      
+    </head>
+    
+    <body translate="no">
+      <nav class="mobile-menu">
+        <a class="logo" href="/">YourLogo</a>
+        <a href="#" class="hamburger-wrapper">
+            <div class="hamburger-menu"></div>
+        </a>
+        <div class="mobile-menu-overlay">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our mission</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+    </nav>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+          <script id="rendered-js" >
+    // Hamburger menu
+    (function () {
+      $('.hamburger-wrapper').on('click', function () {
+        $('.hamburger-menu').toggleClass('animate');
+        $('.mobile-menu-overlay').toggleClass('visible');
+      });
+      $('.mobile-menu-overlay > ul > li > a').on('click', function () {
+        $('.hamburger-menu').removeClass('animate');
+        $('.mobile-menu-overlay').removeClass('visible');
+      });
+    })();
+    //# sourceURL=pen.js
+        </script>
