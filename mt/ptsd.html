@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --background: #faf6f1;
+            --card-background: #faf6f188;
+            --menu-hr: #faf6f1;
+            --menu-bg: #004d40;
+            --menu-text-color: rgb(63, 6, 6);
+            --text-color: #004d40;
+            --cta-color: #f16e00;;
+            --cta-text-color: white;
+            --white: #ffffff;
+            --footer-color: #004d40;
+            --footer-control-color: #faf6f1;
+            --journal-background: #fae8d2;
+            --journal-background-dark: #ffd7a6;
+            --accent-hsl: 9.23076923076923,95.1219512195122%,59.80392156862745%;
+            --headingExtraLargeColor: hsla(var(--accent-hsl),1);
+        }
+
+        h1 {
+            color: var(--headingExtraLargeColor);
+        }
+
+        body {
+            font-family: 'VarelaRound', sans-serif;
+        }
+
+        a {
+            color: var(--headingExtraLargeColor);
+        }
+
+        .title-class {
+           
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo a {
+            font-weight: bold;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .line {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        .cards { grid-template-columns: repeat(3, 1fr); }
+
+
+        body {background-color: var(--background)}
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+          <a href="#"><h2>Manuel Toren Counselling & Psychotherapy</h2></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#"></a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Linkedin</a></li>
+          <li><a href="#" onclick="location.href='https://www.neuro-bridging.com/members';">login</a>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"><x/div>
+        </div>
+    </nav>
+
+    <script>
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+    </script>
+
+
+    <div class="cards">
+
+       <img src="image-asset.jpeg"></img>
+
+    </div>
+
+</body>
+</html>
