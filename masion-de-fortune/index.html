@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baskerville Font</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskerville&display=swap">
+<style>
+  body {
+    font-family: "Didot", serif;
+    background-color: black; /* converted from RGB 74 40 100 to hex */
+    color: black; /* deep purple */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+
+p {
+	letter-spacing 0.5px;
+	line-height 24px;
+	font-size: 20px;
+	text-align: left;
+}
+
+p.writtencopy {
+    font-family: 'HelveticaNeueLTStd-Lt', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    font-size: 17px;
+    line-height: 24px;
+
+        padding-top: 30px;
+        padding-right: 60px;
+}
+
+p.imagep {
+    padding: 10px;  
+    padding-left: 100px;    
+}
+
+
+.white-heading {
+    color: white;
+  }
+
+  h1 {
+      margin: 0; /* Set margin to 0 to remove space around h1 */
+      padding: 0; /* Set padding to 0 to remove space around h1 */
+  }
+
+   h3 {
+      margin: 0; /* Set margin to 0 to remove space around h1 */
+      padding: 0; /* Set padding to 0 to remove space around h1 */
+  }
+
+/* Link styles */
+  a {
+    font-size: 20px;
+    color: white; /* Set link color to white */
+    text-decoration: none; /* Remove underline */
+  }
+
+  /* Visited link styles */
+  a:visited {
+    color: white; /* Set visited link color to white */
+  }
+
+ header {
+     font-size: 30px;
+     padding: 3px;
+     text-align: center;
+     top: 0;
+     z-index: 1000;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+     background-color: black;
+     color: transparent;
+     background-image: linear-gradient(to right, #ffffff, #e4f5f8, #ffffff); /* Dark gold */
+     background-size: 150% auto;
+     -webkit-background-clip: text;
+     background-clip: text;
+     animation: shimmer 30s infinite;
+ }
+
+ @keyframes shimmer {
+     0% {
+         background-position: 0 0;
+     }
+     50% {
+         background-position: 100% 0;
+     }
+     100% {
+         background-position: 0 0;
+     }
+ }
+
+
+  .content {
+    text-align: center;
+    flex: 1;
+
+    background-color: black;
+  }
+
+ 
+
+/* Purple horizontal rule */
+  hr {
+    border: none;
+    height: 2px;
+    background-color: #4A2864; /* deep purple */
+    margin: 20px auto; /* Set margin to center horizontally */
+    width: 60%; /* Set width of the hr */
+  }
+
+  img {
+      max-width: 100%; /* Ensure images don't exceed the width of their container */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Remove extra space beneath images */
+      margin: 0 auto; /* Center images horizontally */
+  }
+
+
+/* Mobile styles */
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 27px; /* Further reduce font size on mobile */
+    }
+
+     h3 {
+	    font-size: 19px; /* Further reduce font size on mobile */
+    }
+
+    p.writtencopy {
+        padding-top: 0px;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    p.imagep {
+        padding: 10px;     
+    }
+  }
+
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .column {
+    flex-basis: 48%; /* Two columns, each taking 48% of the container */
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  /* Adjust styles for better readability */
+  .column {
+    background-color: black;
+    border: 1px solid black;
+    margin-bottom: 10px; /* Add some space between columns */
+  }
+
+  /* Media query for responsiveness */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex-basis: 100%; /* Each column takes full width on smaller screens */
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Maison-De-Fortune</h1>
+  <h3>The House Of Fortune</h3>
+</header>
+
+<div class="content">
+
+    <div class="container">
+        <div class="column">
+       
+          <p class="imagep"><img src="masion-de-fortune.png"></img></p>
+        </div>
+        <div class="column">
+          
+            <h2 class="white-heading">Introduction</h2>
+
+          <p class="writtencopy">
+            
+            Located on the edge of London's Regents Park, a grand townhouse once the residence of a lucky French Nobleman, is now home to an extraordinary group of individuals. 
+            <br><br>
+            This is the story of the collective secretly known as the Maison De Fortune.  A fellowship of spiritualists each one a specialist in the esoteric arts.
+            <br><br>
+            The house shrouded in an air of mystique, serves as a base where they live and work to transform their client's lives, by decoding incidents of spiritual significance.  As these modern day fortunetellers venture further into their mystical craft, the puzzles they encounter become more intricate. With each cryptic revelation, the lives of their clients and their own become increasingly Intertwined.
+            <br><br>
+            Consumed by their passions for art, fashion, jewellery the finer things in life, the group find themselves entangled in their complex problems, and relationships along with a progressively puzzling signal from another dimension.
+            <br><br>
+            The situation only grows more complicated as the journey unfolds, for the group, their clients, the humans and entities that surround them. 
+            <br><br>
+            Are you ready to step inside, the Maison De Fortune?
+
+          </p>
+        </div>
+      </div>
+
+
+    
+      <img src="diamond.png" width="133px" height="133px"></img>
+
+</div>
+
+</body>
+</html>
