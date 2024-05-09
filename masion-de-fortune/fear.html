@@ -62,7 +62,7 @@ p.writtencopyblack {
     font-size: 17px;
     line-height: 24px;
 
-    padding-top: 30px;
+    
     padding-right: 60px;
     padding-left: 60px;
 }
@@ -207,7 +207,26 @@ p.imagep {
   #storydiv {
     background-color: white;
     width: 100%;
-    height: 100vh; /* 100% of the viewport height */
+    
+  }
+
+  .diamond-hr {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: none;
+    margin: 20px 0;
+  }
+
+  .diamond-hr::before, .diamond-hr::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid black;
+    margin: 0 10px;
+  }
+
+  .diamond-symbol {
+    font-size: 20px;
   }
 
 
@@ -231,13 +250,16 @@ p.imagep {
 
         <div class="column">
           
-            <p><h1 class="white-heading">Fear Beneath The Canopy</h1></p>
+            <p><h1 class="white-heading">Fear Beneath The Canopy</h1><hr class="diamond-hr"></p>
+            
 
         </div>
 
       </div>
 
       <div id="storydiv">
+
+        <br><br>
 
         <p class="writtencopyblack">Nadia and Rocco sat under a one-hundred-year-old oak tree, the sky light grey, clouds moving rapidly, blue sections of the sky appeared then passed, fine drops of rain fell on the tree, but its leaves protected the pair to some degree as they sat side by side.</p>
 
@@ -284,7 +306,7 @@ he continued “Is there evil in the universe Nadia?”</p>
 
 <p class="writtencopyblack">Nadia now sat in a semi-yoga position with her belongings and smiled “That evil, that evil you see is your own ego, Rocco”.</p>
 
-
+<br><br><br>
       </div>
 
 
