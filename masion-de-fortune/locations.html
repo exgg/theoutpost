@@ -193,6 +193,34 @@ p.margin-copy {
       flex-basis: 100%; /* Each column takes full width on smaller screens */
     }
   }
+
+
+  /* Ensure the container is using flexbox */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+/* Reverse the order of columns on mobile devices */
+@media (max-width: 768px) {
+  .content-item {
+    flex-direction: column;
+  }
+  .content-item .image-column {
+    order: 1;
+  }
+  .content-item .text-column {
+    order: 2;
+  }
+}
+
+  
 </style>
 </head>
 <body>
@@ -206,61 +234,60 @@ p.margin-copy {
 
 <div class="content">
 
-    <div class="container">
+  <div class="container">
 
-      <!--  maison de fortune house -->
-        <div class="column">
-       
-          <p class="imagep"><img src="fortune-de-maison-inside.png"></img></p>
-        </div>
-
-        <div class="column">
-          
-            <h2 class="white-heading">The Maison De Fortune</h2>
-
-          <p class="writtencopy">
-            
-            Located on the edge of London's Regents Park, a grand townhosue servers as the base of the collective.
-
-          </p>
-        </div>
-
-
-        <!--  visions and jewels -->
-        <div class="column">
-          
-          <h2 class="white-heading">Visions and Jewels</h2>
-
-        <p class="writtencopy margin-copy">
-        </p>
+    <!--  maison de fortune house -->
+    <div class="content-item">
+      <div class="column image-column">
+        <p class="imagep"><img src="fortune-de-maison-inside.png" alt="Maison De Fortune House"></p>
       </div>
-
-      <div class="column">
-     
-        <p class="imagep"><img src="visions-and-jewels-mayfair.png"></img></p>
+      <div class="column text-column">
+        <h2 class="white-heading">The Maison De Fortune</h2>
+        <p class="writtencopy">Located on the edge of London's Regents Park, a grand townhouse serves as the base of the collective.</p>
       </div>
-
-
-       <!--  the spiritual cloud -->
-        <div class="column">
-          
-            <h2 class="white-heading">The Spiritual Cloud</h2>
-
-          <p class="writtencopy margin-copy">
-            
-          Nadia, Colette, along with other people, animals and spiritual entities access the spiritual cloud through various methods to examine historical records and explore future probabilities.  The mechanism they use is to first locate a single image, that acts as a gateway into a conscious stream, a hyper-realistic mental movie but at others completely abstract vision.
-          <br>
-          Others get sent information from the cloud, more often than not in their dreams or via mediations.
-
-
-          </p>
-        </div>
-
-        <div class="column">
-       
-          <p class="imagep"><img src="cloud.png"></img></p>
-        </div>
     </div>
+
+    <!--  visions and jewels -->
+    <div class="content-item">
+      <div class="column text-column">
+        <h2 class="white-heading">Visions and Jewels</h2>
+        <p class="writtencopy margin-copy">this is an antique market</p>
+      </div>
+      <div class="column image-column">
+        <p class="imagep"><img src="visions-and-jewels-mayfair.png" alt="Visions and Jewels"></p>
+      </div>
+    </div>
+
+    <!--  maison de fortune house -->
+    <div class="content-item">
+      <div class="column image-column">
+        <p class="imagep"><img src="miscellany.png" alt="Maison De Fortune House"></p>
+      </div>
+      <div class="column text-column">
+        <h2 class="white-heading">The Miscellany Bookstore</h2>
+        <p class="writtencopy"></p>
+      </div>
+    </div>
+
+
+    <!--  the spiritual cloud -->
+    <div class="content-item">
+      <div class="column text-column">
+        <h2 class="white-heading">The Spiritual Cloud</h2>
+
+    
+        <p class="writtencopy margin-copy">Nadia, Colette, along with other people, animals, and spiritual entities access the spiritual cloud through various methods to examine historical records and explore future probabilities. The mechanism they use is to first locate a single image, that acts as a gateway into a conscious stream, a hyper-realistic mental movie but at others completely abstract vision.<br>Others get sent information from the cloud, more often than not in their dreams or via meditations.</p>
+      </div>
+      <div class="column image-column">
+        <p class="imagep"><img src="cloud.png" alt="The Spiritual Cloud"></p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
       <img src="diamond.png" width="133px" height="133px"></img>
 </div>
 
