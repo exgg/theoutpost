@@ -162,6 +162,64 @@ p {
   }
 
 </style>
+
+<!-- start ..... this style section is for the alternate columns -->
+<style>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.column {
+  flex-basis: 48%; /* Two columns, each taking 48% of the container */
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Adjust styles for better readability */
+.column {
+  background-color: black;
+  border: 1px solid black;
+  margin-bottom: 10px; /* Add some space between columns */
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 600px) {
+  .column {
+    flex-basis: 100%; /* Each column takes full width on smaller screens */
+  }
+}
+
+
+/* Ensure the container is using flexbox */
+.container {
+display: flex;
+flex-direction: column;
+}
+
+.content-item {
+display: flex;
+flex-direction: row;
+margin-bottom: 20px;
+}
+
+/* Reverse the order of columns on mobile devices */
+@media (max-width: 768px) {
+.content-item {
+  flex-direction: column;
+}
+.content-item .image-column {
+  order: 1;
+}
+.content-item .text-column {
+  order: 2;
+}
+}
+</style>
+<!-- end ..... this style section is for the alternate columns -->
+
+
 </head>
 <body>
 
@@ -170,12 +228,19 @@ p {
   <h3>The Dandy Defined</h3>
 
   <div>
-		<a href="https://www.shreejinewsagents.com/products/dandemonium" target="_blank">BUY NOW</a>&nbsp;<font face="Wingdings">w</font><a href="book">&nbsp;About</a>&nbsp;<font face="Wingdings">w</font><a href="book">Articles</a>&nbsp;<font face="Wingdings">w</font><a href="events.html">Events</a>
+		<a href="https://www.shreejinewsagents.com/products/dandemonium" target="_blank">BUY NOW</a>&nbsp;<font face="Wingdings">w</font><a href="book">&nbsp;About</a>&nbsp;<font face="Wingdings">w</font><a href="articles.html">Articles</a>
   </div>
 
 </header>
 
 <div class="content">
+
+
+
+
+
+
+  
 
   <h2>Juanita Colson - Book Review The Lady Magazine</h2>
 <br>
@@ -191,7 +256,7 @@ example of this rare species?
 <h2>Robin Dutt in the 25th Anniversary Edition Home House Magazine</h2>
 <br><br>
 
-<a href="C:\Users\a3501\Documents\GitHub\theoutpost\dande\homeHouseWinter202.pdf" target="_blank" class="rounded-button">Read Now</a>
+<a href="https://issuu.com/homehouselondon/docs/homehousewinter2023" target="_blank" class="rounded-button">Read Now</a>
 
 
 </div>
