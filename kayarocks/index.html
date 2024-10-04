@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .text-block {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-block {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column-reverse;
+            }
+
+            .text-block, .image-block {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="text-block">
+            <h1>Welcome to My Kaya Rocks</h1>
+            <p>
+                Kaya Rocks is about all things beautiful and holistic…<br><br>
+
+
+
+                Our aim is to bring joy, beauty and health to our customers and support them in their spiritual journey.
+
+
+
+
+We create beautiful home objects using carefully curated crystals with intention, to manifest a desired result.<br><br>
+
+
+
+<br>
+
+Our site will also offer well being products  & services that would complement the healing arts such as Crystal healing, Reiki, Yoga, Acupressure and Aromatherapy etc.
+
+
+
+<br><br>
+
+
+Coming soon…
+            </p>
+        </div>
+        <div class="image-block">
+            <img src="kaya-rocks.jpg" alt="Placeholder Image">
+        </div>
+    </div>
+
+</body>
+</html>

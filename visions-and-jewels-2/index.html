@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        header {
+            width: 100%;
+            background-color: #111;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        header a:hover {
+            color: #ccc;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #222;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .left {
+            flex: 1;
+            padding: 30px;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .left h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .left p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        .email-capture {
+            display: flex;
+            flex-direction: column;
+        }
+        .email-capture input[type="email"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #666;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #555;
+            color: #fff;
+        }
+        .email-capture button {
+            padding: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .email-capture button:hover {
+            background-color: #666;
+        }
+        .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #444;
+        }
+        .right img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column-reverse;
+            }
+            .right {
+                height: 300px;
+                order: -1; /* Ensure the image div comes to the top */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+      
+
+        <div id="myNav" class="overlay">
+
+            <div class="close-button-menu"><a href="javascript:void(0)" onclick="closeNav()"><img src="close-menu.svg"></img></a></div>
+          
+            <div class="overlay-content">
+              <a href="index.html" class="h1 menuLink" >Home</a>
+              <a href="services.html" class="h2 menuLink"  class="h1 menuLink">Services</a>
+              <a href="about.html" class="h2 menuLink" class="h1 menuLink">About Me</a>
+              <a href="neuro-bridging.html" class="h2 menuLink"  class="h1 menuLink">Neuro Bridging</a>
+              <a href="https://www.linkedin.com/in/manueltoren" class="h2 menuLink"  class="h1 menuLink" target="_blank">Linkedin</a>
+              <a href="mailto:manueltorentbi@gmail.com" target="_blank" class="h2 menuLink" class="h1 menuLink">Contact</a>
+            </div>
+          
+          </div>
+        
+        
+            <nav class="underline-nav">
+                <div >
+                  <a href="index.html" class="logo"><p class="logo libre-baskerville-text">Visions and Jewels</p></a>
+                </div>
+                <ul class="nav-links">
+        
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="about.html">About Me</a></li>
+                  <li><a href="neuro-bridging.html">Neuro Bridging</a></li>
+                  <li><a href="https://www.linkedin.com/in/manueltoren" target="_blank">Linkedin</a></li>
+        
+                  <li><a href="mailto:manueltorentbi@gmail.com" taget="_blank">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                  <button id="menu_button" type="button" onclick="openNav()"></button>
+                  
+                 <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="h1 openbtn">â˜°</span> -->
+                </div>
+            </nav>
+
+    </header>
+
+    <br><br>
+
+
+
+
+    <div class="container">
+        <div class="left">
+            <h1>Visions and Jewels</h1>
+            <p>Discover an enchanting journey that blurs the line between reality and imagination. Sign up now to get the first chapter for free!</p>
+            <div class="email-capture">
+                <input type="email" placeholder="Enter your email address" required>
+                <button>Get Your Free Chapter</button>
+            </div>
+        </div>
+        <div class="right">
+            <img src="cover.png" alt="Book Cover">
+        </div>
+    </div>
+</body>
+</html>

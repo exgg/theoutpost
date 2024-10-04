@@ -12,6 +12,7 @@
       gtag('config', 'G-370DKWCP4Z');
     </script>
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
@@ -25,6 +26,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="mt-style.css">
+
     <style>
 
 *       {
@@ -33,14 +37,13 @@
         }
 
         :root {
-              --background: #020100;
+              --background: #faf6f1;
               --card-background: #faf6f188;
               --menu-hr: #faf6f1;
               --menu-bg: #004d40;
               --menu-text-color: rgb(63, 6, 6);
-              --text-color: #e0e0e0;
-              --cta-color: #f16e00;
-              --cta-color-active: rgb(226, 102, 1);
+              --text-color: #004d40;
+              --cta-color: #f16e00;;
               --cta-text-color: white;
               --white: #ffffff;
               --accent-hsl: 9.23076923076923,95.1219512195122%,59.80392156862745%;
@@ -49,7 +52,6 @@
               --darkColor: #2F4F4F
           }
 
-        
 
           img {
               border-radius: 10px; /* Adjust the value to change the roundness */
@@ -144,7 +146,6 @@
 		body {
 			display: flex;
 			flex-direction: column;
-      background-color: var(--background)
 		}
 
 		.container {
@@ -255,196 +256,6 @@
 
     </style>
 
-    <!-- email subscribe -->
-    <style>
-       .email-capture {
-            display: flex;
-            flex-direction: column;
-        }
-        .email-capture input[type="email"] {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #666;
-            border-radius: 4px;
-            font-size: 16px;
-            background-color: #555;
-            color: #fff;
-        }
-        .email-capture button {
-            padding: 10px;
-            background-color: var(--cta-color); /* Green background */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .email-capture button:hover {
-            background-color: orange;
-        }
-
-        .email-capture button:active {
-            background-color: orange;
-        }
-
-    </style>
-
-
-<style>
-
-.cards {
-        grid-template-columns: repeat(2, 1fr); 
-        max-width: 1100px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row; /* By default, cards are arranged side by side */
-
-        gap: 20px;
-    }
-
-
-    .card {
-        color: var(--text-color);
-        padding: 1rem;
-       
-        width: 630px;
-        /* background-image: url("background.jpg") ; */
-       
-        
-        display: flex;
-        flex-direction: column;
-    }
-
-    @media screen and (max-width: 768px) {
-        .cards {
-            flex-direction: column; /* On mobile, stack the cards vertically */
-        }
-        
-        .image-card {
-            order: -1; /* Move the image card to the top */
-        }
-    }
-
-    @media (max-width: 768px) {
-
-        
-        .nav-links {
-            display: none;
-        }
-
-        .hamburger {
-            display: flex;
-        }
-
-        .logo {
-            font-size: 17px;
-        }
-    }
-
-</style>
-
-<!-- legacy -->
-<style>
-
-    h1 {
-        color: var(--white);
-    }
-
-    body {
-        font-family: 'VarelaRound', sans-serif;
-    }
-
-    a.logo {
-        color: var(--white);
-        font-weight: bold;
-        font-size: 30px;
-        text-decoration: none;
-    }
-
-    .title-class {
-        
-    }
-
-    .container {
-        margin: 0px;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-       
-    }
-
-    .logo {
-        font-weight: bold;
-        font-size: 25px;
-        text-decoration: none;
-    }
-
-    .nav-links {
-        list-style: none;
-        display: flex;
-    }
-
-    .nav-links li {
-        margin-left: 20px;
-    }
-
-    .nav-links a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-    }
-
-    .line {
-        width: 25px;
-        height: 3px;
-        background-color: black;
-        margin-bottom: 5px;
-    }
-
-    .header-text {
-        font-size: 30px;
-    }
-
-    .underline-nav {
-        border-bottom: 1px solid white;
-    }
-
-    #menu_button {
-        margin-top: 2vmin;
-        margin-left: 2vmin;
-        width: 8vmin;
-        height: 8vmin;
-        background-size: 100%;
-        /* inline SVG element! */
-        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 120 80" width="40" height="40" version="1.0" xmlns="http://www.w3.org/2000/svg"><rect x="15" width="90" height="15" rx="10"></rect><rect x="15" y="30" width="90" height="15" rx="10"></rect><rect x="15" y="60" width="90" height="15" rx="10"></rect></svg>');
-    }
-
-
-</style>
-
-<style>
-
-  /* Unvisited links */
-      a:link {
-          color: white;
-      }
-
-      /* Visited links */
-      a:visited {
-          color: white;
-      }
-
-</style>
-
 
 </head>
 
@@ -496,8 +307,6 @@
 
     <div class="container">
 
-      <div><h3>Searching, Losing, Finding, and Collecting</h3></div>
-
  <div class="cards landing">
         <div class="card">
           <h2>Welcome</h2><br>
@@ -506,17 +315,10 @@
          <br>
          <span>
           In London’s upscale Mayfair, American antique dealer Todd Hunter runs a salon
-          gallery where he’d rather admire his collection than sell it. 
-          <br><br>
-          But the art world’s demands push him into an endless cycle of buying and selling, caught between his love for fine art and the need to
-          survive. With his fiancée Nancy, a savvy dealer herself, Todd navigates the electric world of high-stakes collectors, secrets, and moral compromise.
-          <br><br>
-
-          <div class="email-capture">
-            <input type="email" placeholder="Enter your email address" required>
-            <button class="buttonc">Get Your Free Chapter</button>
-        </div>
-
+          gallery where he’d rather admire his collection than sell it. But the art world’s demands push him
+          into an endless cycle of buying and selling, caught between his love for fine art and the need to
+          survive. With his fiancée Nancy, a savvy dealer herself, Todd navigates the murky world of
+          high-stakes collectors, secrets, and moral compromise.
 <br><br>
 
 </span>
@@ -525,7 +327,7 @@
 
         <div class="card image-card">
 
-          <img src="cover.png" ></img>
+          <img src="cover.png"></img>
 
         </div>
 
@@ -534,13 +336,10 @@
     </div>
 
     <br><br>
-   
-    <div class="cards landing">
-      <div class="card">
-      Paul Newberry is a writer who focuses on contemporary urban fiction and fantasy, primarily set in his native London. He enjoys blending reality with his imagination, infusing his stories with vivid and mystical twists.
-    </div>
+    <center>
+      <img src="PSA-Logo-Online.png" width="200px">
+    </center>
 
-  </div>
 
     <br> <br>
 
