@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid to Slider</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+
+body {
+  font-family: "Montserrat", sans-serif;
+    }
+
+header {
+     font-size: 30px;
+     padding: 3px;
+     text-align: center;
+     top: 0;
+     z-index: 1000;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+     background-color: black;
+     color: transparent;
+     background-image: linear-gradient(to right, #ffffff, #ffffff, #ffffff); /* Dark gold */
+     background-size: 150% auto;
+     -webkit-background-clip: text;
+     background-clip: text;
+     animation: shimmer 30s infinite;
+ }
+
+        /* Grid for Desktop */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 10px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Swiper Slider for Mobile */
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                display: none;
+            }
+            .swiper-container {
+                display: block;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .swiper-container {
+                display: none;
+            }
+        }
+    </style>
+
+
+
+<style>
+  
+  .asymmetrical-banner {
+            width: 100%;
+            height: 400px; /* Set the height of the tallest side */
+            background-image: url('middle1.jpg'); /* Replace with the correct path */
+            background-size: cover;
+            background-position: center;
+            background-position: 20% 40%; /* Adjust the position of the image */
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+            opacity: 0.7; /* Lower value means more transparent */
+        }
+</style>
+
+</head>
+<body>
+
+  <header>
+    <img src="lg_croped.jpg" width="200px"></img>
+  </header>
+
+
+
+  
+  <div class="asymmetrical-banner"></div>
+
+<div>
+  <center><h1>Servicing Surrey, Speicalists In High Quality</h1></center>
+  <br>
+  <center><h1>Brickwork and Landscaping Transformations</h1></center>
+  <br>
+  
+  <center><h1>Bricklaying : Patios : Garden Transformations : Decking</h1></center>
+
+</div>
+
+
+    <!-- Grid for Desktop -->
+    <div class="grid-container">
+        <div class="grid-item"><img src="image1.jpg" alt="Image 1"></div>
+        <div class="grid-item"><img src="image2.jpg" alt="Image 2"></div>
+        <div class="grid-item"><img src="image3.jpg" alt="Image 3"></div>
+        <div class="grid-item"><img src="image4.jpg" alt="Image 4"></div>
+        <div class="grid-item"><img src="image5.jpg" alt="Image 5"></div>
+        <div class="grid-item"><img src="image6.jpg" alt="Image 6"></div>
+        <div class="grid-item"><img src="image7.jpg" alt="Image 7"></div>
+        <div class="grid-item"><img src="image8.jpg" alt="Image 8"></div>
+        <div class="grid-item"><img src="image9.jpg" alt="Image 9"></div>
+        <div class="grid-item"><img src="image10.jpg" alt="Image 10"></div>
+        <div class="grid-item"><img src="image11.jpg" alt="Image 11"></div>
+        <div class="grid-item"><img src="image12.jpg" alt="Image 12"></div>
+    </div>
+
+    <!-- Slider for Mobile -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="image1.jpg" alt="Image 1"></div>
+            <div class="swiper-slide"><img src="image2.jpg" alt="Image 2"></div>
+            <div class="swiper-slide"><img src="image3.jpg" alt="Image 3"></div>
+            <div class="swiper-slide"><img src="image4.jpg" alt="Image 4"></div>
+            <div class="swiper-slide"><img src="image5.jpg" alt="Image 5"></div>
+            <div class="swiper-slide"><img src="image6.jpg" alt="Image 6"></div>
+            <div class="swiper-slide"><img src="image7.jpg" alt="Image 7"></div>
+            <div class="swiper-slide"><img src="image8.jpg" alt="Image 8"></div>
+            <div class="swiper-slide"><img src="image9.jpg" alt="Image 9"></div>
+            <div class="swiper-slide"><img src="image10.jpg" alt="Image 10"></div>
+            <div class="swiper-slide"><img src="image11.jpg" alt="Image 11"></div>
+            <div class="swiper-slide"><img src="image12.jpg" alt="Image 12"></div>
+        </div>
+
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            slidesPerView: 1,  // Show one full image at a time
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2, // 2 images side-by-side on tablets
+                }
+            }
+        });
+    </script>
+</body>
+</html>

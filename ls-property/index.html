@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison-De-Fortune</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baskerville&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+  
+
+<style>
+
+  header {
+     font-size: 30px;
+     padding: 3px;
+     text-align: center;
+     top: 0;
+     z-index: 1000;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+     background-color: black;
+     color: transparent;
+     background-image: linear-gradient(to right, #ffffff, #ffffff, #ffffff); /* Dark gold */
+     background-size: 150% auto;
+     -webkit-background-clip: text;
+     background-clip: text;
+     animation: shimmer 30s infinite;
+ }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* converted from RGB 74 40 100 to hex */
+    color: black; /* deep purple */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .rounded-button {
+    background-color: transparent;
+    border: 2px solid #D1FAFF;
+    color: #D1FAFF;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px; /* Adjust the value to change the roundness */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .rounded-button:hover {
+    background-color: #D1FAFF;
+    color: black;
+  }
+
+
+
+p {
+	letter-spacing 0.5px;
+	line-height 24px;
+	font-size: 20px;
+	text-align: left;
+}
+
+p.writtencopy {
+    font-family: 'HelveticaNeueLTStd-Lt', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    font-size: 17px;
+    line-height: 24px;
+
+        padding-top: 30px;
+        padding-right: 60px;
+}
+
+p.imagep {
+    padding: 10px;  
+    padding-left: 100px;    
+}
+
+
+.white-heading {
+    color: white;
+  }
+
+  h1 {
+      margin: 0; /* Set margin to 0 to remove space around h1 */
+      padding: 0; /* Set padding to 0 to remove space around h1 */
+  }
+
+   h3 {
+      margin: 0; /* Set margin to 0 to remove space around h1 */
+      padding: 0; /* Set padding to 0 to remove space around h1 */
+  }
+
+/* Link styles */
+  a {
+    font-size: 20px;
+    color: white; /* Set link color to white */
+    text-decoration: none; /* Remove underline */
+  }
+
+  /* Visited link styles */
+  a:visited {
+    color: white; /* Set visited link color to white */
+  }
+
+ header {
+     font-size: 30px;
+     padding: 3px;
+     text-align: center;
+     top: 0;
+     z-index: 1000;
+     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+     background-color: black;
+     color: transparent;
+     background-image: linear-gradient(to right, #ffffff, #ffffff, #ffffff); /* Dark gold */
+     background-size: 150% auto;
+     -webkit-background-clip: text;
+     background-clip: text;
+     animation: shimmer 30s infinite;
+ }
+
+
+ @keyframes shimmer {
+     0% {
+         background-position: 0 0;
+     }
+     50% {
+         background-position: 100% 0;
+     }
+     100% {
+         background-position: 0 0;
+     }
+ }
+
+
+  .content {
+    text-align: center;
+    flex: 1;
+
+    background-color: black;
+  }
+
+ 
+
+/* Purple horizontal rule */
+  hr {
+    border: none;
+    height: 2px;
+    background-color: #4A2864; /* deep purple */
+    margin: 20px auto; /* Set margin to center horizontally */
+    width: 60%; /* Set width of the hr */
+  }
+
+  img {
+      max-width: 100%; /* Ensure images don't exceed the width of their container */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Remove extra space beneath images */
+      margin: 0 auto; /* Center images horizontally */
+  }
+
+
+/* Mobile styles */
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 27px; /* Further reduce font size on mobile */
+    }
+
+     h3 {
+	    font-size: 19px; /* Further reduce font size on mobile */
+    }
+
+    p.writtencopy {
+        padding-top: 0px;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    p.imagep {
+        padding: 10px;     
+    }
+  }
+
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .column {
+    flex-basis: 48%; /* Two columns, each taking 48% of the container */
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  /* Adjust styles for better readability */
+  .column {
+    background-color: black;
+    border: 1px solid black;
+    margin-bottom: 10px; /* Add some space between columns */
+  }
+
+  /* Media query for responsiveness */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex-basis: 100%; /* Each column takes full width on smaller screens */
+    }
+  }
+
+  @font-face {
+      font-family: 'Didot';
+      src: url('fonts/Didot.woff2') format('woff2'), 
+           url('fonts/Didot.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    h1 {
+      font-family: 'Didot', serif;
+      font-weight: 400;
+    }
+
+    .contact-div {
+            background-color: rgb(47, 79, 79);
+            color: rgb(250, 246, 241);
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+         }
+
+         .asymmetrical-banner {
+            width: 100%;
+            height: 400px; /* Set the height of the tallest side */
+            background-image: url('middle1.jpg'); /* Replace with the correct path */
+            background-size: cover;
+            background-position: center;
+            background-position: 20% 40%; /* Adjust the position of the image */
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+            opacity: 0.7; /* Lower value means more transparent */
+        }
+
+
+</style>
+</head>
+<body>
+
+<header>
+  <img src="lg_croped.jpg" width="200px"></img>
+  <h1>Ls Propery Serives</h1>
+</header>
+
+<div class="asymmetrical-banner"></div>
+
+
+
+<center><h1>Servicing Surrey, Speicalists In High Quality</h1></center>
+<br>
+<center><h1>Brickwork and Landscaping Transformations</h1></center>
+<br>
+
+<center><h1>Bricklaying : Patios : Garden Transformations : Decking</h1></center>
+
+
+<br><br><br><br><br><br><br>
+<div class="content">
+
+    <div class="container">
+
+
+
+      <img src="middle1.jpg" ></img>
+
+    </div>
+      
+
+
+    
+    
+
+</div>
+
+<div class="contact-div">
+
+  <div  class="inner-div libre-baskerville-text-light"> <h1>
+  
+    <a href="mailto:manueltorentbi@gmail.com" 
+    style="color: #faf6f1; text-decoration: none;"
+    onmouseover="this.style.color='#faf6f1'" 
+    onmouseout="this.style.color='#faf6f1'"
+    onclick="this.style.color='#faf6f1'"
+    onmousedown="this.style.color='#faf6f1'">
+
+    Get In Touch.</a></h1></div>
+
+  <div  class="inner-div"> <p>
+
+  </p>
+  <a href="mailto:manueltorentbi@gmail.com" 
+    style="color: #faf6f1; text-decoration: none;"
+    onmouseover="this.style.color='#faf6f1'" 
+    onmouseout="this.style.color='#faf6f1'"
+    onclick="this.style.color='#faf6f1'"
+    onmousedown="this.style.color='#faf6f1'">Email Me</a>
+
+</p></div>
+</div>
+
+
+</body>
+</html>

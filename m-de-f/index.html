@@ -1,0 +1,631 @@
+<!doctype html>
+<html>
+<head>
+
+      <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-370DKWCP4Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-370DKWCP4Z');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <style>
+
+*       {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+              --background: #020100;
+              --card-background: #faf6f188;
+              --menu-hr: #faf6f1;
+              --menu-bg: #004d40;
+              --menu-text-color: rgb(63, 6, 6);
+              --text-color: #e0e0e0;
+              --cta-color: #f16e00;
+              --cta-color-active: rgb(226, 102, 1);
+              --cta-text-color: white;
+              --white: #ffffff;
+              --accent-hsl: 9.23076923076923,95.1219512195122%,59.80392156862745%;
+              --headingExtraLargeColor: hsla(var(--accent-hsl),1);
+
+              --darkColor: #2F4F4F
+          }
+
+        
+
+          img {
+              border-radius: 10px; /* Adjust the value to change the roundness */
+          }
+          
+          .eb-garamond-gara {
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+          }
+
+          .open-sans-libra {
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+              "wdth" 100;
+          }
+
+          @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+          /* Apply the Libre Baskerville font to h1 and p tags */
+          .libre-baskerville-text {
+            font-family: 'Libre Baskerville', serif;
+          }
+
+          /* Additional styling for h1 tags */
+          .libre-baskerville-text h1 {
+            font-weight: 700; /* Bold */
+          }
+
+          /* Additional styling for h1 tags */
+          .libre-baskerville-text-light h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700; /* Bold */
+            color: rgb(250, 246, 241);
+          }
+
+
+          /* Additional styling for p tags */
+          .libre-baskerville-text p {
+            font-weight: 500; /* Regular */
+          }
+
+          .rounded-image {
+            border-radius: 15px; /* Adjust the value to get the desired roundness */
+          }
+
+          .contact-div {
+            background-color: black;
+            color: rgb(241, 147, 33);
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+         }
+
+        .inner-div {
+            margin: 10px 0;
+        }
+
+        .libre-caslon-text-regular {
+          font-family: "Libre Caslon Text", serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+
+        .libre-caslon-text-bold {
+          font-family: "Libre Caslon Text", serif;
+          font-weight: 700;
+          font-style: normal;
+        }
+
+        .libre-caslon-text-regular-italic {
+          font-family: "Libre Caslon Text", serif;
+          font-weight: 400;
+          font-style: italic;
+        }
+
+
+
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+      background-color: var(--background)
+		}
+
+		.container {
+      padding-top: 40px;
+			
+		}
+
+    .headline {
+      color: #004d40;
+      padding-top: 60px;
+      padding-left: 60px;
+      margin-right: 60px;
+    }
+
+    .statement {
+      color: #004d40;
+      padding-top: 60px;
+      padding-left: 60px;
+      margin-right: 60px;
+    }
+
+    </style>
+
+    <style>
+
+    .overlay {
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(47, 79, 79);
+        overflow-y: hidden;
+        transition: 0.5s;
+	  }
+	
+	.overlay-content {
+	  position: relative;
+	  top: 5%;
+	  width: 100%;
+	  text-align: center;
+	  margin-top: 30px;
+	}
+	
+	.overlay a {
+	  padding: 8px;
+	  text-decoration: none;
+	  font-size: 36px;
+	  color: #f1f1f1;
+	  display: block;
+	  transition: 0.3s;
+	}
+	
+	.overlay a:hover, .overlay a:focus {
+	  color: #f1f1f1;
+	}
+	
+	.overlay .closebtn  {
+	  position: absolute;
+	  top: 10px;
+	  right: 45px;
+	  font-size: 60px;
+	}
+
+  .close-button-menu {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    float: right;
+    width: 50px;
+    height: 0px;
+  }
+	
+	@media screen and (max-height: 450px) {
+	  .overlay {overflow-y: auto;}
+	  .overlay a {font-size: 20px}
+	  .overlay a {font-family: 'Roboto Flex', sans-serif;}
+	  .overlay .closebtn {
+	  font-size: 40px;
+	  top: 15px;
+	  right: 35px;
+	  }
+	}
+
+
+    </style>
+
+    <style>
+
+      /* CSS */
+      .announcement-bar {
+          background-color: #333; /* Change to your preferred background color */
+          color: #fff; /* Change to your preferred text color */
+          text-align: center;
+          padding: 10px 0;
+          font-size: 16px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 9999;
+         
+      }
+
+      body {
+          margin-top: 80px; /* Adjust this value to prevent content overlap */
+      }
+
+    </style>
+
+    <!-- email subscribe -->
+    <style>
+       .email-capture {
+            display: flex;
+            flex-direction: column;
+        }
+        .email-capture input[type="email"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #666;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #555;
+            color: #fff;
+        }
+        .email-capture button {
+            padding: 10px;
+            background-color: var(--cta-color); /* Green background */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .email-capture button:hover {
+            background-color: orange;
+        }
+
+        .email-capture button:active {
+            background-color: orange;
+        }
+
+    </style>
+
+
+<style>
+
+.cards {
+        grid-template-columns: repeat(2, 1fr); 
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row; /* By default, cards are arranged side by side */
+
+        gap: 20px;
+    }
+
+
+    .card {
+        color: var(--text-color);
+        padding: 1rem;
+       
+        width: 630px;
+        /* background-image: url("background.jpg") ; */
+       
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-card img {
+     
+      height: auto;  /* Maintain aspect ratio */
+      max-height: 100vh; /* Limit the image height to the viewport height */
+      object-fit: cover; /* Ensure the image covers the container without distortion */
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .cards {
+            flex-direction: column; /* On mobile, stack the cards vertically */
+        }
+        
+        .image-card {
+          width: 100%;   /* Make the image take the full width of its container */
+            order: -1; /* Move the image card to the top */
+        }
+
+        .card {
+          width: 90%; 
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        
+        .nav-links {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .logo {
+            font-size: 17px;
+        }
+    }
+
+</style>
+
+<!-- legacy -->
+<style>
+
+    h1 {
+        color: var(--white);
+    }
+
+    body {
+        font-family: 'VarelaRound', sans-serif;
+    }
+
+    a.logo {
+        color: var(--white);
+        font-weight: bold;
+        font-size: 30px;
+        text-decoration: none;
+    }
+
+    .title-class {
+        
+    }
+
+    .container {
+        margin: 0px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+       
+    }
+
+    .logo {
+        font-weight: bold;
+        font-size: 25px;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-left: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .line {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin-bottom: 5px;
+    }
+
+    .header-text {
+        font-size: 30px;
+    }
+
+    .underline-nav {
+        border-bottom: 1px solid white;
+    }
+
+    #menu_button {
+        margin-top: 2vmin;
+        margin-left: 2vmin;
+        width: 8vmin;
+        height: 8vmin;
+        background-size: 100%;
+        /* inline SVG element! */
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 120 80" width="40" height="40" version="1.0" xmlns="http://www.w3.org/2000/svg"><rect x="15" width="90" height="15" rx="10"></rect><rect x="15" y="30" width="90" height="15" rx="10"></rect><rect x="15" y="60" width="90" height="15" rx="10"></rect></svg>');
+    }
+
+
+</style>
+
+<style>
+
+  /* Unvisited links */
+      a:link {
+          color: white;
+      }
+
+      /* Visited links */
+      a:visited {
+          color: white;
+      }
+
+</style>
+
+<style>
+
+  /* slogan */
+  .slogan-container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 300px; /* Adjust height as needed */
+           width: 100%; /* Full width of the page */
+           color: white; /* Optional: background color of the container */
+           padding-top: 5px; /* Add top padding */
+       }
+
+   .spaced-slogan {
+       letter-spacing: 0.15em;
+       font-size: 24px; /* Adjust for desired size */
+       color: white; /* Text color */
+       text-align: center;
+   }
+
+</style>
+
+</head>
+
+<body class="container">
+  <!-- HTML -->
+      <div class="announcement-bar">
+        <p>Shop the Story</p>
+      </div>
+      
+  <div id="myNav" class="overlay">
+
+    <div class="close-button-menu"><a href="javascript:void(0)" onclick="closeNav()"><img src="close-menu.svg"></img></a></div>
+  
+    <div class="overlay-content">
+      <a href="index.html" class="h1 menuLink">About</a>
+      <a href="#author" class="h1 menuLink">The Author</a>
+      <a href="services.html" class="h2 menuLink"  class="h1 menuLink">Free Stories</a>
+     <!-- <a href="about.html" class="h2 menuLink" class="h1 menuLink">Shop The Story</a> -->
+     <!--  <a href="neuro-bridging.html" class="h2 menuLink"  class="h1 menuLink">Contact</a> -->
+    </div>
+  
+  </div>
+
+
+    <nav class="underline-nav" >
+        <div >
+          <a href="index.html" class="logo"><p class="logo libre-baskerville-text">Maison De Fortune</p></a>
+        </div>
+        <ul class="nav-links">
+
+          <li><a href="services.html">About</a></li>
+          <li><a href="about.html">Free Story</a></li>
+          <li><a href="neuro-bridging.html">Shop The Story</a></li>
+          <li><a href="" taget="_blank">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <button id="menu_button" type="button" onclick="openNav()"></button>
+          
+         <!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="h1 openbtn">☰</span> -->
+        </div>
+    </nav>
+
+    <script>
+
+
+
+    </script>
+
+
+
+      <div class="slogan-container">
+        <p class="spaced-slogan">The house of fortune</p>
+    </div>
+
+ <div class="cards landing">
+        <div class="card">
+          <h2 class="libre-baskerville-text">The Story</h2><br>
+
+       
+         <br>
+         <span>
+
+          On the edge of London's historic Regent's Park stands an imposing mansion, grand and elegant with the lure of the past. <br><br>Once the domicile of a French aristocrat it is now the home of a trio of unusual and extraordinary women. They are spiritualists and specialists in the esoteric arts and the house is known to the initiated as, Maison de la Fortune.<br><br>
+          <br>
+
+          An air of discernible mystique hovers in the house which is the base for the ladies who give advice and transform their clients' lives by decoding incidents of spiritual significance. But can anyone's individual past and future remain theirs...Entirely?<br><br>
+
+          <br>
+          Informed by aesthetics and a love of fine clothes, jewels and art, it soon becomes apparent that another dimension is not so far from that of today.
+          <br><br>
+          Are you ready to step inside, the Maison De Fortune?
+          <br><br>
+
+          <div class="email-capture">
+            <input type="email" placeholder="Enter your email address" required>
+            <button class="buttonc">Get Your Story</button>
+        </div>
+
+<br><br>
+
+</span>
+          
+        </div>
+
+        <div class="card image-card">
+
+          <img src="mdf.png" ></img>
+
+        </div>
+
+     </div>
+
+    </div>
+
+    <br><br>
+   
+    <div class="cards landing">
+      <div class="card">
+        <a href="#author" >About the Author</a>
+      Paul Newberry is a writer who focuses on contemporary urban fiction and fantasy, primarily set in his native London. He enjoys blending reality with his imagination, infusing his stories with vivid and mystical twists.
+
+      A technologist by trade Paul has worked on a number of small the stories aim to have an underling purpose to inform and inspire people to look into the past
+    </div>
+
+  </div>
+
+    <br> <br>
+
+    <div class="contact-div">
+
+      <div  class="inner-div libre-baskerville-text-light"> <h1>
+      
+        <a href="mailto:manueltorentbi@gmail.com" 
+        style="color: #faf6f1; text-decoration: none;"
+        onmouseover="this.style.color='#faf6f1'" 
+        onmouseout="this.style.color='#faf6f1'"
+        onclick="this.style.color='#faf6f1'"
+        onmousedown="this.style.color='#faf6f1'">
+  
+        Get In Touch.</a></h1></div>
+  
+      <div  class="inner-div"> <p>
+  
+      </p>
+      <a href="mailto:manueltorentbi@gmail.com" 
+        style="color: #faf6f1; text-decoration: none;"
+        onmouseover="this.style.color='#faf6f1'" 
+        onmouseout="this.style.color='#faf6f1'"
+        onclick="this.style.color='#faf6f1'"
+        onmousedown="this.style.color='#faf6f1'">Email Me</a>
+  
+    </p></div>
+    </div>
+
+
+    <script>
+    
+      function openNav() {	
+        document.getElementById("myNav").style.height = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+      }
+
+    </script>
+
+
+</body>
+</html>

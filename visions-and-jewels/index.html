@@ -237,7 +237,7 @@
 
       /* CSS */
       .announcement-bar {
-          background-color: #333; /* Change to your preferred background color */
+          background-color: #1c1b1b; /* Change to your preferred background color */
           color: #fff; /* Change to your preferred text color */
           text-align: center;
           padding: 10px 0;
@@ -315,13 +315,26 @@
         flex-direction: column;
     }
 
+    .image-card img {
+     
+      height: auto;  /* Maintain aspect ratio */
+      max-height: 100vh; /* Limit the image height to the viewport height */
+      object-fit: cover; /* Ensure the image covers the container without distortion */
+    }
+
+
     @media screen and (max-width: 768px) {
         .cards {
             flex-direction: column; /* On mobile, stack the cards vertically */
         }
         
         .image-card {
+          width: 100%;   /* Make the image take the full width of its container */
             order: -1; /* Move the image card to the top */
+        }
+
+        .card {
+          width: 90%; 
         }
     }
 
@@ -379,7 +392,7 @@
 
     .logo {
         font-weight: bold;
-        font-size: 25px;
+        font-size: 35px;
         text-decoration: none;
     }
 
@@ -445,6 +458,27 @@
 
 </style>
 
+<style>
+   /* slogan */
+   .slogan-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px; /* Adjust height as needed */
+            width: 100%; /* Full width of the page */
+            color: white; /* Optional: background color of the container */
+            padding-top: 5px; /* Add top padding */
+        }
+
+    .spaced-slogan {
+        letter-spacing: 0.15em;
+        font-size: 24px; /* Adjust for desired size */
+        color: white; /* Text color */
+        text-align: center;
+    }
+
+</style>
+
 
 </head>
 
@@ -453,17 +487,17 @@
       <div class="announcement-bar">
         <p>Shop the Story</p>
       </div>
-
-
+      
   <div id="myNav" class="overlay">
 
     <div class="close-button-menu"><a href="javascript:void(0)" onclick="closeNav()"><img src="close-menu.svg"></img></a></div>
   
     <div class="overlay-content">
-      <a href="index.html" class="h1 menuLink" >About</a>
+      <a href="index.html" class="h1 menuLink">About</a>
+      <a href="#author" class="h1 menuLink">The Author</a>
       <a href="services.html" class="h2 menuLink"  class="h1 menuLink">Free Stories</a>
-      <a href="about.html" class="h2 menuLink" class="h1 menuLink">Shop The Story</a>
-      <a href="neuro-bridging.html" class="h2 menuLink"  class="h1 menuLink">Contact</a>
+     <!-- <a href="about.html" class="h2 menuLink" class="h1 menuLink">Shop The Story</a> -->
+     <!--  <a href="neuro-bridging.html" class="h2 menuLink"  class="h1 menuLink">Contact</a> -->
     </div>
   
   </div>
@@ -476,7 +510,7 @@
         <ul class="nav-links">
 
           <li><a href="services.html">About</a></li>
-          <li><a href="about.html">Free Stories</a></li>
+          <li><a href="about.html">Free Story</a></li>
           <li><a href="neuro-bridging.html">Shop The Story</a></li>
           <li><a href="" taget="_blank">Contact</a></li>
         </ul>
@@ -494,13 +528,17 @@
     </script>
 
 
+<div class="slogan-container">
+  <p class="spaced-slogan">Searching, Losing, Finding, and Collecting</p>
+</div>
+
     <div class="container">
 
-      <div><h3>Searching, Losing, Finding, and Collecting</h3></div>
+     
 
  <div class="cards landing">
         <div class="card">
-          <h2>Welcome</h2><br>
+          <h2 class="libre-baskerville-text">The story of Todd Hunter Antiques</h2><br>
 
        
          <br>
@@ -514,7 +552,7 @@
 
           <div class="email-capture">
             <input type="email" placeholder="Enter your email address" required>
-            <button class="buttonc">Get Your Free Chapter</button>
+            <button class="buttonc">Get Your Story</button>
         </div>
 
 <br><br>
@@ -537,7 +575,10 @@
    
     <div class="cards landing">
       <div class="card">
+        <a href="#author" >About the Author</a>
       Paul Newberry is a writer who focuses on contemporary urban fiction and fantasy, primarily set in his native London. He enjoys blending reality with his imagination, infusing his stories with vivid and mystical twists.
+
+      A technologist by trade Paul has worked on a number of small the stories aim to have an underling purpose to inform and inspire people to look into the past
     </div>
 
   </div>
