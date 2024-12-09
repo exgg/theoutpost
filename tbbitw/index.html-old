@@ -2,9 +2,7 @@
 <html>
 <head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google tag (gtag.js) -->
+      <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-370DKWCP4Z"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,32 +11,6 @@
 
       gtag('config', 'G-370DKWCP4Z');
     </script>
-
-   
-    <!-- MailerLite Universal -->
-    
-<script>
-  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-  ml('account', '1131084');
-</script>
-
-    <!-- End MailerLite Universal -->
-    
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWBZWXVBJV"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-KWBZWXVBJV');
-    </script>
-
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +24,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
 
     <style>
 
@@ -261,28 +239,6 @@
 
     </style>
 
-<style>
-  /* slogan */
-  .slogan-container {
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           height: 300px; /* Adjust height as needed */
-           width: 100%; /* Full width of the page */
-           color: white; /* Optional: background color of the container */
-           padding-top: 5px; /* Add top padding */
-       }
-
-   .spaced-slogan {
-       letter-spacing: 0.15em;
-       font-size: 24px; /* Adjust for desired size */
-       color: white; /* Text color */
-       text-align: center;
-   }
-
-</style>
-
-
     <style>
 
       /* CSS */
@@ -317,7 +273,7 @@
             border: 1px solid #666;
             border-radius: 4px;
             font-size: 16px;
-            background-color: #555;
+            background-color: black;
             color: #fff;
         }
         .email-capture button {
@@ -373,9 +329,41 @@
     }
 
 
-   
+    @media screen and (max-width: 768px) {
+        .cards {
+            flex-direction: column; /* On mobile, stack the cards vertically */
+        }
+        
+        .image-card {
+          width: 100%;   /* Make the image take the full width of its container */
+            order: -1; /* Move the image card to the top */
+        }
 
+        .card {
+          width: 90%; 
+        }
+    }
 
+    @media (max-width: 768px) {
+
+        
+        .nav-links {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .logo {
+            font-size: 17px;
+        }
+    }
+
+</style>
+
+<!-- legacy -->
+<style>
 
     h1 {
         color: var(--white);
@@ -449,8 +437,15 @@
         border-bottom: 1px solid white;
     }
 
-   
-    
+    #menu_button {
+        margin-top: 2vmin;
+        margin-left: 2vmin;
+        width: 8vmin;
+        height: 8vmin;
+        background-size: 100%;
+        /* inline SVG element! */
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 120 80" width="40" height="40" version="1.0" xmlns="http://www.w3.org/2000/svg"><rect x="15" width="90" height="15" rx="10"></rect><rect x="15" y="30" width="90" height="15" rx="10"></rect><rect x="15" y="60" width="90" height="15" rx="10"></rect></svg>');
+    }
 
 
 </style>
@@ -469,43 +464,40 @@
 
 </style>
 
+<style>
+   /* slogan */
+   .slogan-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px; /* Adjust height as needed */
+            width: 100%; /* Full width of the page */
+            color: white; /* Optional: background color of the container */
+            padding-top: 5px; /* Add top padding */
+        }
+
+    .spaced-slogan {
+        letter-spacing: 0.15em;
+        font-size: 24px; /* Adjust for desired size */
+        color: white; /* Text color */
+        text-align: center;
+    }
+
+</style>
 
 <style>
 
-      @media screen and (max-width: 768px) {
-
-          .logo {
-              font-size: 22px; /* Adjust this size as needed */
-          }
-
-          .cards {
-              flex-direction: column; /* On mobile, stack the cards vertically */
-          }
-
-          .image-card {
-            width: 100%;   /* Make the image take the full width of its container */
-              order: -1; /* Move the image card to the top */
-          }
-
-          .card {
-            width: 90%; 
-          }
-
-          .spaced-slogan {
-
-              font-size: 17px; /* Adjust for desired size */
-          }
-
-      }
-
-      @media screen and (max-width: 320px){ 
-        .logo {
-              font-size: 17px; /* Adjust this size as needed */
-          }
-
-
+.inconsolata-coffee {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 
 </style>
+
 
 </head>
 
@@ -532,14 +524,14 @@
 
     <nav class="underline-nav" >
         <div >
-          <a href="index.html" class="logo"><p class="logo libre-baskerville-text">Visions And Jewels</p></a>
+          <a href="index.html" class="logo"><p class="logo libre-baskerville-text">The Best Barista In The World</p></a>
         </div>
         <ul class="nav-links">
 
-          <li><a href="index.html#author">About</a></li>
-          <li><a href="index.html#free">Free Story</a></li>
-          <!--  <li><a href="neuro-bridging.html">Shop The Story</a></li> -->
-          
+          <li><a href="services.html">About</a></li>
+          <li><a href="about.html">Free Story</a></li>
+          <li><a href="neuro-bridging.html">Shop The Story</a></li>
+          <li><a href="" taget="_blank">Contact</a></li>
         </ul>
         <div class="hamburger">
           <button id="menu_button" type="button" onclick="openNav()"></button>
@@ -556,134 +548,63 @@
 
 
 <div class="slogan-container">
-  <p class="spaced-slogan">Searching, Losing, Finding, and Collecting</p>
+  <p class="spaced-slogan">Serving, Recommending, Losing, and Winning</p>
 </div>
 
-<div class="container">
+    <div class="container">
 
      
 
  <div class="cards landing">
         <div class="card">
+          <h2 class="libre-baskerville-text">The story</h2><br>
 
-          <br><br><br>
+         <br>
+         <span>
+          Be it serving coffee, or recommending a magazine Rocco and Nadia have the innate ability to know how people want to be made to feel. 
+          <br><br>
+         <br><br>
 
-                <h2 class="libre-baskerville-text" style="color: #ff9900;">Book coming Spring 2025: The Story of Todd Hunter Antiques</h2><br>
-       
-                <br>
+          <div class="email-capture">
+            <input type="email" placeholder="Enter your email address" required>
+            <button class="buttonc">Get Your Story</button>
+        </div>
 
-                <span>
-                  In London's upscale Mayfair, American antique dealer Todd Hunter runs a salon
-                  gallery where he'd rather admire his collection than sell it. 
-                  <br><br>
-                  But the art world's demands push him into an endless cycle of buying and selling, caught between his love for fine art and the need to
-                  survive. With his fiancée Nancy, a savvy dealer herself, Todd navigates the electric world of high-stakes collectors, secrets, and moral compromise.
-                  <br><br>
+<br><br>
 
-                  <h4 class="libre-baskerville-text" style="color: #ff9900;">
-                  Sign up to our waitlist for exclusive updates, behind-the-scenes news, and a special bonus: a free short story. Don’t miss your chance for early access and a closer look into the electric world of Todd Hunter Antiques!
-                  </h4>
-
-                  <div class="email-capture">
-                    <div class="ml-embedded" data-form="FhoXMK"></div>
-                  </div>
-
-                  <br><br>
-
-                </span>
+</span>
           
-      </div>
+        </div>
 
         <div class="card image-card">
 
-          <img src="cover.png" ></img>
+          <img src="book.webp" ></img>
 
         </div>
 
-</div>
+     </div>
 
+    </div>
 
+    <br><br>
+   
+    <div class="cards landing">
+      <div class="card">
+        <a href="#author" >About the Author</a>
+      Paul Newberry is a writer who focuses on contemporary urban fiction and fantasy, primarily set in his native London. He enjoys blending reality with his imagination, infusing his stories with vivid and mystical twists.
 
-<div class="cards landing">
-
-  
-
-  <div class="card image-card">
-
-    <section id="free">
-    </section>
-
-    <img src="en-plein-air.png" ></img>
+      A technologist by trade Paul has worked on a number of small the stories aim to have an underling purpose to inform and inspire people to look into the past
+    </div>
 
   </div>
-
-  <div class="card">
-    <br><br><br>
-   
-   
-          <h2 class="libre-baskerville-text">Free Story - En Plein Air</h2><br>
- 
-          <span>
-            Bruce, feeling trapped by his office life, finds unexpected inspiration in the gallery of Todd Hunter Antiques. Encouraged by Todd and Nancy, he leaves with a plan to reclaim his freedom through art and reconnection with nature.
-            <br><br>
-
-            <h2 class="libre-baskerville-text" style="color: #ff9900;"> Get Your Free Story</h2>
-            <div class="email-capture">
-              <div class="ml-embedded" data-form="FhoXMK"></div>
-             
-            </div>
-
-            <br><br>
-
-          </span>
-
-       
-    
-  </div>
-
-
-</div>
-
-
-
 
     <br> <br>
 
     <div class="contact-div">
 
-      <center>
-        <!--
-        <div class="cards landing">
-          <div class="card">
-            <a href="#author" >About</a>
-            Visions and Jewels - The story of Todd Hunter Antiques.  
-          </div>
-        </div>
-        -->
-      
-        <br><br>
-       
-        <section id="author">
-        <div class="cards landing">
-          <div class="card">
-            <p style="text-align: left;">
-              <strong>About the Author</strong><br><br>
-          Paul Newberry is a writer who focuses on contemporary urban fiction and fantasy, primarily set in his native London. He enjoys blending reality with his imagination, infusing his stories with vivid and mystical twists.
-          <br><br>
-          A technologist by trade Paul has worked on a number of small the stories aim to have an underling purpose to inform and inspire people to look into the past
-        </p>
-          </div>
-        </div>
-      </section>
-      
-      
-      </center>
-
-      
-
       <div  class="inner-div libre-baskerville-text-light"> <h1>
       
-        <a href="mailto:info@visions-and-jewels.com" 
+        <a href="mailto:manueltorentbi@gmail.com" 
         style="color: #faf6f1; text-decoration: none;"
         onmouseover="this.style.color='#faf6f1'" 
         onmouseout="this.style.color='#faf6f1'"
@@ -695,7 +616,7 @@
       <div  class="inner-div"> <p>
   
       </p>
-      <a href="mailto:info@visions-and-jewels.com" 
+      <a href="mailto:manueltorentbi@gmail.com" 
         style="color: #faf6f1; text-decoration: none;"
         onmouseover="this.style.color='#faf6f1'" 
         onmouseout="this.style.color='#faf6f1'"
@@ -705,7 +626,6 @@
     </p></div>
     </div>
 
-    <br><br><br><br><br><br><br><br><br>
 
     <script>
     

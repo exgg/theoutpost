@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactive Page</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Questrial&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Questrial', sans-serif;
+            font-weight: bold;
+            background-color: #f9f9f9;
+            line-height: 1.4;
+        }
+
+        .title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+
+        img.active {
+            display: block;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Responsive styling */
+        @media (min-width: 768px) {
+            img {
+                position: absolute;
+                max-width: 500px;
+                max-height: 500px;
+            }
+
+            #inaug { top: 59%; left: 57%; }
+            #cart { top: 38%; left: 89%; }
+            #beans { top: 88%; left: 73%; }
+            #barista { top: 47%; left: 48%; }
+            #daily { top: 17%; left: 72%; }
+            #good { top: 10%; left: 62%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">THE BEST BARISTA IN THE WORLD</h1>
+            </header>
+    <main class="content">
+        <p>However brief your coffee ritual, it sets the tone for your day. <span id="daily-trigger">It’s rituals like these that give us a sense of structure, place, and confidence to take on the world</span>. Rituals matter, and great rituals make your life better. That is why we invest so much time perfecting every detail in our customer experience.</p>
+        <p>When we started Blank Street, we set out to reimagine what a coffee shop could be. Serving a clean, natural, and high-quality menu to customers at an affordable price.</p>
+        <p><span id="inaug-trigger">In August 2020</span>, we launched our first store, a tiny coffee cart nestled in the garden of a Brooklyn diner. Our operation was simple and our footprint small, which let us remove costs that didn’t benefit our customers or baristas. This allowed us to source top-of-the-range specialty graded coffees from around the world. We serve fresh, locally sourced food, <span id="barista-trigger">and pay our baristas above market wages</span>.</p>
+        <p>Today, we’ve grown since that first Brooklyn coffee cart, opening in London in summer 2022 and with more locations across New York, Boston, and DC. Across them all, we’re striving to make each daily ritual, that little bit better.</p>
+        <p>Catch you at the heart of it Rocco Newsstand and Coffee!</p>
+    </main>
+    <section>
+        <img id="inaug" src="https://res.cloudinary.com/blank-street/image/upload/f_auto,w_450,q_auto:eco/v1686187619/web/page_about/Messineo_Patrizia_20210610_blank_street77_ljmvkq" alt="In August 2020">
+        <img id="cart" src="https://res.cloudinary.com/blank-street/image/upload/f_auto,w_450,q_auto:eco/v1686187619/web/page_about/GeorgeArnaldo_225WytheStBK_Oct6-55_wpiwe4" alt="A 5x10 coffee cart nestled in the garden of the Wythe diner in Brooklyn">
+        <img id="beans" src="https://res.cloudinary.com/blank-street/image/upload/f_auto,w_450,q_auto:eco/v1686187619/web/page_about/KrisHayden_Spring_Evergreen_2023March6-20_xellmq" alt="Top-range specialty coffees from around the world">
+        <img id="barista" src="https://res.cloudinary.com/blank-street/image/upload/f_auto,w_450,q_auto:eco/v1686187619/web/page_about/Burton_CharlotteSt_2022_06_27-100_kht26o" alt="Paying baristas above market wages">
+        <img id="daily" src="https://res.cloudinary.com/blank-street/image/upload/f_auto,w_450,q_auto:eco/v1686187619/web/page_about/BLANK_STREET._PHOENIX_JOHNSON_FILM_12.22_31_of_229_hy21ir" alt="Daily rituals that give structure and confidence">
+        <img id="good" src="https://res.cloudinary.com/blank-street/image/upload/f_auto,w_450,q_auto:eco/v1686187619/web/page_about/BLANK_STREET_RORY_LANGDON_DOWN_THE_STRAND_5_AUGUST_22-025_samryn" alt="A better daily ritual">
+    </section>
+    <footer>
+        <ul>
+            <li><a href="https://help.blankstreet.com">Help</a></li>
+            <li><a href="/en-GB/careers">Careers</a></li>
+            <li><a href="mailto:realestate@blankstreet.com">Real Estate</a></li>
+            <li><a href="mailto:partnerships.uk@blankstreet.com">Partnerships</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://www.instagram.com/blankstreet/">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@blankstreet">Tiktok</a></li>
+            <li><a href="mailto:press@blankstreet.com">Press</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
