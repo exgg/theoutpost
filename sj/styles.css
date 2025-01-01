@@ -1,0 +1,109 @@
+body {
+    margin: 0; /* Removes default body margin */
+    padding: 0; /* Removes default body padding */
+    background-color: white; /* Sets the black border */
+    
+    box-sizing: border-box; /* Ensures padding doesn't affect border width */
+}
+
+.container {
+  border: 3px solid black; /* Adds the black border */
+    background-color: white; /* The main content area background */
+    padding: 0px; /* Adds padding inside the border */
+    max-width: 100%; /* Ensures content stays within the page width */
+   
+    box-sizing: border-box; /* Ensures padding doesn't affect container width */
+}
+
+
+
+header {
+
+   
+}
+
+header img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+.gallery a {
+    display: block;
+}
+
+.image-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-modal:target {
+    display: flex;
+}
+
+
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+    gap: 10px; /* Space between grid items */
+    padding: 10px; /* Padding around the gallery */
+}
+
+.gallery img {
+    width: 100%; /* Images stretch to fill their grid cells */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+
+
+.controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.controls .control {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
