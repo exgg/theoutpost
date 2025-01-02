@@ -7,8 +7,9 @@ body {
 }
 
 .container {
-  border: 3px solid black; /* Adds the black border */
-    background-color: white; /* The main content area background */
+  	border: 3px solid black; /* Adds the black border */
+  	background-color: #faf6f1;
+    
     padding: 0px; /* Adds padding inside the border */
     max-width: 100%; /* Ensures content stays within the page width */
    
@@ -75,24 +76,6 @@ header img {
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Optional: Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
-}
-
-
-
-.controls {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 5px;
-}
-
-.controls .control {
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 3px;
 }
 
 /* Responsiveness */
