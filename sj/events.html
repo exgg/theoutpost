@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #faf6f1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        header a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery {
+		    display: grid;
+		    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		    gap: 10px;
+		}
+
+		@media (min-width: 768px) {
+		    .gallery {
+		        grid-template-columns: repeat(3, 1fr); /* 3 cards per line on desktop */
+		    }
+}
+
+    </style>
+
+     <style>
+	    .red-button {
+	      background-color: red;
+	      color: white;
+	      border: none;
+	      padding: 10px 20px;
+	      font-size: 16px;
+	      cursor: pointer;
+	      border-radius: 5px;
+	      transition: background-color 0.3s ease;
+	    }
+
+	    .red-button:hover {
+	      background-color: black;
+	    }
+  </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="header.png" alt="Header Image">
+            <p>Chiltern Street is one of the most iconic streets in London, voted London’s coolest street by Conde Nast Traveller. It’s well known for its character and independent retailers. We are uniquely located opposite the Chiltern Firehouse for collaborative opportunities, launches, book/magazine signings, pop-ups, or brand exposure. <br><br><a href="https://www.shreejinewsagents.com/pages/events-contact"><button class="red-button">Please get in touch</button></a></p>
+        </header>
+
+        <div class="dropdown">
+            <label for="gallery-select">Choose:</label>
+            <select id="gallery-select">
+                <option value="window">Window</option>
+                <option value="shop">Shop</option>
+                <option value="rooms">Rooms</option>
+                <option value="downstairs">Downstairs</option>
+            </select>
+        </div>
+
+        <div id="gallery" class="gallery">
+            <!-- Images will be dynamically updated here -->
+        </div>
+    </div>
+
+    <script>
+        const galleries = {
+            window: [
+                { src: "window/1.jpg", alt: "Window Image 1" },
+                { src: "window/2.jpg", alt: "Window Image 2" },
+                { src: "window/3.jpg", alt: "Window Image 2" },
+                { src: "window/4.jpg", alt: "Window Image 2" },
+                { src: "window/5.jpg", alt: "Window Image 2" },
+                { src: "window/6.jpg", alt: "Window Image 2" },
+                { src: "window/7.jpg", alt: "Window Image 2" },
+                { src: "window/8.jpg", alt: "Window Image 2" },
+                { src: "window/9.jpg", alt: "Window Image 2" },
+                { src: "window/10.jpg", alt: "Window Image 2" },
+                { src: "window/11.jpg", alt: "Window Image 2" },
+                { src: "window/12.jpg", alt: "Window Image 3" }
+            ],
+            shop: [
+                { src: "shop/1.jpg", alt: "Shop Image 1" },
+                { src: "shop/2.webp", alt: "Shop Image 2" },
+                { src: "shop/3.jpg", alt: "Shop Image 3" },
+                { src: "shop/4.jpg", alt: "Shop Image 4" },
+            ],
+            rooms: [
+                { src: "rooms/3.jpg", alt: "Rooms Image 3" },
+                { src: "rooms/1.jpg", alt: "Rooms Image 1" },
+                { src: "rooms/2.jpg", alt: "Rooms Image 2" }
+            ],
+            downstairs: [
+                { src: "downstairs/1.webp", alt: "Downstairs Image 1" },
+                { src: "downstairs/5.jpg", alt: "Downstairs Image " },
+                { src: "downstairs/2.jpg", alt: "Downstairs Image " },
+                { src: "downstairs/3.jpg", alt: "Downstairs Image " },
+                { src: "downstairs/4.jpg", alt: "Downstairs Image " }
+            ]
+        };
+
+        const gallerySelect = document.getElementById("gallery-select");
+        const galleryDiv = document.getElementById("gallery");
+
+        function updateGallery(category) {
+            galleryDiv.innerHTML = ""; // Clear current images
+            galleries[category].forEach(image => {
+                const a = document.createElement("a");
+                a.href = image.src;
+                a.setAttribute("data-lightbox", "gallery");
+                a.setAttribute("data-title", image.alt);
+
+                const img = document.createElement("img");
+                img.src = image.src;
+                img.alt = image.alt;
+
+                a.appendChild(img);
+                galleryDiv.appendChild(a);
+            });
+        }
+
+        // Initial load
+        updateGallery("window");
+
+        // Update gallery on selection change
+        gallerySelect.addEventListener("change", (e) => {
+            updateGallery(e.target.value);
+        });
+    </script>
+</body>
+</html>
