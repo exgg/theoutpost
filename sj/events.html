@@ -96,7 +96,7 @@
 <body>
     <div class="container">
         <header>
-            <img src="header.png" alt="Header Image">
+
             <p>Chiltern Street is one of the most iconic streets in London, voted London’s coolest street by Conde Nast Traveller. It’s well known for its character and independent retailers. We are uniquely located opposite the Chiltern Firehouse for collaborative opportunities, launches, book/magazine signings, pop-ups, or brand exposure. <br><br><a href="https://www.shreejinewsagents.com/pages/events-contact"><button class="red-button">Please get in touch</button></a></p>
         </header>
 
@@ -110,6 +110,8 @@
             </select>
         </div>
 
+
+
         <div id="gallery" class="gallery">
             <!-- Images will be dynamically updated here -->
         </div>
@@ -117,38 +119,29 @@
 
     <script>
         const galleries = {
-            window: [
-                { src: "window/1.jpg", alt: "Window Image 1" },
-                { src: "window/2.jpg", alt: "Window Image 2" },
-                { src: "window/3.jpg", alt: "Window Image 2" },
-                { src: "window/4.jpg", alt: "Window Image 2" },
-                { src: "window/5.jpg", alt: "Window Image 2" },
-                { src: "window/6.jpg", alt: "Window Image 2" },
-                { src: "window/7.jpg", alt: "Window Image 2" },
-                { src: "window/8.jpg", alt: "Window Image 2" },
-                { src: "window/9.jpg", alt: "Window Image 2" },
-                { src: "window/10.jpg", alt: "Window Image 2" },
-                { src: "window/11.jpg", alt: "Window Image 2" },
-                { src: "window/12.jpg", alt: "Window Image 3" }
-            ],
-            shop: [
-                { src: "shop/1.jpg", alt: "Shop Image 1" },
-                { src: "shop/2.webp", alt: "Shop Image 2" },
-                { src: "shop/3.jpg", alt: "Shop Image 3" },
-                { src: "shop/4.jpg", alt: "Shop Image 4" },
-            ],
-            rooms: [
-                { src: "rooms/3.jpg", alt: "Rooms Image 3" },
-                { src: "rooms/1.jpg", alt: "Rooms Image 1" },
-                { src: "rooms/2.jpg", alt: "Rooms Image 2" }
-            ],
-            downstairs: [
-                { src: "downstairs/1.webp", alt: "Downstairs Image 1" },
-                { src: "downstairs/5.jpg", alt: "Downstairs Image " },
-                { src: "downstairs/2.jpg", alt: "Downstairs Image " },
-                { src: "downstairs/3.jpg", alt: "Downstairs Image " },
-                { src: "downstairs/4.jpg", alt: "Downstairs Image " }
+
+        window: [
+		                { src: "resized/1.jpg", alt: "Window Image 1" },
+		                { src: "resized/2.jpg", alt: "Window Image 2" },
+		                { src: "resized/5.jpg", alt: "Window Image 2" }
+
+		            ],
+		            shop: [
+		                { src: "resized/6.jpg", alt: "Shop Image 1" },
+		                { src: "resized/9.jpg", alt: "Shop Image 2" },
+		                { src: "resized/11.jpg", alt: "Shop Image 3" }
+
+		            ],
+		            rooms: [
+		                { src: "resized/10.jpg", alt: "Rooms Image 3" },
+		                { src: "resized/9.jpg", alt: "Rooms Image 1" },
+		                { src: "resized/12.jpg", alt: "Rooms Image 2" }
+		            ],
+		            downstairs: [
+		                { src: "resized/7.jpg", alt: "Downstairs Image " }
             ]
+
+
         };
 
         const gallerySelect = document.getElementById("gallery-select");
