@@ -94,6 +94,7 @@
 
 </head>
 <body>
+ <center><button id="toggle-button" class="red-button">Show Landing Image</button></center>
     <div class="container">
     <img src="header.png" >
         <header>
@@ -120,60 +121,77 @@
 
      <center><img src="landing.jpg" ></center>
 
-    <script>
-        const galleries = {
+   <script>
+       const galleries = {
+           window: [
+               { src: "resized/1.jpg", alt: "Window Image 1" },
+               { src: "resized/2.jpg", alt: "Window Image 2" },
+               { src: "resized/5.jpg", alt: "Window Image 3" }
+           ],
+           shop: [
+               { src: "resized/6.jpg", alt: "Shop Image 1" },
+               { src: "resized/9.jpg", alt: "Shop Image 2" },
+               { src: "resized/11.jpg", alt: "Shop Image 3" }
+           ],
+           rooms: [
+               { src: "resized/10.jpg", alt: "Rooms Image 1" },
+               { src: "resized/8.jpg", alt: "Rooms Image 2" },
+               { src: "resized/12.jpg", alt: "Rooms Image 3" }
+           ],
+           downstairs: [
+               { src: "resized/7.jpg", alt: "Downstairs Image" }
+           ]
+       };
 
-        window: [
-		                { src: "resized/1.jpg", alt: "Window Image 1" },
-		                { src: "resized/2.jpg", alt: "Window Image 2" },
-		                { src: "resized/5.jpg", alt: "Window Image 2" }
+       const gallerySelect = document.getElementById("gallery-select");
+       const galleryDiv = document.getElementById("gallery");
+       const landingImage = document.querySelector("center img[src='landing.jpg']");
+       const toggleButton = document.getElementById("toggle-button");
 
-		            ],
-		            shop: [
-		                { src: "resized/6.jpg", alt: "Shop Image 1" },
-		                { src: "resized/9.jpg", alt: "Shop Image 2" },
-		                { src: "resized/11.jpg", alt: "Shop Image 3" }
+       function updateGallery(category) {
+           galleryDiv.innerHTML = ""; // Clear current images
+           galleries[category].forEach(image => {
+               const a = document.createElement("a");
+               a.href = image.src;
+               a.setAttribute("data-lightbox", "gallery");
+               a.setAttribute("data-title", image.alt);
 
-		            ],
-		            rooms: [
-		                { src: "resized/10.jpg", alt: "Rooms Image 3" },
-		                { src: "resized/8.jpg", alt: "Rooms Image 1" },
-		                { src: "resized/12.jpg", alt: "Rooms Image 2" }
-		            ],
-		            downstairs: [
-		                { src: "resized/7.jpg", alt: "Downstairs Image " }
-            ]
+               const img = document.createElement("img");
+               img.src = image.src;
+               img.alt = image.alt;
+
+               a.appendChild(img);
+               galleryDiv.appendChild(a);
+           });
+       }
+
+       // Initial load
+       updateGallery("window");
+
+       // Update gallery on selection change
+       gallerySelect.addEventListener("change", (e) => {
+           updateGallery(e.target.value);
+       });
+
+       // Toggle Gallery and Landing Image
+       toggleButton.addEventListener("click", () => {
+           if (galleryDiv.style.display === "none") {
+               galleryDiv.style.display = "grid";
+               landingImage.style.display = "none";
+               toggleButton.textContent = "Show Landing Image";
+           } else {
+               galleryDiv.style.display = "none";
+               landingImage.style.display = "block";
+               toggleButton.textContent = "Show Gallery";
+           }
+       });
+
+       // Set initial state
+       galleryDiv.style.display = "grid";
+       landingImage.style.display = "none";
+   </script>
 
 
-        };
 
-        const gallerySelect = document.getElementById("gallery-select");
-        const galleryDiv = document.getElementById("gallery");
-
-        function updateGallery(category) {
-            galleryDiv.innerHTML = ""; // Clear current images
-            galleries[category].forEach(image => {
-                const a = document.createElement("a");
-                a.href = image.src;
-                a.setAttribute("data-lightbox", "gallery");
-                a.setAttribute("data-title", image.alt);
-
-                const img = document.createElement("img");
-                img.src = image.src;
-                img.alt = image.alt;
-
-                a.appendChild(img);
-                galleryDiv.appendChild(a);
-            });
-        }
-
-        // Initial load
-        updateGallery("window");
-
-        // Update gallery on selection change
-        gallerySelect.addEventListener("change", (e) => {
-            updateGallery(e.target.value);
-        });
-    </script>
 </body>
 </html>
