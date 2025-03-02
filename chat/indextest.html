@@ -109,11 +109,20 @@
         function startSpeechRecognition() {
             const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
             recognition.lang = "en-US";
+            recognition.continuous = true; // Keeps listening until manually stopped
+            recognition.interimResults = true; // Shows partial results while speaking
             recognition.start();
 
             recognition.onresult = function(event) {
-                const transcript = event.results[0][0].transcript;
-                userInput.value = transcript;
+                let transcript = "";
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    transcript += event.results[i][0].transcript + " ";
+                }
+                userInput.value = transcript.trim();
+            };
+
+            recognition.onspeechend = function() {
+                setTimeout(() => recognition.stop(), 1000); // Slight delay before stopping to capture final words
             };
 
             recognition.onerror = function(event) {
