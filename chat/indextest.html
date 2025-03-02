@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-    <h2>ChatGPT with Speech Input V3</h2>
+    <h2>ChatGPT with Speech Input v0.3</h2>
     <label for="apiKeyInput">Enter API Key:</label>
     <input type="password" id="apiKeyInput" placeholder="Enter API Key">
     <button id="saveApiKeyBtn">Save</button>
@@ -107,27 +107,39 @@
         }
 
         function startSpeechRecognition() {
-            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-            recognition.lang = "en-US";
-            recognition.continuous = true; // Keeps listening until manually stopped
-            recognition.interimResults = true; // Shows partial results while speaking
-            recognition.start();
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                alert("Microphone access is not supported in this browser.");
+                return;
+            }
+            
+            navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
+                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.lang = "en-US";
+                recognition.continuous = true; 
+                recognition.interimResults = true; 
+                recognition.start();
+                
+                recognition.onresult = function(event) {
+                    let transcript = "";
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                        transcript += event.results[i][0].transcript + " ";
+                    }
+                    userInput.value = transcript.trim();
+                };
 
-            recognition.onresult = function(event) {
-                let transcript = "";
-                for (let i = event.resultIndex; i < event.results.length; i++) {
-                    transcript += event.results[i][0].transcript + " ";
-                }
-                userInput.value = transcript.trim();
-            };
+                recognition.onspeechend = function() {
+                    setTimeout(() => recognition.stop(), 1000);
+                };
 
-            recognition.onspeechend = function() {
-                setTimeout(() => recognition.stop(), 1000); // Slight delay before stopping to capture final words
-            };
-
-            recognition.onerror = function(event) {
-                alert("Speech recognition error: " + event.error);
-            };
+                recognition.onerror = function(event) {
+                    alert("Speech recognition error: " + event.error);
+                    if (event.error === "audio-capture") {
+                        alert("Please check your microphone and ensure browser permissions are enabled.");
+                    }
+                };
+            }).catch(function(error) {
+                alert("Microphone permission denied or unavailable: " + error.message);
+            });
         }
     </script>
 </body>
