@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FWX4DV01W3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FWX4DV01W3');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .text-block {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-block {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-block img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column-reverse;
+            }
+
+            .text-block, .image-block {
+                padding: 10px;
+            }
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="text-block">
+            <h1>Welcome to Kaya Rocks</h1>
+            <p>
+
+
+                Kaya Rocks celebrates all things beautiful and holistic…<br>
+
+
+
+We’re here to help you live your best life—inside and out. Think crystal-infused home décor designed with intention to manifest your dreams and elevate your space.
+<br><br>
+And that’s just the beginning. Soon, we’ll be dropping a curated selection of wellness products and services like Crystal Healing, Reiki, Yoga, Acupressure, Aromatherapy, and more to keep your mind, body, and spirit in sync.
+<br><br>
+Get ready for something magical. Coming soon!"
+            </p>
+        </div>
+        <div class="image-block">
+            <img src="kaya-rocks.jpg" alt="Placeholder Image">
+        </div>
+    </div>
+
+</body>
+</html>
