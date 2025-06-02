@@ -3,211 +3,254 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coydou</title>
+  <title>DANDEMONIUM.NET - 20 / 20</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
-    body {
-      margin: 0;
-      font-family: 'Libre Baskerville', Baskerville, serif;
-      background: #eaeaeb;
-      color: #1c1c1c;
-    }
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', Baskerville, serif;
+  background: #eaeaeb;
+  color: #1c1c1c;
+}
 
-    header {
-      text-align: center;
-      padding: 20px 10px 10px;
-    }
+header {
+  text-align: center;
+  padding: 20px 10px 10px;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0;
-      color: #4b0082;
-    }
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  color: #4b0082;
+}
 
-    header h3 {
-      font-size: 1.25rem;
-      margin-top: 0px;
-      color: #4b0082;
-    }
+header h3 {
+  font-size: 1.25rem;
+  margin-top: 0px;
+  color: #4b0082;
+}
 
-    nav {
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
+nav {
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 14px;
-      color: #1c1c1c;
-      letter-spacing: 1px;
-      display: inline-block;
-      margin-bottom: 5px;
-    }
+nav a {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Libre Baskerville', serif;
+  padding: 8px 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #1c1c1c;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
 
-    .container {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #4b0082;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
 
-    .left, .right {
-      flex: 1;
-    }
+nav a:hover::after {
+  width: 100%;
+}
 
-    .left img {
-      max-width: 100%;
-      height: auto;
-      border: 1px solid #ccc;
-    }
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4b0082;
+  transform: none;
+}
 
-    .right .label {
-      background: #4b0082;
-      color: white;
-      display: inline-block;
-      padding: 4px 10px;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
 
-    .right h1 {
-      font-size: 28px;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
+.left, .right {
+  flex: 1;
+}
 
-    .right p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
+.left img {
+  max-width: 350px;
+  height: auto;
+  border: 1px solid #ccc;
+  display: block;
+  margin: 0 auto;
+}
 
-    .right .author {
-      font-size: 14px;
-      text-transform: uppercase;
-      margin-top: 20px;
-    }
+.right .label {
+  background: #4b0082;
+  color: white;
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
 
-    .read-more {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 6px 12px;
-      border: 1px solid #4b0082;
-      text-decoration: none;
-      font-size: 14px;
-      color: #1c1c1c;
-      background-color: transparent;
-      transition: background-color 0.2s ease;
-    }
+.right h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
 
-    .read-more:hover {
-      background-color: #4b0082;
-      color: white;
-    }
+.right p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
 
-    .hero {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #f8f8f9;
-      text-align: center;
-      border-top: 1px solid #ccc;
-    }
+.right .author {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
 
-    .hero .badge {
-      display: inline-block;
-      background: #4b0082;
-      color: white;
-      padding: 6px 12px;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+.read-more {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 12px;
+  border: 1px solid #4b0082;
+  text-decoration: none;
+  font-size: 14px;
+  color: #1c1c1c;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
 
-    .hero .headline {
-      font-size: 20px;
-      font-style: italic;
-      line-height: 1.5;
-      color: #1c1c1c;
-      margin: 15px 0;
-    }
+.read-more:hover {
+  background-color: #4b0082;
+  color: white;
+}
 
-    .hero .dots {
-      font-size: 24px;
-      letter-spacing: 5px;
-      color: #4b0082;
-      margin: 10px 0;
-    }
+.hero {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f8f8f9;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
 
-    .hero .custom-line {
-      border: none;
-      border-top: 2px solid #4b0082;
-      width: 60px;
-      margin: 20px auto 0;
-    }
+.hero .badge {
+  display: inline-block;
+  background: #4b0082;
+  color: white;
+  padding: 6px 12px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-      }
+.hero .headline {
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #1c1c1c;
+  margin: 15px 0;
+}
 
-      header h1 {
-        font-size: 2rem;
-      }
+.hero .dots {
+  font-size: 24px;
+  letter-spacing: 5px;
+  color: #4b0082;
+  margin: 10px 0;
+}
 
-      header h3 {
-        font-size: 1rem;
-      }
+.hero .custom-line {
+  border: none;
+  border-top: 2px solid #4b0082;
+  width: 60px;
+  margin: 20px auto 0;
+}
 
-      .right h1 {
-        font-size: 22px;
-      }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
 
-      .right p {
-        font-size: 15px;
-      }
+  header h1 {
+    font-size: 2rem;
+  }
 
-      nav {
-        text-align: center;
-      }
+  header h3 {
+    font-size: 1rem;
+  }
 
-      nav a {
-        display: inline-block;
-        margin: 5px 10px;
-        font-size: 13px;
-      }
+  .right h1 {
+    font-size: 22px;
+  }
 
-      .hero .headline {
-        font-size: 18px;
-      }
+  .right p {
+    font-size: 15px;
+  }
 
-      .hero .dots {
-        font-size: 20px;
-      }
-    }
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px 10px;
+    font-size: 13px;
+  }
+
+  .hero .headline {
+    font-size: 18px;
+  }
+
+  .hero .dots {
+    font-size: 20px;
+  }
+}
+
+
+    
+
+
   </style>
 </head>
 <body>
 
+  <div style="background: black; color: white; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+    Subscribe and Receive Our Dispatches
+  </div>
+
   <header>
-    <h1>20 20</h1>
+    <h1>20 / 20</h1>
     <h3>20 Stories, 20 Poems</h3>
     <nav>
-      <a href="#">20 / 20</a>
-      <a href="#">Arts & Letters</a>
-      <a href="#">Style & Living</a>
+      <a href="2020.html" class="active">20 / 20</a>
+      <a href="index.html">Home</a>
+      <a href="dispatch.html">Subscribe</a>
       <a href="about.html">About Robin</a>
-      <a href="#">Miscellaneous</a>
+      <a href="events.html">Events</a>
     </nav>
   </header>
 
@@ -216,7 +259,7 @@
       <img src="2020.png" alt="2020 Cover">
     </div>
     <div class="right">
-      <div class="label">THE BOOK</div>
+      <div class="label">THE eBOOK</div>
       <h1>2020</h1>
       <p><em>Journalist, author, and curator Robin Dutt</em> returns with <strong>2020</strong>, a contemplative collection of 20 short stories and 20 poems. This new volume explores everyday reflections, childhood memory, fable, and fantasy—each piece a mirror to the shared human experience.</p>
 
@@ -228,16 +271,6 @@
 
       <a class="read-more" href="https://www.shreejinewsagents.com/products/2020" target="_blank">Buy Now</a>
     </div>
-  </div>
-
-  <div class="hero">
-    <div class="badge">Reflections and Fables</div>
-    <div class="headline">
-      Observations and Imaginings<br>
-      of the Life We All Share.
-    </div>
-    <div class="dots">. . . . . . . . . . .</div>
-    <hr class="custom-line">
   </div>
 
 </body>

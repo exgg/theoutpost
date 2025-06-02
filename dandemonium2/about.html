@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DANDEMONIUM The Dandy Defined</title>
+  <title>DANDEMONIUM.NET - ABOUT</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
@@ -166,7 +166,7 @@
       font-size: 14px;
       margin-bottom: 40px;
     }
-    h3 {
+    h4 {
       font-size: 18px;
       margin-top: 40px;
       border-bottom: 2px solid #d8cbb2;
@@ -184,27 +184,80 @@
     }
 
   </style>
+
+  <style>
+    nav {
+      margin-top: 1px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      position: relative;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Libre Baskerville', serif;
+      padding: 8px 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #4b0082;
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4b0082;
+      transform: none;
+    }
+
+  </style>
 </head>
 <body>
 
+  <div style="background: black; color: white; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+    Subscribe and Receive Our Dispatches
+  </div>
+
+
   <header>
-    <h1>DANDEMONIUM</h1>
-    <h3>The Dandy Defined</h3>
+    <h1>ROBIN DUTT</h1>
+    <h3>JOURNALIST – STYLIST – ART CRITIC – CURATOR</h3>
     <nav>
-      <a href="#">20 / 20</a>
-      <a href="#">Arts & Letters</a>
-      <a href="#">Style & Living</a>
-      <a href="#">About Robin</a>
-      <a href="#">Miscellaneous</a>
+      <a href="2020.html" >20 / 20</a>
+      <a href="index.html" >Home</a>
+      <a href="dispatch.html">Subscribe</a>
+      <a href="about.html" class="active">About Robin</a>
+      <a href="events.html">Events</a>
     </nav>
   </header>
 
-  <div class="container">
-   
 
-    <h1>ROBIN DUTT</h1>
-      <h2>JOURNALIST – STYLIST – ART CRITIC – CURATOR</h2>
-      
+  <div class="container">
+  
 
       <div class="section">
         <h3>PROFILE</h3>
@@ -217,13 +270,13 @@
       </div>
 
       <div class="section">
-        <h3>MEDIA (1987 to date)</h3>
+        <h4>MEDIA (1987 to date)</h4>
         <p>Contributions to Clothes Show Magazine, Esquire, The Times, The Independent, The Express, Elle, The London Magazine, Time Out, Attitude, and many others.</p>
         <p>Interviews with fashion figures such as Pierre Cardin, Issey Miyake, Jean Paul Gaultier, Vivienne Westwood, and artists like Grayson Perry, Gilbert & George.</p>
       </div>
 
       <div class="section">
-        <h3>TV, RADIO AND ARCHIVE</h3>
+        <h4>TV, RADIO AND ARCHIVE</h4>
         <p>Appearances on Granada TV, BBC World Service, Channel 4, BBC Radio, and Channel 5. Interviewer for British Library’s National Sound Archives.</p>
       </div>
 

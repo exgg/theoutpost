@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join the Dandemonium Dispatch</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', Baskerville, serif;
+      background: #eaeaeb;
+      color: #1c1c1c;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      color: #4b0082;
+    }
+
+    header h3 {
+      font-size: 1.25rem;
+      margin-top: 0px;
+      color: #4b0082;
+    }
+
+    .signup-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #efefef;
+      padding: 40px 20px;
+      border-top: 4px solid #4b0082;
+      flex-direction: row;
+    }
+
+    .signup-copy {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      order: 1;
+    }
+
+    .signup-form {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      order: 2;
+    }
+
+    .signup-copy h4 {
+      font-size: 18px;
+      color: #4b0082;
+      margin-bottom: 5px;
+      margin-top: 20px;
+    }
+
+    .signup-copy p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 15px;
+    }
+
+    .signup-form h2 {
+      font-size: 22px;
+      color: #4b0082;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .signup-form p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .signup-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .signup-form input[type="text"],
+    .signup-form input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .signup-form button {
+      background: #4b0082;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+
+    .signup-form button:hover {
+      background: #371062;
+    }
+
+    .footer-note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .signup-wrapper {
+        flex-direction: column;
+      }
+
+      .signup-copy {
+        order: 2;
+      }
+
+      .signup-form {
+        order: 1;
+      }
+    }
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', Baskerville, serif;
+      background: #eaeaeb;
+      color: #1c1c1c;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      color: #4b0082;
+    }
+
+    header h3 {
+      font-size: 1.25rem;
+      margin-top: 0px;
+      color: #4b0082;
+    }
+
+    nav {
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .left, .right {
+      flex: 1;
+    }
+
+    .left img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    .right .label {
+      background: #4b0082;
+      color: white;
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .right h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .right .author {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 12px;
+      border: 1px solid #4b0082;
+      text-decoration: none;
+      font-size: 14px;
+      color: #1c1c1c;
+      background-color: transparent;
+      transition: background-color 0.2s ease;
+    }
+
+    .read-more:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f8f8f9;
+      text-align: center;
+      border-top: 1px solid #ccc;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: #4b0082;
+      color: white;
+      padding: 6px 12px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero .headline {
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.5;
+      color: #1c1c1c;
+      margin: 15px 0;
+    }
+
+    .hero .dots {
+      font-size: 24px;
+      letter-spacing: 5px;
+      color: #4b0082;
+      margin: 10px 0;
+    }
+
+    .hero .custom-line {
+      border: none;
+      border-top: 2px solid #4b0082;
+      width: 60px;
+      margin: 20px auto 0;
+    }
+
+    .left img {
+      max-width: 470px;
+      height: auto;
+      border: 1px solid #ccc;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header h3 {
+        font-size: 1rem;
+      }
+
+      .right h1 {
+        font-size: 22px;
+      }
+
+      .right p {
+        font-size: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 13px;
+      }
+
+      .hero .headline {
+        font-size: 18px;
+      }
+
+      .hero .dots {
+        font-size: 20px;
+      }
+    }
+  </style>
+  
+  <style>
+    nav {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Libre Baskerville', serif;
+  padding: 8px 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #1c1c1c;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #4b0082;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #4b0082;
+  transform: none;
+}
+  </style>
+</head>
+<body>
+
+  <div style="background: black; color: white; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+    Subscribe and Receive Our Dispatches
+  </div>
+
+  <header>
+    <h1>DANDEMONIUM</h1>
+    <h3>Join the Dispatch</h3>
+    <nav>
+      <a href="2020.html" >20 / 20</a>
+      <a href="index.html">Home</a>
+      <a href="dispatch.html" class="active">Subscribe</a>
+      <a href="about.html">About Robin</a>
+      <a href="events.html">Events</a>
+    </nav>
+  </header>
+
+  <div class="signup-wrapper">
+    <div class="signup-copy">
+      <h4>Sent only when inspiration strikes.</h4>
+      <p>A stylish whisper from the world of wit, elegance, and ideas.</p>
+
+      <h4>Irregular by design, exceptional by nature.</h4>
+      <p> A cultured gentleman’s primer, surveying the global arts and cultural happenings, curated with elegant discernment..</p>
+
+      <h4>No fixed schedule — just timely, stylish missives.</h4>
+      <p> Your invitation to the global salon: theatre, film, fashion, and fine art delivered with the flair of a true connoisseur.</p>
+
+      <h4>Published as the moment demands, never by rote.</h4>
+      <p>Unmissable reading recommendations for the thinking dandy — just in time for a cultivated repose.</p>
+    </div>
+
+    <div class="signup-form">
+      <h2>Receive Our Dispatches</h2>
+      <p>Receive occasional dispatches filled with curated Dandyist insight, rare book excerpts, and reflections on style — always sent when the moment is right. Includes a free PDF sampler from <strong>Dandemonium: The Dandy Defined and the upcoming 20 / 20 Volume One</strong>.</p>
+      <form action="#" method="post">
+        <input type="email" name="email" placeholder="Email Address" required />
+        <button type="submit">JOIN THE LIST</button>
+      </form>
+      <div class="footer-note">We respect your privacy. Unsubscribe at any time.</div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
