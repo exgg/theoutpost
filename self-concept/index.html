@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Self Concept</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .left, .right {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+    }
+
+    .left {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .right {
+      padding: 40px;
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 2em;
+      color: #00ffff;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .right, .left {
+        flex: 1 1 100%;
+      }
+
+      .right {
+        order: -1;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="right">
+      <h1>Self Concept</h1>
+      <p>
+        Your self-concept shapes every perception and decision.  
+        It’s the silent architect of your confidence, wealth, and well-being.  
+        The clearer and more empowered your self-view, the more reality aligns to match.
+      </p>
+
+      <div>
+        <a href="#affirmations">→ Affirmations</a>
+        <a href="#rewiring">→ Rewiring Practice</a>
+      </div>
+
+      <h2 id="affirmations">Affirmations</h2>
+      <p>
+        “I am worthy of wealth, love, and success.”<br>
+        “My self-concept is constantly evolving toward power and freedom.”<br>
+        “I embody the version of me I admire.”
+      </p>
+
+      <h2 id="rewiring">Rewiring Practice</h2>
+      <p>
+        Each morning, write down one empowering belief.<br>
+        Visualize yourself embodying it throughout the day.<br>
+        Example: “I speak with confidence in every interaction.”
+      </p>
+
+      <div style="margin-top: 40px;">
+        <a href="https://www.instagram.com/reel/DJZa_Ssz82I/?igsh=ZGxiOTI4aHlicnVr" target="_blank" rel="noopener noreferrer">
+          → Watch on Instagram
+        </a>
+      </div>
+    </div>
+
+    <div class="left">
+      <img src="A_traditional_ink_and_color_illustration_in_Moebiu.png" alt="Intergalactic Beacon">
+    </div>
+  </div>
+</body>
+</html>
+
