@@ -255,6 +255,106 @@
       }
 
   </style>
+
+  <style>
+
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        scroll-behavior: auto;
+        will-change: transform;
+      }
+
+
+      .carousel-track img {
+        width: 100%;
+        flex-shrink: 0;
+        border: 1px solid #ccc;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background-color: rgba(75, 0, 130, 0.8);
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        padding: 5px 10px;
+        transition: background 0.3s;
+      }
+
+      .arrow:hover {
+        background-color: #4b0082;
+      }
+
+      .left-arrow {
+        left: 10px;
+      }
+
+      .right-arrow {
+        right: 10px;
+      }
+
+  </style>
+
+
+<style>
+
+  .site-footer {
+  background: #eaeaeb;
+  padding: 30px 20px 60px;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  color: #1c1c1c;
+  margin-top: 60px;
+}
+
+.footer-line {
+  border: none;
+  border-top: 2px solid #4b0082;
+  width: 80px;
+  margin: 0 auto 25px;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #4b0082;
+  font-size: 14px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #1c1c1c;
+}
+
+.footer-links .dot {
+  color: #4b0082;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+</style>
 </head>
 <body>
 
@@ -276,8 +376,22 @@
 
   <div class="container">
     <div class="left">
-      <img src="DANDEMONIUMMAIN1.jpg" alt="Dandemonium Cover">
+
+      <div class="carousel">
+      <button class="arrow left-arrow">&#10094;</button>
+      <div class="carousel-track">
+        <!-- These will be cloned in JS -->
+        <img src="DANDEMONIUM3_720x.webp" alt="Last Clone" class="clone">
+        <img src="DANDEMONIUMMAIN1.jpg" alt="Dandemonium 1">
+        <img src="DANDEMONIUM2_rollover_720x.webp" alt="Dandemonium 2">
+        <img src="DANDEMONIUM3_720x.webp" alt="Dandemonium 3">
+        <img src="DANDEMONIUMMAIN1.jpg" alt="First Clone" class="clone">
+      </div>
+      <button class="arrow right-arrow">&#10095;</button>
     </div>
+
+</div>
+
     <div class="right">
       <div class="label">THE BOOK</div>
       <h1>Dandemonium: The Dandy Defined</h1>
@@ -303,6 +417,59 @@
   <div class="dots">. . . . . . . . . . .</div>
   <hr class="custom-line">
 </div>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+
+  const slideWidth = () => track.clientWidth;
+  let currentIndex = 1; // Start on first real image
+
+  const scrollToIndex = (index, animate = true) => {
+    track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+    track.style.transform = `translateX(-${slideWidth() * index}px)`;
+  };
+
+  // Initial position (skip first clone)
+  scrollToIndex(currentIndex, false);
+
+  rightArrow.addEventListener('click', () => {
+    if (currentIndex >= slides.length - 1) return;
+    currentIndex++;
+    scrollToIndex(currentIndex);
+  });
+
+  leftArrow.addEventListener('click', () => {
+    if (currentIndex <= 0) return;
+    currentIndex--;
+    scrollToIndex(currentIndex);
+  });
+
+  // Handle looping after transition
+  track.addEventListener('transitionend', () => {
+    if (slides[currentIndex].classList.contains('clone')) {
+      track.style.transition = 'none';
+      currentIndex = currentIndex === 0 ? slides.length - 2 : 1;
+      scrollToIndex(currentIndex, false);
+    }
+  });
+
+  window.addEventListener('resize', () => scrollToIndex(currentIndex, false));
+</script>
+
+<footer class="site-footer">
+  <hr class="footer-line">
+  <div class="footer-links">
+    <a href="https://instagram.com/YOURHANDLE" target="_blank">Instagram</a>
+    <span class="dot">·</span>
+    <a href="mailto:contact@dandemonium.net">Contact</a>
+  </div>
+  <p class="copyright">&copy; Dandemonium </p>
+</footer>
+
+
 
 </body>
 </html>
