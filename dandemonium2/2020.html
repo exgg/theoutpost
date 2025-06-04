@@ -7,146 +7,149 @@
   <style>
    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
-body {
-  margin: 0;
-  font-family: 'Libre Baskerville', Baskerville, serif;
-  background: #eaeaeb;
-  color: #1c1c1c;
-}
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', Baskerville, serif;
+      background: #eaeaeb;
+      color: #1c1c1c;
+    }
 
-header {
-  text-align: center;
-  padding: 20px 10px 10px;
-}
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0;
-  color: #4b0082;
-}
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      color: #4b0082;
+    }
 
-header h3 {
-  font-size: 1.25rem;
-  margin-top: 0px;
-  color: #4b0082;
-}
+    header h3 {
+      font-size: 1.25rem;
+      margin-top: 0px;
+      color: #4b0082;
+    }
 
-nav {
-  margin-top: 1px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+    nav {
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
 
-nav a {
-  position: relative;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: 'Libre Baskerville', serif;
-  padding: 8px 4px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #1c1c1c;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #4b0082;
-  transition: width 0.3s ease, left 0.3s ease;
-  transform: translateX(-50%);
-}
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
 
-nav a:hover::after {
-  width: 100%;
-}
+    .left, .right {
+      flex: 1;
+    }
 
-nav a.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #4b0082;
-  transform: none;
-}
+    .left img {
+      max-width: 80%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
 
-.container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+    .right .label {
+      background: #4b0082;
+      color: white;
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
 
-.left, .right {
-  flex: 1;
-}
+    .right h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
 
-.left img {
-  max-width: 350px;
-  height: auto;
-  border: 1px solid #ccc;
-  display: block;
-  margin: 0 auto;
-}
+    .right p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
 
-.right .label {
-  background: #4b0082;
-  color: white;
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
+    .right .author {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
 
-.right h1 {
-  font-size: 28px;
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 12px;
+      border: 1px solid #4b0082;
+      text-decoration: none;
+      font-size: 14px;
+      color: #1c1c1c;
+      background-color: transparent;
+      transition: background-color 0.2s ease;
+    }
 
-.right p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
+    .read-more:hover {
+      background-color: #4b0082;
+      color: white;
+    }
 
-.right .author {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-top: 20px;
-}
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+      }
 
-.read-more {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 6px 12px;
-  border: 1px solid #4b0082;
-  text-decoration: none;
-  font-size: 14px;
-  color: #1c1c1c;
-  background-color: transparent;
-  transition: background-color 0.2s ease;
-}
+      header h1 {
+        font-size: 2rem;
+      }
 
-.read-more:hover {
-  background-color: #4b0082;
-  color: white;
-}
+      header h3 {
+        font-size: 1rem;
+      }
 
-.hero {
+      .right h1 {
+        font-size: 22px;
+      }
+
+      .right p {
+        font-size: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+
+  <style>
+    .hero {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
@@ -188,39 +191,8 @@ nav a.active::after {
   margin: 20px auto 0;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  header h3 {
-    font-size: 1rem;
-  }
-
-  .right h1 {
-    font-size: 22px;
-  }
-
-  .right p {
-    font-size: 15px;
-  }
-
-  nav {
-    text-align: center;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 5px 10px;
-    font-size: 13px;
-  }
-
   .hero .headline {
     font-size: 18px;
   }
@@ -228,19 +200,174 @@ nav a.active::after {
   .hero .dots {
     font-size: 20px;
   }
+
+  .left img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+}
+
+  </style>
+
+  <style>
+
+    nav {
+        margin-top: 1px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+      }
+
+      nav a {
+        position: relative;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Libre Baskerville', serif;
+        padding: 8px 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #1c1c1c;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+      }
+
+      nav a::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #4b0082;
+        transition: width 0.3s ease, left 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      nav a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #4b0082;
+        transform: none;
+      }
+
+  </style>
+
+  <style>
+
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        scroll-behavior: auto;
+        will-change: transform;
+      }
+
+
+      .carousel-track img {
+        width: 100%;
+        flex-shrink: 0;
+        border: 1px solid #ccc;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background-color: rgba(75, 0, 130, 0.8);
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        padding: 5px 10px;
+        transition: background 0.3s;
+      }
+
+      .arrow:hover {
+        background-color: #4b0082;
+      }
+
+      .left-arrow {
+        left: 10px;
+      }
+
+      .right-arrow {
+        right: 10px;
+      }
+
+  </style>
+
+
+<style>
+
+  .site-footer {
+  background: #eaeaeb;
+  padding: 30px 20px 60px;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  color: #1c1c1c;
+  margin-top: 60px;
+}
+
+.footer-line {
+  border: none;
+  border-top: 2px solid #4b0082;
+  width: 90%;
+  margin: 0 auto 25px;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #4b0082;
+  font-size: 14px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #1c1c1c;
+}
+
+.footer-links .dot {
+  color: #4b0082;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 
-    
+</style>
 
-
-  </style>
 </head>
 <body>
 
-  <div style="background: black; color: white; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
-    Subscribe and Receive Our Dispatches
-  </div>
+  <div style="background: black; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+  <a href="dispatch.html" style="color: white; text-decoration: none; display: block;">Subscribe and Receive Our Dispatches</a>
+</div>
 
   <header>
     <h1>20 / 20</h1>
@@ -250,7 +377,7 @@ nav a.active::after {
       <a href="index.html">Home</a>
       <a href="dispatch.html">Subscribe</a>
       <a href="about.html">About Robin</a>
-      <a href="events.html">Events</a>
+      <!-- <a href="events.html">Events</a> -->
     </nav>
   </header>
 
@@ -260,18 +387,28 @@ nav a.active::after {
     </div>
     <div class="right">
       <div class="label">THE eBOOK</div>
-      <h1>2020</h1>
-      <p><em>Journalist, author, and curator Robin Dutt</em> returns with <strong>2020</strong>, a contemplative collection of 20 short stories and 20 poems. This new volume explores everyday reflections, childhood memory, fable, and fantasy—each piece a mirror to the shared human experience.</p>
+      <h1>20 / 20</h1>
+      <p><em>Journalist, author, and curator Robin Dutt</em> returns with <strong>20 / 20</strong>, a contemplative collection of 20 short stories and 20 poems. This new volume explores everyday reflections, childhood memory, fable, and fantasy—each piece a mirror to the shared human experience.</p>
 
       <p>With gentle observation and philosophical enquiry, Dutt reminds us how much of life is chosen—and how much chooses us. The tales, like the poems, offer a subtle kind of intimacy, revealing truths shaped by the brushstrokes of memory and imagination.</p>
 
-      <p>Profound yet playful, <strong>2020</strong> is an invitation to journey inward—whether through a remembered bedtime story or a fleeting moment on a city street.</p>
+      <p>Profound yet playful, <strong>20 / 20</strong> is an invitation to journey inward—whether through a remembered bedtime story or a fleeting moment on a city street.</p>
 
       
 
       <a class="read-more" href="https://www.shreejinewsagents.com/products/2020" target="_blank">Buy Now</a>
     </div>
   </div>
+
+ <footer class="site-footer">
+  <hr class="footer-line">
+  <div class="footer-links">
+    <a href="https://www.instagram.com/dandemonium.online/" target="_blank">Instagram</a>
+    <span class="dot">·</span>
+    <a href="mailto:info@dandemonium.net">Contact: info@dandemonium.net</a>
+  </div>
+  <p class="copyright">&copy; 2025 Dandemonium.net </p>
+</footer>
 
 </body>
 </html>

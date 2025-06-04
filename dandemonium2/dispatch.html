@@ -338,12 +338,12 @@
   
   <style>
     nav {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+        margin-top: 1px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+    }
 
 nav a {
   position: relative;
@@ -385,12 +385,72 @@ nav a.active::after {
   transform: none;
 }
   </style>
+
+  <style>
+
+  .site-footer {
+  background: #eaeaeb;
+  padding: 30px 20px 60px;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  color: #1c1c1c;
+  margin-top: 60px;
+}
+
+.footer-line {
+  border: none;
+  border-top: 2px solid #4b0082;
+  width: 90%;
+  margin: 0 auto 25px;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #4b0082;
+  font-size: 14px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #1c1c1c;
+}
+
+.footer-links .dot {
+  color: #4b0082;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+</style>
+
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1572738');
+</script>
+<!-- End MailerLite Universal -->
+
 </head>
 <body>
 
-  <div style="background: black; color: white; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
-    Subscribe and Receive Our Dispatches
-  </div>
+  <div style="background: black; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+  <a href="dispatch.html" style="color: white; text-decoration: none; display: block;">Subscribe and Receive Our Dispatches</a>
+</div>
 
   <header>
     <h1>DANDEMONIUM</h1>
@@ -400,7 +460,7 @@ nav a.active::after {
       <a href="index.html">Home</a>
       <a href="dispatch.html" class="active">Subscribe</a>
       <a href="about.html">About Robin</a>
-      <a href="events.html">Events</a>
+      <!-- <a href="events.html">Events</a> -->
     </nav>
   </header>
 
@@ -422,13 +482,22 @@ nav a.active::after {
     <div class="signup-form">
       <h2>Receive Our Dispatches</h2>
       <p>Receive occasional dispatches filled with curated Dandyist insight, rare book excerpts, and reflections on style — always sent when the moment is right. Includes a free PDF sampler from <strong>Dandemonium: The Dandy Defined and the upcoming 20 / 20 Volume One</strong>.</p>
-      <form action="#" method="post">
-        <input type="email" name="email" placeholder="Email Address" required />
-        <button type="submit">JOIN THE LIST</button>
-      </form>
-      <div class="footer-note">We respect your privacy. Unsubscribe at any time.</div>
+      
+      <div class="ml-embedded" data-form="yKwC1R"></div>
+
+      
     </div>
   </div>
+
+ <footer class="site-footer">
+  <hr class="footer-line">
+  <div class="footer-links">
+    <a href="https://www.instagram.com/dandemonium.online/" target="_blank">Instagram</a>
+    <span class="dot">·</span>
+    <a href="mailto:info@dandemonium.net">Contact: info@dandemonium.net</a>
+  </div>
+  <p class="copyright">&copy; 2025 Dandemonium.net </p>
+</footer>
 
 </body>
 </html>

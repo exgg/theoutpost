@@ -211,7 +211,7 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 0px;
       }
 
       nav a {
@@ -283,17 +283,19 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: 2rem;
-        background-color: rgba(75, 0, 130, 0.8);
-        color: white;
+        background-color: rgba(255, 255, 255, 0.1); /* light, semi-transparent white */
+        color: #4b0082;
         border: none;
         cursor: pointer;
         z-index: 1;
         padding: 5px 10px;
         transition: background 0.3s;
+        border-radius: 4px;
       }
 
+
       .arrow:hover {
-        background-color: #4b0082;
+        /*  background-color: #4b0082; */
       }
 
       .left-arrow {
@@ -321,7 +323,7 @@
 .footer-line {
   border: none;
   border-top: 2px solid #4b0082;
-  width: 80px;
+  width: 90%;
   margin: 0 auto 25px;
 }
 
@@ -355,12 +357,13 @@ footer p {
 
 
 </style>
+
 </head>
 <body>
 
-  <div style="background: black; color: white; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
-    Subscribe and Receive Our Dispatches
-  </div>
+  <div style="background: black; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+  <a href="dispatch.html" style="color: white; text-decoration: none; display: block;">Subscribe and Receive Our Dispatches</a>
+</div>
 
   <header>
     <h1>DANDEMONIUM</h1>
@@ -370,7 +373,7 @@ footer p {
       <a href="index.html" class="active">Home</a>
       <a href="dispatch.html">Subscribe</a>
       <a href="about.html">About Robin</a>
-      <a href="events.html">Events</a>
+      <!-- <a href="events.html">Events</a> -->
     </nav>
   </header>
 
@@ -462,14 +465,12 @@ footer p {
 <footer class="site-footer">
   <hr class="footer-line">
   <div class="footer-links">
-    <a href="https://instagram.com/YOURHANDLE" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/dandemonium.online/" target="_blank">Instagram</a>
     <span class="dot">·</span>
-    <a href="mailto:contact@dandemonium.net">Contact</a>
+    <a href="mailto:info@dandemonium.net">Contact: info@dandemonium.net</a>
   </div>
-  <p class="copyright">&copy; Dandemonium </p>
+  <p class="copyright">&copy; 2025 Dandemonium.net </p>
 </footer>
-
-
 
 </body>
 </html>
