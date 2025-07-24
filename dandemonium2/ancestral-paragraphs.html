@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DANDEMONIUM.NET - ABOUT</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K7N65R6SF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0K7N65R6SF');
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', Baskerville, serif;
+      background: #eaeaeb;
+      color: #1c1c1c;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      color: #4b0082;
+    }
+
+    header h3 {
+      font-size: 1.25rem;
+      margin-top: 0px;
+      color: #4b0082;
+    }
+
+    nav {
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .container {
+
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .left, .right {
+      flex: 1;
+    }
+
+    .left img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    .right .label {
+      background: #4b0082;
+      color: white;
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .right h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .right .author {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 12px;
+      border: 1px solid #4b0082;
+      text-decoration: none;
+      font-size: 14px;
+      color: #1c1c1c;
+      background-color: transparent;
+      transition: background-color 0.2s ease;
+    }
+
+    .read-more:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header h3 {
+        font-size: 1rem;
+      }
+
+      .right h1 {
+        font-size: 22px;
+      }
+
+      .right p {
+        font-size: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+
+  <style>
+
+     h1 {
+      font-size: 36px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      font-weight: normal;
+      margin-top: 0;
+    }
+    .contact {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    h4 {
+      font-size: 18px;
+      margin-top: 40px;
+      border-bottom: 2px solid #d8cbb2;
+      padding-bottom: 4px;
+    }
+    ul {
+      margin-top: 0;
+      padding-left: 20px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+
+  </style>
+
+  <style>
+
+    nav {
+        margin-top: 1px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+
+    nav a {
+      position: relative;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Libre Baskerville', serif;
+      padding: 8px 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #4b0082;
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4b0082;
+      transform: none;
+    }
+
+  </style>
+
+  <style>
+    .cv-link-container {
+      text-align: center;
+      padding: 40px 10px 60px;
+    }
+
+    .cv-link {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      text-decoration: none;
+      color: #4b0082;
+      border: 1px solid #4b0082;
+      padding: 10px 20px;
+      border-radius: 4px;
+      display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .cv-link:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+  </style>
+
+  <style>
+
+  .site-footer {
+      background: #eaeaeb;
+      padding: 30px 20px 60px;
+      text-align: center;
+      font-family: 'Libre Baskerville', serif;
+      color: #1c1c1c;
+      margin-top: 60px;
+    }
+
+    .footer-line {
+      border: none;
+      border-top: 2px solid #4b0082;
+      width: 90%;
+      margin: 0 auto 25px;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #4b0082;
+      font-size: 14px;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #1c1c1c;
+    }
+
+    .footer-links .dot {
+      color: #4b0082;
+      font-weight: bold;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+
+</style>
+
+<style>
+
+    .notify-line {
+      font-style: italic;
+      font-weight: bold;
+      color: #4b0082; /* Indigo purple */
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+</style>
+
+</head>
+<body>
+
+  <div style="background: black; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+  <a href="dispatch.html" style="color: white; text-decoration: none; display: block;">Subscribe and Receive Our Dispatches</a>
+</div>
+
+
+  <header>
+    <h1>ROBIN DUTT</h1>
+    <h3>ANCESTRAL PARAGRAPHS</h3>
+    <nav>
+      <a href="2020.html" >20 / 20</a>
+      <a href="index.html" >Home</a>
+      <a href="dispatch.html">Subscribe</a>
+      <a href="about.html" class="active">About Robin</a>
+      <!-- <a href="events.html">Events</a> -->
+    </nav>
+  </header>
+
+
+  <div class="container">
+
+  <h3>Introduction and family sketches by ROBIN DUTT.</h3>
+
+  One might say that the original 'special relationship' enjoyed by the UK was with India first - and not that vast behemoth across the pond with which the phrase is now and has in recent years been so connected. Naturally nothing can run smoothly in life - all the time - and it takes new times, new people to set new things in motion. Sworn enemies can become best of friends. Wars can be, if not forgotten then with every passing year and inevitable passing of people, changed. With India, despite the undoubted many problems and issue of a proud, ancient country being something of a vassal state is an example. Now this 'vassal state' is a world leader with brain power, abilities, riches beyond but also where still the everyday trauma of life exists for many. For many Indians then and now, Britain was always and will always be, the 'Mother State.' And India, perhaps fancifully and in a sense, incorrectly, was the rather wild but cherished 'child.'<br><br>
+
+  In fact, is it really Britain we speak of? It is certainly not the more formal United Kingdom either which tells exactly what the union of the four kingdoms were and are but so much more. Four different languages, cultures, ways of being. It is really England that I am speaking of - still mythical in an almost sonic vibrance - the England of yesterday and today - which resounds in the hearts of so many from the sub continent and causes pride and sense of mother love. Customs (however odd and archaic!), the panoply of artistic expression, the feeling of fair play and justice, festivals, folklore, uniqueness and conviviality, parochialism and major global stage-playing. All of these things weld India to England. Then...Kabaddi or Cricket?!?  And these are only the central notes of a most complex pot pouri - still as flagrantly fragrant as it ever was. Much of the world looks on with a slight twinge of jealousy, as it well might. The words 'special' and 'relationship' might as well have been forged in the same smithery.<br><br>
+
+  One recent and tragic incident at the time of writing serves to illustrate this special relationship. Just a few days ago, a most reliable in the main, passenger aeroplane tragically, and for whatever reason, was lost in a catastrophic accident in Ahmedabad. Prayers and chants were offered around the globe - hauntingly mellifluous and hailing from so long ago.  And King Charles specifically requested that his family wear black armbands in sympathy for those in grief and to honour those who had passed. His request was more than genuine...<br><br>
+
+  It is difficult to imagine another country which could have produced such a heartfelt and immediate response to a tragedy but tragedy though it is, reinforces, surely, this 'special relationship' which lives on and thrives.<br><br>
+
+  My great grandfather and my great uncles would have understood this - no matter what intellectualism and idealism also commanded the creativity of their lives...<br<br>
+
+  To understand the dawning of a new India and to also keep in their hearts, the place of the mother...It is the past and the future combined.
+
+
+<br><br>
+ <h3>ROBIN DUTT'S Ancestors from the Nineteenth Century.</h3>
+
+  <p class="notify-line">SRI AUROBINDO</P>
+
+  Sri Aurobindo (1872-1950) was an enlightened spiritual leader whose writing output was vast. His role as yogi, maharishi, commentator and nationalist, secured his place in India's history and he still remains to many, one of the country's most glittering sons. He reached the intelligentsia and the already spiritually enlightened but also simple people - of all faiths - and none. His feted books - still in demand include, <b>'The Life Divine', (1919) 'The Renaissance of India' (1920), 'Essays on the Gita' (1922), 'Foundation of Indian Culture' (1923) and 'The Mother' (1937).</B> There were many other expressions of his prolific talent and vision. His literary talents also extended to being the editor of the newspaper, <b>Bande Mataram.</b><br><br>
+
+  Although born in India, at the age of seven, he was relocated to England where he studied at St Pauls and then, Kings College, Cambridge returning to the sub continent in 1893 where he worked for the next thirteen years as a Baroda College professor in the service of the Maharajah of that state.<br><br>
+
+  Sri Aurobindo left the political and educatory life per se for one of contemplation and concentrated on inner spirituality in Pondicherry which is sti>ll an international centre as an ashram for devotees of his teachings and writings but also those who have heard of this enlightened individual and are keen to discover more - his verve, his ideas and ideals. he created the concept of Integral Yoga.<br><br>
+
+  There are many statues of Sri Aurobindo from his birthplace in Calcutta to UNESCO in Paris, also Moscow and of course, the Ashram at Auroville, itself.<br><br>
+
+  By dint of Fate it was a most promising young photographer who captured an ancient Sri Aurobindo in his latter, almost final days. One Cartier Bresson.<br<br>
+
+<br><br>
+  <p class="notify-line">MANMOHAN GHOSE</p>
+
+  Manmohan Ghose (1869-1924) was the brother of Sri Aurobindo - an Indian poet and reportedly one of the first Indians to write verse in English to such a high standard - beyond, indeed, that it was impossible to definitely state the nationality of the writer. Charmed and magnetised by ancient Greek poetry and the Romantic verse of the English, Manmohan Ghose added his own aspects of capturing the essence of ancient stories of love and loss, heroic ideals and life itself and many have alluded to a connection with the genius of Keats or Tennyson. He wrote epic ideas into verse structures from the purely observational to the still heart breaking  <b>'The Rider on The White Horse'</b>, about the death of his wife. It begins...'How did I lose you sweet? I hardly know'...<br.<br>
+
+  Ghose was educated at the Manchester Grammar School (1881-1884) and then like Sri Aurobindo, at St Pauls (1884-1887) subsequently winning an open scholarship to Christ Church, Oxford.<br><br>
+
+  At the age of 21, he showed a prestigious poetic talent in the form of the publication of <b>PRIMAVERA : Poems by Four Authors (1890) with Laurence Binyon, Arthur S. Cripps and Stephen Phillips.</b> It is Binyon's words the world hears every year, at the beginning of the London winter regarding the fallen, commemorated at London's Cenotaph - 'We will remember them.'<br><br>
+
+  Ghose met Oscar Wilde in the 1890s, then the toast of the town and in literary and social circles, celebrated for his originality and wicked wit. But Wilde was not simply the 'Velvet Dandy' and recognised something vitally important in this English-educated young Indian man and wrote a favourable review of his work in the Pall Mall Gazette of 1891 where he expressed the hope that the intricacies of the 'Oriental mind' were something he felt the West could learn from. The mystical poet W.B.Yeats was moved to tears by Monmohan Ghose's words and other admirers included Lionel Johnson and Ernest Dowson. They became firm friends and allies, as fellow creators on the cusp of a new beginning - a creative dawn, which a new century can often produce.
+<br><br>
+
+  <p class="notify-line">BARINDRA KUMAR GHOSH </P>
+
+  Barindra Kumar Ghosh (1880-1959) or Barindra Ghosh (also 'popularly' Barin Ghosh) was a journalist and Indian revolutionary. He was the brother of Sri Aurobindo and Manmohan Ghose. Educated at Patna College, he founded Jugantar Bengali Weekly - a revolutionary outfit in Bengal which proved to be controversial to many. It was, one might assume his mother from whom he gleaned much inspiration when it came to writing as she was a prominent intellectual character of the Bengal Renaissance.<br><br>
+
+  Ghosh wrote several books, including <b>'The Tale of my Exile (12 Years in Andamans) '</b>and one about his brother, Sri Aurobindo. He started an English weekly publication in 1933 - <b>'The Dawn of India'</b> and was associated with The Statesman.<br><br>
+
+  Unlike his brothers, Barindra was born in the suburban British town of Croydon but then returned to India for education and also to pursue his nationalistic preoccupations, the better to learn from the proximity of the old country and the identities of the emerging Indian national whose views and outlooks were significantly new and challenging and looked towards a new dawn.
+
+
+  </div>
+
+ <footer class="site-footer">
+  <hr class="footer-line">
+  <div class="footer-links">
+    <a href="https://www.instagram.com/dandemonium.online/" target="_blank">Instagram</a>
+    <span class="dot">·</span>
+    <a href="mailto:info@dandemonium.net">Contact: info@dandemonium.net</a>
+  </div>
+  <p class="copyright">&copy; 2025 Dandemonium.net </p>
+</footer>
+
+</body>
+</html>

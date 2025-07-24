@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DANDEMONIUM.NET - ABOUT</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K7N65R6SF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0K7N65R6SF');
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', Baskerville, serif;
+      background: #eaeaeb;
+      color: #1c1c1c;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      color: #4b0082;
+    }
+
+    header h3 {
+      font-size: 1.25rem;
+      margin-top: 0px;
+      color: #4b0082;
+    }
+
+    nav {
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .container {
+
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .left, .right {
+      flex: 1;
+    }
+
+    .left img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    .right .label {
+      background: #4b0082;
+      color: white;
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .right h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .right .author {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 12px;
+      border: 1px solid #4b0082;
+      text-decoration: none;
+      font-size: 14px;
+      color: #1c1c1c;
+      background-color: transparent;
+      transition: background-color 0.2s ease;
+    }
+
+    .read-more:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header h3 {
+        font-size: 1rem;
+      }
+
+      .right h1 {
+        font-size: 22px;
+      }
+
+      .right p {
+        font-size: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+
+  <style>
+
+     h1 {
+      font-size: 36px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      font-weight: normal;
+      margin-top: 0;
+    }
+    .contact {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    h4 {
+      font-size: 18px;
+      margin-top: 40px;
+      border-bottom: 2px solid #d8cbb2;
+      padding-bottom: 4px;
+    }
+    ul {
+      margin-top: 0;
+      padding-left: 20px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+
+  </style>
+
+  <style>
+
+    nav {
+        margin-top: 1px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+
+    nav a {
+      position: relative;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Libre Baskerville', serif;
+      padding: 8px 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #4b0082;
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4b0082;
+      transform: none;
+    }
+
+  </style>
+
+  <style>
+    .cv-link-container {
+      text-align: center;
+      padding: 40px 10px 60px;
+    }
+
+    .cv-link {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      text-decoration: none;
+      color: #4b0082;
+      border: 1px solid #4b0082;
+      padding: 10px 20px;
+      border-radius: 4px;
+      display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .cv-link:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+  </style>
+
+  <style>
+
+  .site-footer {
+      background: #eaeaeb;
+      padding: 30px 20px 60px;
+      text-align: center;
+      font-family: 'Libre Baskerville', serif;
+      color: #1c1c1c;
+      margin-top: 60px;
+    }
+
+    .footer-line {
+      border: none;
+      border-top: 2px solid #4b0082;
+      width: 90%;
+      margin: 0 auto 25px;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #4b0082;
+      font-size: 14px;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #1c1c1c;
+    }
+
+    .footer-links .dot {
+      color: #4b0082;
+      font-weight: bold;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+
+</style>
+
+<style>
+
+    .notify-line {
+      font-style: italic;
+      font-weight: bold;
+      color: #4b0082; /* Indigo purple */
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+</style>
+
+</head>
+<body>
+
+  <div style="background: black; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+  <a href="dispatch.html" style="color: white; text-decoration: none; display: block;">Subscribe and Receive Our Dispatches</a>
+</div>
+
+
+  <header>
+    <h1>ROBIN DUTT</h1>
+    <h3>ANCESTRAL PARAGRAPHS</h3>
+    <nav>
+      <a href="2020.html" >20 / 20</a>
+      <a href="index.html" >Home</a>
+      <a href="dispatch.html">Subscribe</a>
+      <a href="about.html" class="active">About Robin</a>
+      <!-- <a href="events.html">Events</a> -->
+    </nav>
+  </header>
+
+
+  <div class="container">
+
+  <h3>My Father</h3>
+
+  My Father, Sanjoy Kumar had always been a snappy dresser. But I use that word lightly , especially with Sir Hardy Amies' words of advice constantly ringing in my ears when it comes to sartorial matters. He couldn't bear the word 'sharp' when applied to tailoring! 'Freedom and Flow' were his maxims re male dress. In a similar fashion, my father often made a bee-line for DAKS (a subsidiary of London stalwart, Simpsons (now the Waterstones HQ in Piccadilly. DAKS stood for 'Dad's Slacks' - if I am not mistaken. I think that it was a more 'basic' business and country casual line which was more affordable than the mainline Simpsons brand. I remember purchasing a superb Jeff Sayre 'safari' coat which I accessorized with a wide, coffee-brown leather belt, much to the admiration of the staff! But was it admiration, per se , or simply another joy at selling...something?! But Father went for the usual tweeds, pinstripes, plain block, solid blues and (I seem to recall) greys - no blacks - unlike me(!) and revelled in any English-made, mill-originated material. There wasn't a great deal of cash to splash - although he was an ad exec at Ted Bates (originally Hobson Bates & Partners - v. NY high flying ad firm) and there were many examples of silent male sartoria in his wardrobe from trusted English labels and random finds from, ironically, an Indian boutique in Kilburn called, Nagaria which sold British labels amongst the tat. Oh, and there was also Burton around the corner - the first to provide 'whistles and flutes' to the lower middle/middle classes for first interviews and the like.  He bought me a grey and GREY(!) window pane jacket from there once. VILE!!!
+
+  <br><br>
+
+  Even then, I wondered...HOW was it that cardboard had entered the realms of clothing...? Mind you, looking at what passes for fabric today, perhaps Burton was way ahead of its time?!?
+
+  <br><br>
+
+  BUT on one occasion, I was shocked/delighted(?) I am not sure which, to see him coming home, after a business trip to Madrid, wearing a blue denim jean two-piece suit with lapels wide enough to challenge Concorde's legendary wing span and with a sombrero hat...Somewhere...But thankfully not 'completing' the outfit. Of course it was the mid-70s. Think Roxy Music, Mott the Hoople, Sparks...You get the picture?!? He had recently been at a supper for the Sun Newspaper which he was one of the promoters and sat next to one Elton John. Apparently they got on famously - as the couple of menus/football souvenir leaflets with Elton's name scribbled all over the place attest.
+
+  <br><br>
+
+  They say, never match blue denim - even if born from the same material 'mother-womb.' Well...He did and now I always remember and always will, how very right old maxims can be!!!
+
+  <br><br>
+
+  </div>
+
+ <footer class="site-footer">
+  <hr class="footer-line">
+  <div class="footer-links">
+    <a href="https://www.instagram.com/dandemonium.online/" target="_blank">Instagram</a>
+    <span class="dot">·</span>
+    <a href="mailto:info@dandemonium.net">Contact: info@dandemonium.net</a>
+  </div>
+  <p class="copyright">&copy; 2025 Dandemonium.net </p>
+</footer>
+
+</body>
+</html>

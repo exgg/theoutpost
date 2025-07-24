@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DANDEMONIUM.NET - ABOUT</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K7N65R6SF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0K7N65R6SF');
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', Baskerville, serif;
+      background: #eaeaeb;
+      color: #1c1c1c;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      color: #4b0082;
+    }
+
+    header h3 {
+      font-size: 1.25rem;
+      margin-top: 0px;
+      color: #4b0082;
+    }
+
+    nav {
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .container {
+
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .left, .right {
+      flex: 1;
+    }
+
+    .left img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    .right .label {
+      background: #4b0082;
+      color: white;
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .right h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .right .author {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 12px;
+      border: 1px solid #4b0082;
+      text-decoration: none;
+      font-size: 14px;
+      color: #1c1c1c;
+      background-color: transparent;
+      transition: background-color 0.2s ease;
+    }
+
+    .read-more:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header h3 {
+        font-size: 1rem;
+      }
+
+      .right h1 {
+        font-size: 22px;
+      }
+
+      .right p {
+        font-size: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+
+  <style>
+
+     h1 {
+      font-size: 36px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      font-weight: normal;
+      margin-top: 0;
+    }
+    .contact {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    h4 {
+      font-size: 18px;
+      margin-top: 40px;
+      border-bottom: 2px solid #d8cbb2;
+      padding-bottom: 4px;
+    }
+    ul {
+      margin-top: 0;
+      padding-left: 20px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+
+  </style>
+
+  <style>
+
+    nav {
+        margin-top: 1px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+
+    nav a {
+      position: relative;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Libre Baskerville', serif;
+      padding: 8px 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #4b0082;
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #4b0082;
+      transform: none;
+    }
+
+  </style>
+
+  <style>
+    .cv-link-container {
+      text-align: center;
+      padding: 40px 10px 60px;
+    }
+
+    .cv-link {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      text-decoration: none;
+      color: #4b0082;
+      border: 1px solid #4b0082;
+      padding: 10px 20px;
+      border-radius: 4px;
+      display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .cv-link:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+  </style>
+
+  <style>
+
+  .site-footer {
+      background: #eaeaeb;
+      padding: 30px 20px 60px;
+      text-align: center;
+      font-family: 'Libre Baskerville', serif;
+      color: #1c1c1c;
+      margin-top: 60px;
+    }
+
+    .footer-line {
+      border: none;
+      border-top: 2px solid #4b0082;
+      width: 90%;
+      margin: 0 auto 25px;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #4b0082;
+      font-size: 14px;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #1c1c1c;
+    }
+
+    .footer-links .dot {
+      color: #4b0082;
+      font-weight: bold;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+
+</style>
+
+<style>
+
+    .notify-line {
+      font-style: italic;
+      font-weight: bold;
+      color: #4b0082; /* Indigo purple */
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+</style>
+
+</head>
+<body>
+
+  <div style="background: black; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+  <a href="dispatch.html" style="color: white; text-decoration: none; display: block;">Subscribe and Receive Our Dispatches</a>
+</div>
+
+
+  <header>
+    <h1>ROBIN DUTT</h1>
+    <h3>ANCESTRAL PARAGRAPHS</h3>
+    <nav>
+      <a href="2020.html" >20 / 20</a>
+      <a href="index.html" >Home</a>
+      <a href="dispatch.html">Subscribe</a>
+      <a href="about.html" class="active">About Robin</a>
+      <!-- <a href="events.html">Events</a> -->
+    </nav>
+  </header>
+
+
+  <div class="container">
+
+  <h3>Jean Muir</h3>
+
+ Perhaps it isn't rare to say that as a journalist/writer/stylist one is apt from time to time to meet a legend. Of course, the word (like perhaps 'genius') might be said to be generally overused by many but in the case of Jean Muir, I can only say this...She was one of the most inspiring, unexpected and delightful people in design I have ever met, with a natural and commanding sense of what was precise, accurate and informed. All tailors will understand this...<br><br>
+
+ Naturally, known for her simple but sublime women's clothes - many redolent of her mastery of jersey and boucle wool but also punched suede and leather, Muir blazed an early trail in the design world, making clothes that celebrated the non-excess of display and the magnificence of quality. And although she made  clothes almost exclusively for women, she had a definite interest in the strictures - or otherwise- that traditional Dandyism brought to the stage world of presentation for men. These were men who appreciated her suede slippers, for example - mine were sapphire blue and had golden paisley motifs, or the occasional study-chunk of porcelain to compete a gentleman's sartorial picture - an ideal place to stash cufflinks or the 'chains of the day'! With her love of drape and shape, it often occurred to me that so much of what she sketched and realised could so easily have been adapted for an experimental male market. The punched suede garments come to mind again. I can just imagine a long, ankle length coat for example in blackest suede - the kind that might have been worn by the more chic gunslingers in 'High Noon' ' The Man who shot Liberty Valance' or similar! Cowboy tailoring (of the best kind) has never really been understood! All those waistcoats and boot-tie laces. And naturally, so much of that inspiration was English tailoring.<br><br>
+
+ I first met Miss Muir (and it was always, to all Miss Muir - never Jean) at her chic Bruton Street atelier/couture salon, predictably plain, like a classic Paris establishment of the 1940s or 50s a la Christian Dior. The architecture was kept deliberately plain so the clothes shown would not have to fight. This was a similar situation with Hardy Amies and Norman Hartnell. Her 'fashion' shows were all about style - cut and verve being the continual threads that united each collection - whether for Spring/Summer or Autumn/Winter. It was exciting when the invitations arrived and one was checked in by, was it the stately Princess Galitzine?!? predictably, there was always a queue. Miss Muir had an eye for detail (which is to say the least) and sought out the best silversmiths and jewellers to provide her with precise geometric buttons in plain Perspex or sets of sterling examples or indeed, mediaeval-esque silver, punched key fobs with a definite masculine air which reminded of ancient portcullis structures. Simon Harrison and Ian Young were her top choices, along with one Annie Sherbourne who experimented with felt tufts and surprising colours, which she made into cocoon coats. It was the artistry and sculpture of everything that attracted her - the shape of everything. And this comes as no surprise when thinking of her superb cuts and forms for her modes. My jewellery, I made with Dominic Lutyens which was a one-season experimentation, was chosen for her models to wear. I recall that the show featuring many greats was simply called 'Time.' Her admiration of classical male tailoring - although interpreted as very feminine wear for those in love with 'la ligne' reminded constantly of the fit and flare of everything important when it came to presentation. She once took me to lunch at a chic French restaurant close to her Farringdon studio where to see the workers punching the butter-soft leather made a new meaning of design production  line! They all knew an aspect of their employer which related to their individuality as creators - les petits mains - as it is called in couture. But everything had to 'fit in.' Her models had to have bobbed hair so you can imagine that Joanna Lumley was quite the star in her time at JM's...Individually styled, long hair was a distraction!<br><br>
+
+ My first meeting with her was for Ritz Newspaper, run by David Bailey and Patrick Litchfield and I recall the lovely girlish laugh of hers when she approved highly and said...'Ooh, that's so snappy!' She also had a charming vocal 'tic' which seemed to work for her like commas or  question marks after a statement. A portrait by the superb David Remfry dominated the main room in swathes of charcoal. Remfry also painted my sister and myself some time later, so I know what it was like to sit to someone quite, shall we say...'exacting'!!! Then I interviewed her for several other publications, one centred on her apartment just behind the Royal Albert Hall - a vast space , all  pure Arctic white with the only colour supplied by paintings and sculptures - unexpected bolts of pure hue. There were vases of stoic Longi Lilies dotted about the place, competing with the general hum of Albion and I seem to recall that the floorboards were also of a similar hue. But it was not 'cold' - as such. Certainly, it would not have been a 'comfort nest' for many if not most but it suited her down to a 'T'!<br><br>
+
+ She then met me at the Victoria & Albert Museum for a private view and came to one of my shows I had curated for a gallery, where she admired the nudes of a certain Antonio Pacitti from the 1960s. At another meeting, someone collared her and said...'Oh Miss Muir, have you met the journalist, Robin Dutt?' I was hovering close by. Miss Muir almost snapped back and I felt inescapable pride - 'Robin is not a journalist. He is a writer!' She attended another of my shows - an ecological one - where we served 'fizz' dyed a vivid green. So not her but she graciously accepted a glass!<br><br>
+
+  But the apartment became and remains a poignant well of memories. Out of the blue, an invitation came for me to join a small crowd for a Jean Muir supper followed by a jazz concert in her specially ordered box at the Royal Albert Hall, with champagne on tap. Of course!<br><br>
+
+ I had no idea that she had months to live and this was, I suppose, a way of saying farewell...<br><br>
+
+ Jean Muir will always, always stand out from the design crowd. Those who appreciated her design ethos will never forget the quiet, subtle symphonies she created. They resonate today.<br><br>
+
+If only she had branched into a Dandy line!
+
+  </div>
+
+ <footer class="site-footer">
+  <hr class="footer-line">
+  <div class="footer-links">
+    <a href="https://www.instagram.com/dandemonium.online/" target="_blank">Instagram</a>
+    <span class="dot">·</span>
+    <a href="mailto:info@dandemonium.net">Contact: info@dandemonium.net</a>
+  </div>
+  <p class="copyright">&copy; 2025 Dandemonium.net </p>
+</footer>
+
+</body>
+</html>
