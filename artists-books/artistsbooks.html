@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARTISTS BOOKS.</title>
+  <!-- Font: Inter (heavy weights) for a clean grotesk look similar to the screenshot;
+       falls back to Helvetica/Arial/system if not available on the user machine. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --page-padding: clamp(16px, 3vw, 40px);
+      --max-width: 1400px;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
+
+    .container{
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: var(--page-padding);
+    }
+
+    /* HERO TITLE */
+    .hero-title {
+      /* Massive, responsive type like the reference */
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.035em;            /* tight tracking */
+      line-height: 0.85;                    /* compact lines */
+      margin: 0 0 clamp(16px, 2vw, 24px) 0;
+
+      /* The magic: scale smoothly from phones to 4k */
+      font-size: clamp(42px, 10vw + 8px, 160px);
+    }
+
+    /* Force two-line layout like the screenshot */
+    .hero-title span{ display: block; }
+
+    /* Optional subheading to mimic style */
+    .subhead {
+      font-size: clamp(18px, 2.2vw, 28px);
+      font-weight: 500;
+      max-width: 28ch;
+      line-height: 1.2;
+      margin: 0 0 clamp(24px, 4vw, 40px) 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(16px, 4vw, 48px);
+      align-items: start;
+    }
+
+    @media (max-width: 900px){
+      .split{ grid-template-columns: 1fr; }
+    }
+
+    .feature-img{
+      width: 100%;
+      height: min(62vh, 700px);
+      object-fit: cover;
+      border-radius: 0; /* square corners to keep it brutal/clean */
+    }
+
+    .eyebrow{
+      font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color:#666;
+      margin-bottom: 10px;
+    }
+
+    /* BOOK GRID */
+    .grid-wrap{ padding-top:clamp(24px,4vw,48px); }
+    .grid-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:12px; gap:16px; flex-wrap:wrap; }
+    .grid-title{ font-weight:800; text-transform:uppercase; letter-spacing:.06em; font-size:14px; color:#444; }
+    .book-grid{
+      display:grid;
+      gap:clamp(10px,1vw,16px);
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+    }
+    /* Keep ~two rows on larger screens; adjust columns as width shrinks */
+    @media (max-width: 1200px){ .book-grid{ grid-template-columns: repeat(4, minmax(160px, 1fr)); } }
+    @media (max-width: 900px){ .book-grid{ grid-template-columns: repeat(3, minmax(140px, 1fr)); } }
+    @media (max-width: 700px){ .book-grid{ grid-template-columns: repeat(2, minmax(140px, 1fr)); } }
+    @media (max-width: 480px){ .book-grid{ grid-template-columns: 1fr; } }
+
+    .book-card{
+      position:relative; overflow:hidden; border-radius:0;
+      aspect-ratio: 2 / 3; background:#eee; display:flex; align-items:stretch; justify-content:stretch;
+    }
+    .book-card img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .book-meta{
+      position:absolute; inset:auto 0 0 0; padding:10px 12px;
+      background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+      color:#fff; font-size:12px; letter-spacing:.04em; text-transform:uppercase;
+    }
+    .book-meta b{ display:block; font-size:13px; }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1 class="hero-title">
+      <span>Artists</span>
+      <span>Books.</span>
+    </h1>
+  </header>
+
+  <main class="container split">
+    <section>
+      <h2 class="subhead">Our mission: To celebrate art books & street art books worldwide.</h2>
+      <p style="max-width: 52ch; font-size: clamp(16px, 1.4vw, 18px); line-height: 1.45; color:#222;">
+       We curate artists’ books, run workshops and training, host street art tours, and offer unique prints and gifts.
+      </p>
+    </section>
+    <section>
+      <div class="eyebrow">Featured: Midnight Murals</div>
+      <!-- Replace the image URL with your own cover/hero image.  -->
+      <img class="feature-img" src="image1.jpeg" alt="Featured art book"/>
+    </section>
+  </main>
+
+  <section class="container grid-wrap">
+    <div class="grid-head">
+      <div class="grid-title">Street Art & Graffiti Books — Featured</div>
+      <div style="font-size:12px; color:#666;">Simulated covers for demo purposes</div>
+    </div>
+    <div class="book-grid">
+      <!-- Place the generated JPGs in a folder named `covers/` next to this HTML file -->
+      <figure class="book-card"><img src="covers/cover-01.png" alt="Street Noise cover"><figcaption class="book-meta"><b>Street Noise</b>A Visual Anthology</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-02.jpg" alt="Chrome Drips cover"><figcaption class="book-meta"><b>Chrome Drips</b>Urban Lettering Vol. 1</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-03.jpg" alt="Tag City cover"><figcaption class="book-meta"><b>Tag City</b>Writers of the World</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-04.jpg" alt="Concrete Dreams cover"><figcaption class="book-meta"><b>Concrete Dreams</b>Photobook Edition</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-05.jpg" alt="Line Breakers cover"><figcaption class="book-meta"><b>Line Breakers</b>Notes from the Lines</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-06.jpg" alt="Wall Writers cover"><figcaption class="book-meta"><b>Wall Writers</b>Graffiti Archives</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-07.jpg" alt="Ink & Asphalt cover"><figcaption class="book-meta"><b>Ink & Asphalt</b>Marks of the Night</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-08.jpg" alt="Spray Stories cover"><figcaption class="book-meta"><b>Spray Stories</b>Zine Collection</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-09.jpg" alt="Yard Legends cover"><figcaption class="book-meta"><b>Yard Legends</b>Freight & Metro</figcaption></figure>
+      <figure class="book-card"><img src="covers/cover-10.jpg" alt="Sticker Wars cover"><figcaption class="book-meta"><b>Sticker Wars</b>Paste-Ups & Labels</figcaption></figure>
+    </div>
+  </section>
+
+</body>
+</html>
