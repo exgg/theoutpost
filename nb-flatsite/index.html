@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neuro-Bridging – Turn Off The Stress Switch</title>
+  <meta name="description" content="Neuro-Bridging helps you reset stress patterns, improve sleep, and restore emotional balance through guided imagery based on neuroscience." />
+
+  <style>
+    :root {
+      --ink: #0e2b3a;
+      --sub: #345;
+      --bg: #f7fafb;
+      --surface: #ffffff;
+      --cta: #499275;
+      --cta-dark: #3d7d63;
+      --muted: #6b7a86;
+      --link: #1d6fe8;
+      --overlay: rgba(15,31,42,.4);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "DM Sans", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header */
+    .site { display: flex; flex-direction: column; min-height: 100%; }
+    .nav {
+      position: sticky; top: 0;
+      backdrop-filter: saturate(180%) blur(6px);
+      background: rgba(255,255,255,.7);
+      border-bottom: 1px solid rgba(15,31,42,.06);
+      z-index: 30;
+    }
+    .nav-inner {
+      max-width: 1180px; margin: 0 auto;
+      padding: 14px 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .2px; }
+    .brand-badge {
+      width: 28px; height: 28px; border-radius: 8px; background: var(--cta);
+      display: grid; place-items: center; color: #fff; font-size: 14px; font-weight: 800;
+      box-shadow: 0 4px 14px rgba(73,146,117,.25);
+    }
+    .grow { flex: 1; }
+    .links {
+      display: flex; align-items: center; gap: 6px;
+    }
+    .nav a {
+      text-decoration: none; color: var(--sub); font-weight: 600; font-size: 15px;
+      padding: 8px 10px; border-radius: 8px;
+    }
+    .nav a:hover { background: rgba(13,68,120,.06); }
+
+    .pill-login {
+      appearance: none; border: 1px solid #000; cursor: pointer;
+      background: #fff; color: #000; font-weight: 600; border-radius: 9999px;
+      padding: 8px 18px; font-size: 14px; line-height: 1;
+      transition: background-color .25s ease, color .25s ease, transform .1s ease;
+    }
+    .pill-login:hover { background: #000; color: #fff; transform: translateY(-1px); }
+
+    /* Hamburger (mobile only) */
+    .hamburger {
+      appearance: none; border: 0; background: transparent; cursor: pointer;
+      width: 40px; height: 40px; border-radius: 10px;
+      display: none; /* show on mobile via media query */
+      align-items: center; justify-content: center;
+    }
+    .hamburger:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+    .hamburger .bars { width: 22px; height: 2px; background: var(--ink); position: relative; border-radius: 2px; }
+    .hamburger .bars::before,
+    .hamburger .bars::after {
+      content: ""; position: absolute; left: 0; right: 0; height: 2px; background: var(--ink); border-radius: 2px;
+    }
+    .hamburger .bars::before { top: -7px; }
+    .hamburger .bars::after { top: 7px; }
+
+    /* Mobile drawer */
+    .drawer-overlay {
+      position: fixed; inset: 0; background: var(--overlay);
+      opacity: 0; pointer-events: none; transition: opacity .2s ease;
+      z-index: 40;
+    }
+    .drawer {
+      position: fixed; top: 0; left: 0; height: 100dvh; width: 280px;
+      background: #fff; box-shadow: 0 10px 40px rgba(0,0,0,.2);
+      transform: translateX(-100%); transition: transform .25s ease;
+      z-index: 41; display: flex; flex-direction: column;
+      padding: 16px;
+      border-right: 1px solid rgba(15,31,42,.08);
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+    .drawer .drawer-head {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+    }
+    .drawer nav {
+      display: grid; gap: 6px; margin-top: 6px;
+    }
+    .drawer a {
+      padding: 10px 12px; border-radius: 10px; color: var(--ink); font-weight: 700; text-decoration: none;
+    }
+    .drawer a:hover { background: rgba(13,68,120,.06); }
+    .drawer .drawer-foot {
+      margin-top: auto; padding-top: 12px; border-top: 1px solid rgba(15,31,42,.08);
+    }
+
+    /* Hero */
+    .hero { position: relative; overflow: hidden; }
+    .hero-inner {
+      max-width: 1180px; margin: 0 auto; padding: 56px 20px 40px;
+      display: grid; align-items: center;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 32px;
+    }
+    @media (max-width: 950px) {
+      .hero-inner { grid-template-columns: 1fr; grid-template-areas: "words" "image"; }
+      .hero .left { grid-area: words; }
+      .hero .right { grid-area: image; }
+    }
+    .eyebrow { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 8px; }
+    .title { font-size: clamp(44px, 7vw, 84px); line-height: .95; letter-spacing: -.02em; margin: 6px 0 10px; }
+    .lead { font-size: clamp(18px, 2.2vw, 22px); color: #2c3a44; line-height: 1.45; margin: 16px 0 28px; }
+    .btn { appearance: none; border: 0; cursor: pointer; background: var(--cta); color: #fff; font-weight: 700; border-radius: 9999px; padding: 10px 16px; font-size: 15px; box-shadow: 0 6px 16px rgba(73,146,117,.25); }
+    .btn:hover { background: var(--cta-dark); }
+
+    .shot-img {
+      max-width: min(520px, 100%);
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 28px 60px rgba(15,31,42,.25);
+      background: #fff;
+    }
+
+    /* Sections */
+    .section { padding: 56px 20px; }
+    .container-max {max-width:1100px; margin:0 auto;}
+
+    /* Prominent section title (used for Who) */
+    .section-title{
+      margin: 0 0 16px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      font-size: clamp(40px, 5vw, 56px);
+      line-height: 1.05;
+    }
+
+    /* How It Works */
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      grid-template-areas: "image copy";
+    }
+    .shot-wrap { grid-area: image; }
+    .how-copy { grid-area: copy; }
+
+    @media (max-width: 920px) {
+      .how-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        grid-template-areas:
+          "copy"
+          "image";
+      }
+      .shot-wrap { display: flex; justify-content: center; align-items: center; text-align: center; }
+      .how-phone { margin: 0 auto; display: block; }
+    }
+
+    .how-phone {
+      width: min(320px, 85%);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 28px 60px rgba(15,31,42,.25);
+    }
+
+    .how-header { margin-bottom: 10px; display: flex; align-items: center; gap: 12px; }
+    .how-title { font-size: 32px; font-weight: 800; margin: 0; }
+
+    .step-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+    .step-pill {
+      border: 1px solid rgba(15,31,42,.12);
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 9999px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .step-pill:hover { background: #f2f4f5; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; }
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      background: var(--surface);
+      border: 1px solid rgba(15,31,42,.06);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 6px 16px rgba(15,31,42,.04);
+    }
+    .step-badge {
+      width: 34px; height: 34px; border-radius: 9999px;
+      display: grid; place-items: center;
+      background: #cfeee0; color: #0f3a2b; font-weight: 800;
+      box-shadow: 0 4px 10px rgba(73,146,117,.18);
+    }
+    .step h4 { margin: 0 0 6px; font-size: 17px; }
+    .step p { margin: 0; color: #475968; line-height: 1.5; }
+
+    /* Who It's For */
+    .who-wrap{max-width:1100px;margin:0 auto}
+    .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width: 900px){.who-grid{grid-template-columns:1fr}}
+    .who-card{
+      background:var(--surface);
+      border:1px solid rgba(15,31,42,.06);
+      border-radius:16px;
+      padding:16px 18px;
+      box-shadow:0 6px 16px rgba(15,31,42,.04);
+    }
+    .who-card h4{
+      margin:0 0 6px;
+      font-size:18px;
+    }
+    .who-card p{margin:0;color:#475968;line-height:1.55}
+
+    /* FAQ */
+    .faq-wrap{max-width:1100px;margin:0 auto}
+    .faq-grid{display:grid;gap:14px}
+    .faq-item{
+      background:var(--surface);
+      border:1px solid rgba(15,31,42,.06);
+      border-radius:16px;
+      box-shadow:0 6px 16px rgba(15,31,42,.04);
+      overflow:hidden;
+      padding:16px 18px;
+    }
+    .faq-row{display:flex; align-items:flex-start; gap:12px; margin-bottom:8px}
+    .faq-badge{
+      width:28px; height:28px; border-radius:9999px;
+      background:#cfeee0; color:#0f3a2b; font-weight:800;
+      display:grid; place-items:center; flex:0 0 28px;
+      box-shadow:0 4px 10px rgba(73,146,117,.18);
+    }
+    .faq-q{margin:0; font-size:18px; font-weight:800; color:var(--ink)}
+    .faq-a{margin:0 0 4px; color:#475968; line-height:1.55; padding-left:40px}
+
+    /* Footer */
+    .foot {
+      border-top: 1px solid rgba(15,31,42,.07);
+      color: #5a6a76;
+      font-size: 14px;
+      padding: 30px 20px;
+    }
+    .foot a { color: var(--link); text-decoration: none; }
+
+    /* Responsive: show hamburger, hide top links on mobile */
+    @media (max-width: 920px) {
+      .hamburger { display: inline-flex; }
+      .links, .pill-login { display: none; }
+      .nav-inner { gap: 8px; }
+    }
+
+    /* Motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .drawer, .drawer-overlay { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site">
+
+    <!-- Header -->
+    <header class="nav">
+      <div class="nav-inner">
+        <!-- Hamburger on the LEFT (mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+          <span class="bars" aria-hidden="true"></span>
+        </button>
+
+        <div class="brand" style="user-select:none">
+          <div class="brand-badge">NB</div>
+          Neuro&nbsp;Bridging
+        </div>
+
+        <div class="grow"></div>
+
+        <!-- Desktop links (hidden on mobile) -->
+        <nav class="links" aria-label="Primary">
+          <a href="#who">Who is it for?</a>
+          <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <button class="pill-login"
+          onclick="window.open('https://neuro-bridging-823225126678.europe-west1.run.app/frontend?action=practise', '_blank')">
+          Log in
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer + Overlay -->
+    <div class="drawer-overlay" id="drawer-overlay" hidden></div>
+    <aside class="drawer" id="mobile-drawer" aria-hidden="true" aria-label="Mobile menu">
+      <div class="drawer-head">
+        <div class="brand-badge">NB</div>
+        <strong>Neuro&nbsp;Bridging</strong>
+      </div>
+      <nav aria-label="Mobile primary navigation">
+        <a href="#who" data-close-drawer>Who is it for?</a>
+        <a href="#how" data-close-drawer>How it works</a>
+        <a href="#faq" data-close-drawer>FAQ</a>
+      </nav>
+      <div class="drawer-foot">
+        <button class="pill-login" style="width:100%;" onclick="window.open('https://neuro-bridging-823225126678.europe-west1.run.app/frontend?action=practise', '_blank')" data-close-drawer>
+          Log in
+        </button>
+      </div>
+    </aside>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="left">
+          <div class="eyebrow">Neuro-Bridging</div>
+          <h1 class="title">Turn Off The Stress Switch</h1>
+          <p class="lead">
+            With Neuro-Bridging, a digital therapeutic that enables individuals to eliminate post-traumatic stress disorder (PTSD) symptoms through a guided imagery exercise, rooted in the neuroscience of memory reconsolidation.
+          </p>
+          <button class="btn" onclick="document.getElementById('who').scrollIntoView({behavior:'smooth'})">
+            Learn more
+          </button>
+        </div>
+        <div class="right">
+          <img src="top-image.png" alt="Neuro-Bridging app interface" class="shot-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section id="who" class="section">
+      <div class="who-wrap">
+        <h2 class="section-title">Who is it for?</h2>
+        <div class="who-grid">
+
+          <div class="who-card">
+            <h4>Individuals with PTSD symptoms</h4>
+            <p>For people experiencing intrusive thoughts, hyper-arousal, nightmares, avoidance, or persistent stress responses following trauma.</p>
+          </div>
+
+          <div class="who-card">
+            <h4>Those Affected by General Stress Conditions</h4>
+            <p>This technique has the potential to help anyone struggling with stress, anxiety, cravings, compulsive behaviors, or persistent negative thinking.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how" class="section">
+      <div class="how-grid">
+        <div class="shot-wrap" style="min-height:auto;">
+          <img src="middle-image.png" alt="Neuro-Bridging app walkthrough" class="how-phone" />
+        </div>
+
+        <div class="how-copy">
+          <div class="how-header">
+            <h2 class="how-title">How It Works</h2>
+          </div>
+
+          <div class="step-nav">
+            <a class="step-pill" href="#step1">1 Measure</a>
+            <a class="step-pill" href="#step2">2 Learn</a>
+            <a class="step-pill" href="#step3">3 Practise</a>
+            <a class="step-pill" href="#step4">4 Follow up</a>
+          </div>
+
+          <div class="steps">
+            <div class="step" id="step1">
+              <div class="step-badge">1</div>
+              <div>
+                <h4>Measure (Baseline)</h4>
+                <p>Start with a brief assessment using standard clinical measures to understand your current state.</p>
+              </div>
+            </div>
+
+            <div class="step" id="step2">
+              <div class="step-badge">2</div>
+              <div>
+                <h4>Learn the Technique</h4>
+                <p>Access guided audio lessons or learn with our therapist, the app includes everything you need and guides you through each step of the process.</p>
+              </div>
+            </div>
+
+            <div class="step" id="step3">
+              <div class="step-badge">3</div>
+              <div>
+                <h4>Practice (Sessions)</h4>
+                <p>You'll complete a series of short sessions using the technique, each lasting 3 minutes, every half hour over the course of a day. The system will email you reminders to help you stay on track. Consistent practice is essential to achieving change.</p>
+              </div>
+            </div>
+
+            <div class="step" id="step4">
+              <div class="step-badge">4</div>
+              <div>
+                <h4>Follow Up</h4>
+                <p>Evaluate your progress by comparing your latest results with your initial measurement. The cycle can be repeated if required.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="faq-wrap">
+        <h2 style="margin:0 0 14px; font-size:32px; font-weight:800;">FAQ</h2>
+        <div class="faq-grid">
+
+          <div class="faq-item">
+            <div class="faq-row">
+              <span class="faq-badge">1</span>
+              <h3 class="faq-q">Do I need headphones?</h3>
+            </div>
+            <p class="faq-a">
+              <strong>Optional but helpful.</strong> Headphones can improve focus during the audio steps, but phone or computer speakers work just as well. The program functions effectively without them.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-row">
+              <span class="faq-badge">2</span>
+              <h3 class="faq-q">How was Neuro-Bridging developed?</h3>
+            </div>
+            <p class="faq-a">
+              Neuro-Bridging was developed in the field by highly skilled therapists in real-world settings. The app and process were the result of their work over many years.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-row">
+              <span class="faq-badge">3</span>
+              <h3 class="faq-q">Do I need to use the app alongside a therapist?</h3>
+            </div>
+            <p class="faq-a">
+              At this stage, yes. Strong emotions may arise during the process, and as the product is still in development, we want you to be supported by a qualified therapist for your safety.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-row">
+              <span class="faq-badge">4</span>
+              <h3 class="faq-q">Is Neuro-Bridging just another wellness app?</h3>
+            </div>
+            <p class="faq-a">
+              Many wellness and meditation apps provide only temporary relief or, at best, incremental change. Neuro-Bridging delivers lasting, transformational results, symptoms are resolved, and users experience a new quality of life. Neuro-Bridging is a digital therapeutic, not a wellness app.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="foot">
+      <div class="container-max" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>&copy; 2025 Neuro-Bridging</div>
+        <div style="display:flex; gap:14px">
+          <a href="#who">Who is it for?</a>
+          <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://neuro-bridging-823225126678.europe-west1.run.app/frontend" target="_blank" rel="noopener">Log in</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      const hamburger = document.getElementById('hamburger');
+      const drawer = document.getElementById('mobile-drawer');
+      const overlay = document.getElementById('drawer-overlay');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        hamburger.setAttribute('aria-expanded', 'true');
+        overlay.hidden = false;
+        // trap focus basic
+        drawer.querySelector('a,button')?.focus();
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        hamburger.setAttribute('aria-expanded', 'false');
+        // delay hiding overlay to allow fade
+        setTimeout(() => { overlay.hidden = true; }, 200);
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        expanded ? closeDrawer() : openDrawer();
+      });
+      overlay.addEventListener('click', closeDrawer);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+      // close when clicking any link/button with data-close-drawer
+      drawer.addEventListener('click', (e) => {
+        const t = e.target;
+        if (t instanceof Element && t.hasAttribute('data-close-drawer')) closeDrawer();
+      });
+    })();
+  </script>
+</body>
+</html>
+
+
+
