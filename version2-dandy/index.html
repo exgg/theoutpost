@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DANDEMONIUM>NET - The Dandy Defined</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0K7N65R6SF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0K7N65R6SF');
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', Baskerville, serif;
+      background: #eaeaeb;
+      color: #1c1c1c;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+      color: #4b0082;
+    }
+
+    header h3 {
+      font-size: 1.25rem;
+      margin-top: 0px;
+      color: #4b0082;
+    }
+
+    nav {
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #1c1c1c;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .left, .right {
+      flex: 1;
+    }
+
+    .left img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    .right .label {
+      background: #4b0082;
+      color: white;
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .right h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .right p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .right .author {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 12px;
+      border: 1px solid #4b0082;
+      text-decoration: none;
+      font-size: 14px;
+      color: #1c1c1c;
+      background-color: transparent;
+      transition: background-color 0.2s ease;
+    }
+
+    .read-more:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header h3 {
+        font-size: 1rem;
+      }
+
+      .right h1 {
+        font-size: 22px;
+      }
+
+      .right p {
+        font-size: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+
+  <style>
+    .hero {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.hero .badge {
+  display: inline-block;
+  background: #4b0082;
+  color: white;
+  padding: 6px 12px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero .headline {
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #1c1c1c;
+  margin: 15px 0;
+}
+
+.hero .dots {
+  font-size: 24px;
+  letter-spacing: 5px;
+  color: #4b0082;
+  margin: 10px 0;
+}
+
+.hero .custom-line {
+  border: none;
+  border-top: 2px solid #4b0082;
+  width: 60px;
+  margin: 20px auto 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero .headline {
+    font-size: 18px;
+  }
+
+  .hero .dots {
+    font-size: 20px;
+  }
+}
+
+  </style>
+
+  <style>
+
+    nav {
+        margin-top: 1px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px;
+      }
+
+      nav a {
+        position: relative;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Libre Baskerville', serif;
+        padding: 8px 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #1c1c1c;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+      }
+
+      nav a::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #4b0082;
+        transition: width 0.3s ease, left 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      nav a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #4b0082;
+        transform: none;
+      }
+
+  </style>
+
+  <style>
+
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        scroll-behavior: auto;
+        will-change: transform;
+      }
+
+
+      .carousel-track img {
+        width: 100%;
+        flex-shrink: 0;
+        border: 1px solid #ccc;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background-color: rgba(255, 255, 255, 0.1); /* light, semi-transparent white */
+        color: #4b0082;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        padding: 5px 10px;
+        transition: background 0.3s;
+        border-radius: 4px;
+      }
+
+
+      .arrow:hover {
+        /*  background-color: #4b0082; */
+      }
+
+      .left-arrow {
+        left: 10px;
+      }
+
+      .right-arrow {
+        right: 10px;
+      }
+
+  </style>
+
+
+<style>
+
+  .site-footer {
+  background: #eaeaeb;
+  padding: 30px 20px 60px;
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  color: #1c1c1c;
+  margin-top: 60px;
+}
+
+.footer-line {
+  border: none;
+  border-top: 2px solid #4b0082;
+  width: 90%;
+  margin: 0 auto 25px;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #4b0082;
+  font-size: 14px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #1c1c1c;
+}
+
+.footer-links .dot {
+  color: #4b0082;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+</style>
+
+<style>
+
+  .comments-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2em;
+  font-family: 'Georgia', serif;
+}
+
+.comment-block {
+  margin-bottom: 2em;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 1.5em;
+}
+
+.comment-text {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+
+.comment-author {
+  font-size: 0.95em;
+  color: #666;
+  font-style: italic;
+}
+
+
+</style>
+
+</head>
+<body>
+
+  <div style="background: black; text-align: center; padding: 10px 0; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Libre Baskerville', serif;">
+  <a href="dispatch.html" style="color: white; text-decoration: none; display: block;">Subscribe and Receive Our Dispatches</a>
+</div>
+
+  <header>
+    <h1>DANDEMONIUM</h1>
+    <h3>The Dandy Defined</h3>
+    <nav>
+      <a href="2020.html" >20 / 20</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="dispatch.html">Subscribe</a>
+      <a href="about.html">About Robin</a>
+      <!-- <a href="events.html">Events</a> -->
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="left">
+
+      <div class="carousel">
+      <button class="arrow left-arrow">&#10094;</button>
+      <div class="carousel-track">
+        <!-- These will be cloned in JS -->
+        <img src="DANDEMONIUM3_720x.webp" alt="Last Clone" class="clone">
+        <img src="DANDEMONIUMMAIN1.jpg" alt="Dandemonium 1">
+        <img src="DANDEMONIUM2_rollover_720x.webp" alt="Dandemonium 2">
+        <img src="DANDEMONIUM3_720x.webp" alt="Dandemonium 3">
+        <img src="DANDEMONIUMMAIN1.jpg" alt="First Clone" class="clone">
+      </div>
+      <button class="arrow right-arrow">&#10095;</button>
+    </div>
+
+</div>
+
+    <div class="right">
+      <div class="label">THE BOOK</div>
+      <h1>Dandemonium: The Dandy Defined</h1>
+      <p><em>Journalist, author, and curator Robin Dutt</em> spent over a decade crafting this elegant homage to Dandyism. Part social history, part aesthetic manifesto, the book charts a stylish course from Beau Brummell to David Sylvian.</p>
+
+      <p>With vivid portraits of Quentin Crisp, AA Gill, Pierre Cardin, and others, Dutt argues that while the wardrobe may have changed, the essence of the Dandy remains: detail-obsessed, socially subversive, and sartorially untouchable.</p>
+
+      <p>Lavishly illustrated and surprisingly moving, <strong>Dandemonium</strong> is a call to arms for men who still believe dressing well is a form of art.</p>
+
+      <p class="author">Published by Kerseymere</p>
+
+      <a class="read-more" href="https://www.shreejinewsagents.com/products/dandemonium" target="_blank">Buy Now</a>
+    </div>
+  </div>
+
+  
+<div class="hero">
+  <div class="badge">Observations and Comments</div>
+</div>
+
+<div class="comments-section">
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘At once, scholarly and wickedly entertaining, this book is a must for curious minds and stylish coffee tables.’
+    </div>
+    <div class="comment-author">
+      — Juanita Coulson, <em>The Lady Magazine</em>
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘…A life’s work. It really is wonderful and I will enjoy reading it.’
+    </div>
+    <div class="comment-author">
+      — Brian Clivaz, Director, L’Escargot, Soho, London
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘This handsome collector’s edition book limited to 1,000 copies…is the culmination of more than a decade’s work…The author brings the notion of male sartorial finery right up to date.’
+    </div>
+    <div class="comment-author">
+      — <em>Times Online Luxury</em>
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      DANDEMONIUM is definitive; meaning essential reading for anyone remotely interested in clothes as obsessive self-expression.
+    </div>
+    <div class="comment-author">
+      — Peter York, Journalist and author (<em>The Official Sloane Ranger Diary</em>, <em>Dictator Style</em>, <em>A Dead Cat on Your Table</em>)
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘If there is a more elegant and enlightening book, I have yet to find it.’
+    </div>
+    <div class="comment-author">
+      — Sam Taylor, Journalist and author (<em>East of Islington</em>)
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘This book is informative and in 12 chapters shares examples of prominent Dandies and the concept of Dandyism as a social and historical phenomenon… A long-awaited work of art. Congratulations, Robin.’
+    </div>
+    <div class="comment-author">
+      — Sarah Millar, CEO, Sister London
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      DANDEMONIUM is not just a literary endeavour; it’s a social, historical and literary journey that delves into the intriguing world of the Dandy.
+    </div>
+    <div class="comment-author">
+      — <em>Home House Magazine</em> (25th Anniversary Edition)
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘As well as touching on the Dandy’s personality through clothes, the book explores the multifarious nature of sexual identity. Gender-fluid fashion is, after all, the preserve of many a public figure today.’
+    </div>
+    <div class="comment-author">
+      — Lucie Muir, <em>Bond Street Journal</em>
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘SHOW is proud to produce ‘DANDEMONIUM – The Dandy Defined’, a true labour of love on the part of its author, journalist Robin Dutt…in which he challenges some misconceptions (it isn’t all about peacockery)…and treats us to his own recollections of Dandies he’s met (which) includes Andy Warhol, Sir Hardy Amies, David Sylvian and AA Gill.’
+    </div>
+    <div class="comment-author">
+      — <em>SHOW Media London</em>
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘My mentor and inspiration. Best wishes for the success of his new book, DANDEMONIUM. A true Dandy in a changing world.’
+    </div>
+    <div class="comment-author">
+      — Anthony Moss, author (<em>The Visual History of Antique Walking Sticks and Canes</em>)
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘Robin Dutt, author, journalist, bon viveur and expert on all things Savile Row introduces us to his book, DANDEMONIUM and why the person of the Dandy should always be considered and remembered and indeed, celebrated.’
+    </div>
+    <div class="comment-author">
+      — <em>Savile Row Style Magazine</em>
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘In appearance, this book is a true Dandy with its voluptuous, purple-clothed exterior and its parade of iconic images. But it is more than a visual delight; here you will find fascinating scholarship, a stellar cast ranging from Beau Brummell to Quentin Crisp and Pierre Cardin and Boy George and some unexpected insights as to what constitutes a Dandy…Robin Dutt writes with style and panache, shaping his material with an intelligence that is as precise as a tailor’s blade.’
+    </div>
+    <div class="comment-author">
+      — Diane Pacitti, Poet (<em>Dark Angelic Mills</em> Canterbury Press)
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘Robin is without a doubt the most qualified chronicler of dandification. His personal style and delightful DANDEMONIUM book are informed not only through his thorough historical research but also his flamboyant flair. Robin is a beacon…illuminating all in his realm.’
+    </div>
+    <div class="comment-author">
+      — Guy Hills, Dashing Tweeds, Marylebone, London
+    </div>
+  </div>
+
+  <div class="comment-block">
+    <div class="comment-text">
+      ‘I am honoured to have been asked to write this foreword. Robin hasn’t watered down his extravagant look one iota, testament to the Dandy cause. As such, he is perfectly qualified to expound upon this fascinating subject.’
+    </div>
+    <div class="comment-author">
+    — From the foreword to <em>DANDEMONIUM</em> by Dominic Lutyens (Journalist and author of
+    <em>‘Celia Birtwell’</em>, Quadrille; <em>‘Living with Mid-Century Collectibles’</em>, Ryland Peters &amp; Small; and <em>‘Perriand’</em>, OH! Life/Design Monographs).
+  </div>
+  </div>
+</div>
+
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+
+  const slideWidth = () => track.clientWidth;
+  let currentIndex = 1; // Start on first real image
+
+  const scrollToIndex = (index, animate = true) => {
+    track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+    track.style.transform = `translateX(-${slideWidth() * index}px)`;
+  };
+
+  // Initial position (skip first clone)
+  scrollToIndex(currentIndex, false);
+
+  rightArrow.addEventListener('click', () => {
+    if (currentIndex >= slides.length - 1) return;
+    currentIndex++;
+    scrollToIndex(currentIndex);
+  });
+
+  leftArrow.addEventListener('click', () => {
+    if (currentIndex <= 0) return;
+    currentIndex--;
+    scrollToIndex(currentIndex);
+  });
+
+  // Handle looping after transition
+  track.addEventListener('transitionend', () => {
+    if (slides[currentIndex].classList.contains('clone')) {
+      track.style.transition = 'none';
+      currentIndex = currentIndex === 0 ? slides.length - 2 : 1;
+      scrollToIndex(currentIndex, false);
+    }
+  });
+
+  window.addEventListener('resize', () => scrollToIndex(currentIndex, false));
+</script>
+
+<footer class="site-footer">
+  <hr class="footer-line">
+  <div class="footer-links">
+    <a href="https://www.instagram.com/dandemonium.online/" target="_blank">Instagram</a>
+    <span class="dot">·</span>
+    <a href="mailto:info@dandemonium.net">Contact: info@dandemonium.net</a>
+  </div>
+  <p class="copyright">&copy; 2025 Dandemonium.net </p>
+</footer>
+
+</body>
+</html>
